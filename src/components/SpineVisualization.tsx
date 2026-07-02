@@ -86,9 +86,9 @@ export default function SpineVisualization() {
       <div className="flex-1 w-full max-w-md relative perspective-1000">
         <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent blur-3xl -z-10 rounded-full opacity-50 translate-y-10"></div>
         
-        <div className="bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(20,184,166,0.3)] border border-slate-200 overflow-hidden" ref={containerRef}>
+        <div className="bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(20,184,166,0.3)] border border-slate-300 overflow-hidden" ref={containerRef}>
           {/* Mac Window Header */}
-          <div className="flex items-center px-4 py-3 border-b border-slate-100 bg-white/50">
+          <div className="flex items-center px-4 py-3 border-b border-slate-200 bg-slate-50/50">
             <div className="flex gap-1.5 flex-1">
               <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
               <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
