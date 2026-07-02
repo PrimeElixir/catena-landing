@@ -5,7 +5,7 @@ import Integrations from '@/components/Integrations';
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col bg-background text-text-primary selection:bg-accent selection:text-[#0a0c10]">
+    <main className="flex min-h-screen flex-col bg-gradient-to-b from-background via-background to-slate-100 text-text-primary selection:bg-accent selection:text-white">
       <Header />
       
       <Hero />
@@ -14,7 +14,7 @@ export default function Home() {
       
       <Integrations />
       
-      <footer className="py-12 text-center text-text-secondary text-sm border-t border-border-glass">
+      <footer className="py-12 text-center text-text-secondary text-sm border-t border-border-glass bg-transparent">
         <p>&copy; {new Date().getFullYear()} Prime Elixir Co. All rights reserved.</p>
       </footer>
     </main>

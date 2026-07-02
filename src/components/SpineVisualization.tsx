@@ -89,7 +89,7 @@ export default function SpineVisualization() {
 
       {/* Right Glass Card with Spine */}
       <div className="flex-1 w-full max-w-md relative perspective-1000">
-        <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-blue-500/20 blur-3xl -z-10 rounded-full opacity-50 translate-y-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent blur-3xl -z-10 rounded-full opacity-50 translate-y-10"></div>
         
         <div className="glass-panel p-8" ref={containerRef}>
           {/* Card Header */}
@@ -107,7 +107,7 @@ export default function SpineVisualization() {
           <div className="relative">
             {/* The Animated Gradient Line that "fills" on scroll */}
             <motion.div 
-              className="absolute left-6 top-6 w-[2px] bg-gradient-to-b from-accent to-blue-500 -translate-x-1/2 z-0"
+              className="absolute left-6 top-6 w-[2px] bg-gradient-to-b from-spine-line to-accent -translate-x-1/2 z-0"
               style={{ height: lineHeight, originY: 0 }}
             />
             

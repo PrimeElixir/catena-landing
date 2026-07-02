@@ -23,7 +23,7 @@ export default function Header() {
         {/* CTAs */}
         <div className="flex items-center gap-4">
           <a href="#signin" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors hidden sm:block">Sign in</a>
-          <button className="bg-accent hover:bg-accent-hover text-[#0a0c10] font-semibold py-2 px-5 rounded-full text-sm transition-colors shadow-[0_0_15px_rgba(20,184,166,0.3)] hover:shadow-[0_0_20px_rgba(20,184,166,0.5)]">
+          <button className="bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-5 rounded-full text-sm transition-colors shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/40">
             Join the Pilot
           </button>
         </div>

@@ -6,9 +6,9 @@ export default function Hero() {
     <section className="relative pt-40 pb-20 px-6 flex flex-col items-center text-center overflow-hidden">
       
       {/* Background Architectural Elements (abstract shapes) */}
-      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
-        <div className="absolute top-[20%] left-[15%] w-96 h-96 bg-accent rounded-full mix-blend-screen filter blur-[100px] animate-pulse opacity-20"></div>
-        <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-blue-600 rounded-full mix-blend-screen filter blur-[150px] opacity-10"></div>
+      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
+        <div className="absolute top-[20%] left-[15%] w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-[100px] animate-pulse opacity-10"></div>
+        <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-slate-300 rounded-full mix-blend-multiply filter blur-[150px] opacity-30"></div>
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
@@ -19,7 +19,7 @@ export default function Hero() {
         </div>
 
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-tight">
-          File status <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">≠</span> <br className="hidden md:block" />
+          File status <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-400 to-accent">≠</span> <br className="hidden md:block" />
           matter readiness.
         </h1>
 
@@ -28,7 +28,7 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center gap-4">
-          <button className="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-accent-hover text-[#0a0c10] font-semibold rounded-full shadow-[0_0_20px_rgba(20,184,166,0.3)] transition-all transform hover:scale-105">
+          <button className="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-full shadow-md shadow-accent/20 transition-all transform hover:scale-105">
             Join the Pilot
           </button>
           

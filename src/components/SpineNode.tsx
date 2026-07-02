@@ -17,7 +17,7 @@ export interface SpineNodeProps {
 
 const getIcon = (type: string, status: NodeStatus) => {
   const size = 18;
-  const className = status === 'pending' ? 'text-text-secondary/50' : (status === 'completed' ? 'text-accent' : 'text-blue-400');
+  const className = status === 'pending' ? 'text-text-secondary/50' : (status === 'completed' ? 'text-success' : 'text-accent');
   
   switch (type) {
     case 'scan': return <FileSearch size={size} className={className} />;
@@ -34,23 +34,23 @@ export default function SpineNode({ status, title, timestamp, description, iconT
     <div className="relative flex gap-6 pb-12">
       {/* Spine Line (Background) */}
       {!isLast && (
-        <div className="absolute left-6 top-14 bottom-0 w-[2px] bg-border-glass -translate-x-1/2"></div>
+        <div className="absolute left-6 top-14 bottom-0 w-[2px] bg-spine-line -translate-x-1/2"></div>
       )}
       
       {/* Node Icon Container */}
       <div className="relative z-10 flex-shrink-0">
         <div className={clsx(
-          "w-12 h-12 rounded-xl flex items-center justify-center bg-surface border-2 transition-all duration-500",
-          status === 'completed' && "border-accent shadow-[0_0_10px_rgba(20,184,166,0.2)]",
-          status === 'active' && "border-blue-400 shadow-[0_0_15px_rgba(96,165,250,0.4)]",
-          status === 'pending' && "border-border-glass border-dashed opacity-60"
+          "w-12 h-12 rounded-xl flex items-center justify-center border-2 transition-all duration-500",
+          status === 'completed' && "bg-white border-success shadow-md shadow-success/10",
+          status === 'active' && "bg-white border-accent shadow-md shadow-accent/20",
+          status === 'pending' && "bg-slate-100 border-border-glass opacity-60"
         )}>
           {getIcon(iconType, status)}
         </div>
         
         {/* Active Pulse Effect */}
         {status === 'active' && (
-          <div className="absolute inset-0 rounded-xl border-2 border-blue-400 animate-ping opacity-20"></div>
+          <div className="absolute inset-0 rounded-xl border-2 border-accent animate-ping opacity-20"></div>
         )}
       </div>
 
@@ -61,7 +61,7 @@ export default function SpineNode({ status, title, timestamp, description, iconT
           {timestamp && <span>{timestamp}</span>}
           {timestamp && <span className="text-border-glass">•</span>}
           <span className={clsx(
-            status === 'completed' ? "text-accent/80" : (status === 'active' ? "text-blue-400/80" : "text-text-secondary")
+            status === 'completed' ? "text-success font-medium" : (status === 'active' ? "text-accent font-medium" : "text-text-secondary")
           )}>{description}</span>
         </div>
       </div>
