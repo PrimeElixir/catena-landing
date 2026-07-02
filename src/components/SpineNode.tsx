@@ -1,9 +1,10 @@
 import React from 'react';
-import { CheckCircle2, CircleDashed, FileSearch, MessageSquare, Image as ImageIcon, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, TriangleAlert, Smartphone, Image as ImageIcon, ShieldCheck, Flag } from 'lucide-react';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 
 export type NodeStatus = 'completed' | 'active' | 'pending';
+export type ColorTheme = 'slate' | 'success' | 'indigo';
 
 export interface SpineNodeProps {
   id: string;
@@ -11,58 +12,64 @@ export interface SpineNodeProps {
   title: string;
   timestamp?: string;
   description: string;
-  iconType: 'scan' | 'sms' | 'photo' | 'verify' | 'ready';
+  iconType: 'alert' | 'sms' | 'photo' | 'verify' | 'ready';
+  colorTheme: ColorTheme;
   isLast?: boolean;
 }
 
-const getIcon = (type: string, status: NodeStatus) => {
-  const size = 18;
-  const className = status === 'pending' ? 'text-text-secondary/50' : (status === 'completed' ? 'text-success' : 'text-accent');
+const getIcon = (type: string, theme: ColorTheme) => {
+  const size = 16;
+  let className = '';
+  
+  if (theme === 'slate') className = 'text-slate-400';
+  if (theme === 'success') className = 'text-success';
+  if (theme === 'indigo') className = 'text-indigo-100'; // Inside solid circle
   
   switch (type) {
-    case 'scan': return <FileSearch size={size} className={className} />;
-    case 'sms': return <MessageSquare size={size} className={className} />;
-    case 'photo': return <ImageIcon size={size} className={className} />;
-    case 'verify': return <ShieldCheck size={size} className={className} />;
-    case 'ready': return <CheckCircle2 size={size} className={className} />;
-    default: return <CircleDashed size={size} className={className} />;
+    case 'alert': return <TriangleAlert size={size} className={className} />;
+    case 'sms': return <Smartphone size={size} className={className} />;
+    case 'photo': return <CheckCircle2 size={size} className={className} />;
+    case 'verify': return <CheckCircle2 size={size} className={className} />;
+    case 'ready': return <Flag size={size} className={className} />;
+    default: return <CheckCircle2 size={size} className={className} />;
   }
 };
 
-export default function SpineNode({ status, title, timestamp, description, iconType, isLast }: SpineNodeProps) {
+export default function SpineNode({ status, title, timestamp, description, iconType, colorTheme, isLast }: SpineNodeProps) {
   return (
-    <div className="relative flex gap-6 pb-12">
-      {/* Spine Line (Background) */}
+    <div className="relative flex gap-6 pb-10">
+      {/* Solid Blue Spine Line */}
       {!isLast && (
-        <div className="absolute left-6 top-14 bottom-0 w-[2px] bg-spine-line -translate-x-1/2"></div>
+        <div className="absolute left-[15px] top-[34px] bottom-[-2px] w-[2px] bg-blue-600 rounded-full"></div>
       )}
       
       {/* Node Icon Container */}
-      <div className="relative z-10 flex-shrink-0">
+      <div className="relative z-10 flex-shrink-0 pt-1">
         <div className={clsx(
-          "w-12 h-12 rounded-xl flex items-center justify-center border-2 transition-all duration-500",
-          status === 'completed' && "bg-white border-success shadow-md shadow-success/10",
-          status === 'active' && "bg-white border-accent shadow-md shadow-accent/20",
-          status === 'pending' && "bg-slate-100 border-border-glass opacity-60"
+          "w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500",
+          colorTheme === 'slate' && "bg-white border-[1.5px] border-slate-300",
+          colorTheme === 'success' && "bg-white border-[1.5px] border-success",
+          colorTheme === 'indigo' && "bg-indigo-600 shadow-md shadow-indigo-600/30",
         )}>
-          {getIcon(iconType, status)}
+          {getIcon(iconType, colorTheme)}
         </div>
-        
-        {/* Active Pulse Effect */}
-        {status === 'active' && (
-          <div className="absolute inset-0 rounded-xl border-2 border-accent animate-ping opacity-20"></div>
-        )}
       </div>
 
       {/* Content */}
-      <div className={clsx("flex flex-col pt-2", status === 'pending' && "opacity-50")}>
-        <h3 className="text-base font-semibold text-text-primary">{title}</h3>
-        <div className="flex items-center gap-2 mt-1 text-xs font-mono text-text-secondary">
-          {timestamp && <span>{timestamp}</span>}
-          {timestamp && <span className="text-border-glass">•</span>}
+      <div className="flex flex-col">
+        <h3 className="text-[15px] font-semibold text-slate-800">{title}</h3>
+        <div className="flex items-center gap-1.5 mt-1.5 text-xs font-mono">
           <span className={clsx(
-            status === 'completed' ? "text-success font-medium" : (status === 'active' ? "text-accent font-medium" : "text-text-secondary")
-          )}>{description}</span>
+            colorTheme === 'slate' ? "text-slate-500" : (colorTheme === 'success' ? "text-success" : "text-indigo-600")
+          )}>
+            {timestamp}
+          </span>
+          <span className="text-slate-300">•</span>
+          <span className={clsx(
+            colorTheme === 'slate' ? "text-slate-500" : (colorTheme === 'success' ? "text-success" : "text-indigo-600")
+          )}>
+            {description}
+          </span>
         </div>
       </div>
     </div>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import SpineNode, { SpineNodeProps } from './SpineNode';
 
 const sampleNodes: SpineNodeProps[] = [
@@ -11,7 +10,8 @@ const sampleNodes: SpineNodeProps[] = [
     title: 'Illegible ID Scan identified',
     timestamp: '10:42 AM',
     description: 'Trigger: Document Analysis',
-    iconType: 'scan'
+    iconType: 'alert',
+    colorTheme: 'slate'
   },
   {
     id: '2',
@@ -19,7 +19,8 @@ const sampleNodes: SpineNodeProps[] = [
     title: 'Automated SMS Sent to Client',
     timestamp: '10:43 AM',
     description: 'Action: Comm Hub',
-    iconType: 'sms'
+    iconType: 'sms',
+    colorTheme: 'slate'
   },
   {
     id: '3',
@@ -27,38 +28,32 @@ const sampleNodes: SpineNodeProps[] = [
     title: 'Client uploaded new photo via secure link',
     timestamp: '11:15 AM',
     description: 'Event: Client Portal',
-    iconType: 'photo'
+    iconType: 'photo',
+    colorTheme: 'success'
   },
   {
     id: '4',
-    status: 'active',
+    status: 'completed',
     title: 'Blocker resolved: ID Scan verified',
     timestamp: '11:16 AM',
     description: 'Engine: Catena Vision',
-    iconType: 'verify'
+    iconType: 'verify',
+    colorTheme: 'success'
   },
   {
     id: '5',
-    status: 'pending',
+    status: 'active',
     title: 'Matter ready to move forward',
-    description: 'Awaiting Status Update in CMS',
-    iconType: 'ready'
+    timestamp: '11:16 AM',
+    description: 'Status Updated in CMS',
+    iconType: 'ready',
+    colorTheme: 'indigo'
   }
 ];
 
 export default function SpineVisualization() {
   const containerRef = useRef<HTMLDivElement>(null);
   
-  // Track scroll progress relative to this container
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start center", "end center"]
-  });
-
-  // Map scroll progress to the height of the animated gradient line
-  // From 0% to 100% height
-  const lineHeight = useTransform(scrollYProgress, [0, 0.8], ["0%", "100%"]);
-
   return (
     <section className="py-20 px-6 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16" id="platform">
       
@@ -91,33 +86,42 @@ export default function SpineVisualization() {
       <div className="flex-1 w-full max-w-md relative perspective-1000">
         <div className="absolute inset-0 bg-gradient-to-tr from-accent/10 to-transparent blur-3xl -z-10 rounded-full opacity-50 translate-y-10"></div>
         
-        <div className="glass-panel p-8" ref={containerRef}>
-          {/* Card Header */}
-          <div className="flex items-center justify-between mb-8 border-b border-border-glass pb-6">
-            <div>
-              <h3 className="text-lg font-bold">Sample Matter</h3>
-              <p className="text-sm text-text-secondary">Personal Injury • ID: MT-8924</p>
+        <div className="bg-white rounded-xl shadow-[0_20px_60px_-15px_rgba(20,184,166,0.3)] border border-slate-200 overflow-hidden" ref={containerRef}>
+          {/* Mac Window Header */}
+          <div className="flex items-center px-4 py-3 border-b border-slate-100 bg-white/50">
+            <div className="flex gap-1.5 flex-1">
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
+              <div className="w-2.5 h-2.5 rounded-full bg-slate-300"></div>
             </div>
-            <div className="px-3 py-1 bg-accent/10 text-accent text-xs font-semibold rounded-full border border-accent/20">
-              Readiness Check
+            <div className="text-xs font-mono text-slate-500 justify-center flex-1 text-center whitespace-nowrap">
+              catena://matter/garcia-v-deliveryco
             </div>
+            <div className="flex-1"></div>
           </div>
 
-          {/* Spine Nodes Container */}
-          <div className="relative">
-            {/* The Animated Gradient Line that "fills" on scroll */}
-            <motion.div 
-              className="absolute left-6 top-6 w-[2px] bg-gradient-to-b from-spine-line to-accent -translate-x-1/2 z-0"
-              style={{ height: lineHeight, originY: 0 }}
-            />
-            
-            {sampleNodes.map((node, idx) => (
-              <SpineNode 
-                key={node.id} 
-                {...node} 
-                isLast={idx === sampleNodes.length - 1} 
-              />
-            ))}
+          <div className="p-8 pb-10">
+            {/* Card Header */}
+            <div className="flex items-center justify-between mb-10 pb-2">
+              <div>
+                <h3 className="text-[22px] font-bold text-slate-800 mb-1">Sample Matter</h3>
+                <p className="text-[13px] text-slate-500">Personal Injury • ID: MT-8924</p>
+              </div>
+              <div className="px-3.5 py-1.5 bg-accent/10 text-accent text-xs font-semibold rounded-full">
+                Readiness Achieved
+              </div>
+            </div>
+
+            {/* Spine Nodes Container */}
+            <div className="relative ml-2">
+              {sampleNodes.map((node, idx) => (
+                <SpineNode 
+                  key={node.id} 
+                  {...node} 
+                  isLast={idx === sampleNodes.length - 1} 
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
