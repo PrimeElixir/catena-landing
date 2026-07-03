@@ -172,11 +172,11 @@ export default function HeroSection() {
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="line-through text-slate-400">Demand: drafted</span> <span className="text-slate-500 font-bold mx-2">→</span> 
-                      <span className="font-bold text-amber-700">Can't go out until the release clears.</span> <span className="text-slate-500 font-normal">Catena held it and flagged the dependency.</span> 
-                      <span className="text-amber-600 italic font-semibold ml-1">· blocked, correctly</span>
+                      <span className="font-bold text-slate-700">Can't go out until the release clears.</span> <span className="text-slate-500 font-normal">Catena held it and flagged the dependency.</span> 
+                      <span className="text-slate-500 italic font-semibold ml-1">· blocked, correctly</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">

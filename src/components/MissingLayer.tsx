@@ -63,7 +63,7 @@ export default function MissingLayer() {
             {/* The Illusion Card */}
             <div className="glass-panel p-8 text-left">
               <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
-                <span className="text-slate-400">👻</span> The Illusion: what your tools report
+                The Illusion: what your tools report
               </h3>
               
               <ul className="space-y-4">
