@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { ArrowRight, AlertCircle, FileX, Send, Clock, FileCheck } from 'lucide-react';
 
@@ -28,15 +30,23 @@ export default function PreviewSection() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
-            <a href="#" className="w-full sm:w-auto px-6 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-full shadow-md shadow-accent/20 transition-all flex items-center justify-center gap-2 group">
+            <a 
+              href={process.env.NEXT_PUBLIC_READINESS_URL || "https://catena-demo-puce.vercel.app/"}
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-full shadow-md shadow-accent/20 transition-all flex items-center justify-center gap-2 group"
+            >
               Explore the Document Readiness loop
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </a>
             
-            <a href="#" className="w-full sm:w-auto px-6 py-3.5 flex items-center justify-center gap-2 bg-transparent hover:bg-slate-100 text-slate-700 font-medium rounded-full transition-all group">
+            <button 
+              onClick={() => window.dispatchEvent(new Event('open-request-modal'))}
+              className="w-full sm:w-auto px-6 py-3.5 flex items-center justify-center gap-2 bg-transparent hover:bg-slate-100 text-slate-700 font-medium rounded-full transition-all group"
+            >
               Map one document stall
               <ArrowRight size={18} className="text-slate-400 group-hover:translate-x-1 transition-transform" />
-            </a>
+            </button>
           </div>
         </div>
 
