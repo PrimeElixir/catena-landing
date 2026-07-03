@@ -21,8 +21,8 @@ export default function HeroSection() {
       
       {/* Background Architectural Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-accent/20 rounded-full filter blur-[120px] animate-pulse opacity-40"></div>
-        <div className="absolute top-[30%] right-[5%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full filter blur-[150px] opacity-60"></div>
+        <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] bg-accent rounded-full blur-[120px] animate-pulse opacity-20"></div>
+        <div className="absolute top-[25%] right-[-10%] w-[700px] h-[700px] bg-slate-400 rounded-full blur-[150px] opacity-20"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center">
