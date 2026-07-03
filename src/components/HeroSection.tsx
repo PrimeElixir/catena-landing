@@ -47,10 +47,15 @@ export default function HeroSection() {
             Request Access
           </button>
           
-          <button className="w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-surface hover:bg-surface/80 border border-border-glass text-text-primary font-medium rounded-full transition-all">
-            <Play size={16} className="text-accent fill-accent" />
+          <a 
+            href={process.env.NEXT_PUBLIC_READINESS_URL || "https://catena-demo-puce.vercel.app/"}
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-surface hover:bg-surface/80 border border-border-glass text-text-primary font-medium rounded-full transition-all group"
+          >
+            <Play size={16} className="text-accent fill-accent group-hover:scale-110 transition-transform" />
             Watch the 90-second replay
-          </button>
+          </a>
         </div>
 
         {/* The Toggle Section */}
