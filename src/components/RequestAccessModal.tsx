@@ -7,7 +7,9 @@ type PathType = 'pilot' | 'question' | 'media' | 'partnership' | 'other' | '';
 
 export default function RequestAccessModal() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState('');
   const [path, setPath] = useState<PathType>('');
   
   // Form fields
@@ -44,10 +46,35 @@ export default function RequestAccessModal() {
     };
   }, [isOpen]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here is where you would normally fire the submission to a backend.
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          path,
+          name,
+          email,
+          firm,
+          role,
+          mind
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setIsSubmitted(true);
+    } catch (err) {
+      setError('Something went wrong. Please try again or use the phone number below.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (!isOpen) return null;
@@ -224,11 +251,24 @@ export default function RequestAccessModal() {
                   </div>
 
                   <div className="pt-2">
+                    {error && (
+                      <div className="mb-4 p-3 bg-red-50 text-red-600 text-sm rounded-lg border border-red-100">
+                        {error}
+                      </div>
+                    )}
                     <button 
                       type="submit"
-                      className="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-md shadow-accent/20"
+                      disabled={isSubmitting}
+                      className="w-full bg-accent hover:bg-accent-hover text-white font-semibold py-3 px-6 rounded-lg transition-colors shadow-md shadow-accent/20 disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                     >
-                      Send Message
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                          Sending...
+                        </>
+                      ) : (
+                        'Send Message'
+                      )}
                     </button>
                     
                     <p className="text-center text-sm text-slate-500 mt-5 mb-2">
