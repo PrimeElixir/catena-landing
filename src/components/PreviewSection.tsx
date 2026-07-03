@@ -5,7 +5,7 @@ import { ArrowRight, AlertCircle, FileX, Send, Clock, FileCheck } from 'lucide-r
 
 export default function PreviewSection() {
   return (
-    <section id="document-readiness" className="py-16 md:py-32 px-6 bg-slate-50 border-t border-border-glass">
+    <section id="document-readiness" className="pt-8 pb-16 md:py-32 px-6 bg-slate-50 border-t border-border-glass">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
         
         {/* Left: Text & CTAs */}

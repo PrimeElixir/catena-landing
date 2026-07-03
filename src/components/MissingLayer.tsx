@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 export default function MissingLayer() {
   return (
-    <section className="py-16 md:py-32 px-6">
+    <section className="pt-16 pb-8 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
@@ -123,7 +123,7 @@ export default function MissingLayer() {
         </div>
 
         {/* Body Copy */}
-        <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-slate-700 leading-relaxed font-light mb-24 text-center md:text-left">
+        <div className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-slate-700 leading-relaxed font-light mb-12 md:mb-24 text-center md:text-left">
           <p>
             Work doesn't stall inside a system. It stalls <em className="font-medium text-slate-900">between</em> them. The call happens in one tool, the signature in another, the records in a third, the invoice in a fourth — and each one faithfully reports that its piece is done, while the matter sits untouched for three weeks. 
           </p>
@@ -136,7 +136,7 @@ export default function MissingLayer() {
         </div>
 
         {/* Closing Statement */}
-        <div className="max-w-4xl mx-auto pt-16 border-t border-slate-200 text-center">
+        <div className="max-w-4xl mx-auto pt-8 md:pt-16 border-t border-slate-200 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">
             Activity is not movement.<br/>
             <span className="text-accent">Catena is the layer that moves.</span>
