@@ -147,29 +147,51 @@ export default function HeroSection() {
                 </div>
               </div>
             ) : (
-              <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <ul className="space-y-4 max-w-lg mx-auto text-slate-700 font-medium">
+              <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-2xl mx-auto">
+                <div className="text-center mb-8">
+                  <p className="text-lg font-semibold text-slate-800">
+                    Four green checkmarks. Four hidden blockers. <span className="text-accent">Catena caught all four.</span>
+                  </p>
+                </div>
+
+                <ul className="space-y-5 mx-auto text-slate-700 font-medium text-[15px] leading-snug">
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
-                    <div>Release — <span className="font-semibold text-slate-900">rejected by provider</span> <span className="text-slate-400 font-normal">· corrected form re-sent</span></div>
+                    <div>
+                      <span className="line-through text-slate-400">Release: signed</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="font-bold text-slate-900">Provider rejected it.</span> <span className="text-slate-500 font-normal">Catena generated their required form and re-sent it for signature.</span> 
+                      <span className="text-accent italic font-semibold ml-1">· moving</span>
+                    </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
-                    <div>Records — <span className="font-semibold text-slate-900">came back partial</span> <span className="text-slate-400 font-normal">· full chart re-requested</span></div>
+                    <div>
+                      <span className="line-through text-slate-400">Records: received</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="font-bold text-slate-900">Complete only through March</span> <span className="text-slate-500 font-normal">— treatment ran to July. Catena re-requested the full chart.</span> 
+                      <span className="text-accent italic font-semibold ml-1">· moving</span>
+                    </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></div>
-                    <div>Demand — <span className="font-semibold text-amber-700">blocked until the release is accepted</span> <span className="text-slate-400 font-normal">· flagged</span></div>
+                    <div>
+                      <span className="line-through text-slate-400">Demand: drafted</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="font-bold text-amber-700">Can't go out until the release clears.</span> <span className="text-slate-500 font-normal">Catena held it and flagged the dependency.</span> 
+                      <span className="text-amber-600 italic font-semibold ml-1">· blocked, correctly</span>
+                    </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
-                    <div>1 item — <span className="font-semibold text-slate-900">routed to an attorney for judgment</span></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="line-through text-slate-400">Follow-up: sent</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="font-bold text-slate-900">Client's reply needs legal judgment.</span> <span className="text-slate-500 font-normal">Catena packaged the file and routed it to the attorney.</span> 
+                      <span className="text-slate-500 italic font-semibold ml-1">· human review</span>
+                    </div>
                   </li>
                 </ul>
 
                 <div className="mt-6 pt-6 border-t border-slate-100 text-center">
-                  <h3 className="text-2xl font-bold text-accent mb-3">
-                    3 matters moving <span className="text-slate-300 font-light mx-1">·</span> <span className="text-slate-800">1 sent to human review</span>
+                  <h3 className="text-2xl font-bold text-accent mb-2">
+                    3 matters moving <span className="text-slate-300 font-light mx-1">·</span> <span className="text-slate-800">1 at human review</span>
                   </h3>
                   <p className="text-sm text-slate-500 font-medium">
                     The same week, through the movement lens.
