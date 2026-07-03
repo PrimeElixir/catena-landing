@@ -35,7 +35,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section className="relative py-24 px-6 overflow-hidden" id="how-it-works">
       {/* Abstract Background Blurs */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-40">
         <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] rounded-full border-[60px] border-indigo-200/50 filter blur-[40px]"></div>

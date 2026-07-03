@@ -4,7 +4,9 @@ const integrations = [
   { name: 'Clio', type: 'Practice Management' },
   { name: 'Lawmatics', type: 'CRM' },
   { name: 'DocuSign', type: 'E-Sign' },
-  { name: 'Outlook', type: 'Email' }
+  { name: 'Outlook', type: 'Email' },
+  { name: 'Google Docs', type: 'Documents' },
+  { name: 'Dropbox', type: 'Storage' }
 ];
 
 export default function Integrations() {
