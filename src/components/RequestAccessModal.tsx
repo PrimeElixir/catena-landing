@@ -111,7 +111,7 @@ export default function RequestAccessModal() {
       <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
         
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-slate-100">
           <h2 className="text-xl font-bold text-slate-900 tracking-tight">Request Access</h2>
           <button 
             onClick={handleClose}
@@ -122,7 +122,7 @@ export default function RequestAccessModal() {
         </div>
 
         {/* Scrollable Content */}
-        <div className="overflow-y-auto px-6 py-6 custom-scrollbar">
+        <div className="overflow-y-auto px-4 sm:px-6 py-6 custom-scrollbar">
           
           {isSubmitted ? (
             <div className="flex flex-col items-center text-center py-10 px-4">
