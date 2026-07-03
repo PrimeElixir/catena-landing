@@ -28,7 +28,7 @@ export default function HeroSection() {
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-text-primary max-w-4xl">
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-text-primary max-w-4xl">
           Your tools track activity.<br/>
           <span className="text-accent">Catena moves outcomes.</span>
         </h1>

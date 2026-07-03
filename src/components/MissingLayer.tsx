@@ -20,39 +20,40 @@ export default function MissingLayer() {
           
           {/* Pipeline Strip */}
           <div className="max-w-4xl mx-auto mb-16 relative">
-            <div className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-200 -translate-y-1/2 z-0 border-t border-dashed border-slate-300"></div>
+            {/* The dashed line: vertical on mobile, horizontal on md */}
+            <div className="absolute left-[39px] md:left-0 top-0 md:top-1/2 w-[2px] md:w-full h-full md:h-[2px] bg-slate-200 md:-translate-y-1/2 z-0 border-l md:border-l-0 md:border-t border-dashed border-slate-300"></div>
             
-            <div className="relative z-10 flex justify-between items-center w-full px-4 md:px-12">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center w-full px-4 md:px-12 gap-8 md:gap-0">
               {/* Step 1 */}
-              <div className="flex flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600 font-medium text-sm">
-                <Phone size={16} className="mb-1 text-slate-400" />
-                Phone
+              <div className="flex md:flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600 font-medium text-sm gap-3 md:gap-0">
+                <Phone size={16} className="md:mb-1 text-slate-400" />
+                <span>Phone</span>
               </div>
               
               {/* Step 2 */}
-              <div className="flex flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600 font-medium text-sm">
-                <PenTool size={16} className="mb-1 text-slate-400" />
-                Signature
+              <div className="flex md:flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-600 font-medium text-sm gap-3 md:gap-0">
+                <PenTool size={16} className="md:mb-1 text-slate-400" />
+                <span>Signature</span>
               </div>
 
               {/* STUCK POINT */}
-              <div className="flex flex-col items-center bg-white px-6 py-3 rounded-lg border-2 border-amber-500 shadow-md shadow-amber-500/20 text-amber-600 font-bold text-sm relative transform scale-110">
+              <div className="flex md:flex-col items-center bg-white px-6 py-3 rounded-lg border-2 border-amber-500 shadow-md shadow-amber-500/20 text-amber-600 font-bold text-sm relative transform md:scale-110 gap-3 md:gap-0">
                 <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-amber-500 rounded-full animate-ping opacity-75"></div>
                 <div className="absolute -top-1.5 -right-1.5 w-3 h-3 bg-amber-500 rounded-full"></div>
-                <FileWarning size={20} className="mb-1 text-amber-500" />
-                STUCK
+                <FileWarning size={20} className="md:mb-1 text-amber-500" />
+                <span>STUCK</span>
               </div>
 
               {/* Step 4 */}
-              <div className="flex flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-400 font-medium text-sm opacity-60">
-                <FileText size={16} className="mb-1 text-slate-300" />
-                Records
+              <div className="flex md:flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-400 font-medium text-sm opacity-60 gap-3 md:gap-0">
+                <FileText size={16} className="md:mb-1 text-slate-300" />
+                <span>Records</span>
               </div>
 
               {/* Step 5 */}
-              <div className="flex flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-400 font-medium text-sm opacity-60">
-                <Receipt size={16} className="mb-1 text-slate-300" />
-                Invoice
+              <div className="flex md:flex-col items-center bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm text-slate-400 font-medium text-sm opacity-60 gap-3 md:gap-0">
+                <Receipt size={16} className="md:mb-1 text-slate-300" />
+                <span>Invoice</span>
               </div>
             </div>
           </div>
