@@ -17,7 +17,7 @@ export default function Header() {
 
         {/* Navigation - Hidden on mobile for simplicity in prototype */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-          <a href="/readiness" className="hover:text-slate-900 transition-colors">Document Readiness</a>
+          <a href="https://catena-demo-puce.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 transition-colors">Document Readiness</a>
           <a href="#how-it-works" className="hover:text-slate-900 transition-colors">How it works</a>
         </nav>
 

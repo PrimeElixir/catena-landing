@@ -24,10 +24,15 @@ export default function CloseSection() {
             Request Access
           </button>
           
-          <button className="w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-surface hover:bg-surface/80 border border-border-glass text-text-primary font-medium rounded-full transition-all group">
+          <a 
+            href="https://catena-demo-puce.vercel.app/"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-surface hover:bg-surface/80 border border-border-glass text-text-primary font-medium rounded-full transition-all group"
+          >
             Explore Document Readiness
             <ArrowRight size={16} className="text-accent group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
 
         <p className="text-sm font-semibold text-accent uppercase tracking-widest">
