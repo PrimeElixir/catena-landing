@@ -38,6 +38,10 @@ export default function Integrations() {
           })}
         </div>
 
+        <p className="mt-12 text-xs text-slate-400 italic">
+          Product names are examples of systems Catena operates around; partnership status varies.
+        </p>
+
       </div>
     </section>
   );
