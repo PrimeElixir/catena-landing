@@ -20,9 +20,9 @@ export default function HeroSection() {
     <section className="relative pt-40 pb-20 px-6 flex flex-col items-center overflow-hidden">
       
       {/* Background Architectural Elements */}
-      <div className="absolute inset-0 z-0 opacity-40 pointer-events-none">
-        <div className="absolute top-[20%] left-[15%] w-96 h-96 bg-accent rounded-full mix-blend-multiply filter blur-[100px] animate-pulse opacity-10"></div>
-        <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-slate-300 rounded-full mix-blend-multiply filter blur-[150px] opacity-30"></div>
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-[10%] left-[5%] w-[500px] h-[500px] bg-accent/20 rounded-full filter blur-[120px] animate-pulse opacity-40"></div>
+        <div className="absolute top-[30%] right-[5%] w-[600px] h-[600px] bg-indigo-500/10 rounded-full filter blur-[150px] opacity-60"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center">
