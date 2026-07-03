@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 export default function MissingLayer() {
   return (
-    <section className="pt-16 pb-8 md:py-32 px-6">
+    <section className="pt-16 pb-0 md:pt-32 md:pb-8 px-6">
       <div className="max-w-6xl mx-auto">
         
         {/* Header */}
