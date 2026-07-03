@@ -6,6 +6,7 @@ import PreviewSection from '@/components/PreviewSection';
 import GovernedFabric from '@/components/GovernedFabric';
 import Integrations from '@/components/Integrations';
 import CloseSection from '@/components/CloseSection';
+import RequestAccessModal from '@/components/RequestAccessModal';
 
 export default function Home() {
   return (
@@ -28,6 +29,8 @@ export default function Home() {
       <footer className="py-12 text-center text-text-secondary text-sm border-t border-border-glass bg-transparent">
         <p>&copy; {new Date().getFullYear()} Prime Elixir Co. All rights reserved.</p>
       </footer>
+
+      <RequestAccessModal />
     </main>
   );
 }

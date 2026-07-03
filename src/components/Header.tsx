@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Link } from 'lucide-react';
 
@@ -21,7 +23,10 @@ export default function Header() {
 
         {/* CTAs */}
         <div className="flex items-center gap-4">
-          <button className="bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-5 rounded-full text-sm transition-colors shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/40">
+          <button 
+            onClick={() => window.dispatchEvent(new Event('open-request-modal'))}
+            className="bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-5 rounded-full text-sm transition-colors shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/40"
+          >
             Request Access
           </button>
         </div>
