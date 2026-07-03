@@ -60,7 +60,7 @@ export default function GovernedFabric() {
           {/* Middle Tier: Model of Truth */}
           <div className="relative z-10 flex items-center justify-center">
             {/* Radiant glow behind the anchor node */}
-            <div className="absolute inset-0 bg-accent rounded-2xl blur-xl animate-pulse opacity-20 scale-125"></div>
+            <div className="absolute inset-0 bg-accent rounded-2xl blur-xl animate-pulse opacity-10 scale-125"></div>
             
             <div className="relative glass-panel px-10 py-6 flex items-center gap-4 border-accent/40 shadow-xl shadow-accent/10">
               {/* Live status dot */}
