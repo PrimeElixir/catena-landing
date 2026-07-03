@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import SpineVisualization from '@/components/SpineVisualization';
+import HowItWorks from '@/components/HowItWorks';
 import Integrations from '@/components/Integrations';
 
 export default function Home() {
@@ -11,6 +12,8 @@ export default function Home() {
       <Hero />
       
       <SpineVisualization />
+      
+      <HowItWorks />
       
       <Integrations />
       
