@@ -19,15 +19,13 @@ export default function Integrations() {
           We operate around your existing tools
         </p>
 
-        {/* Container for scrolling/non-wrapping on smaller screens */}
-        <div className="w-full overflow-x-auto pb-4 hide-scrollbar">
-          <div className="flex flex-nowrap md:justify-center items-center gap-8 md:gap-12 min-w-max px-6">
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-6">
           {integrations.map((integration, idx) => {
             const Icon = integration.icon;
             return (
               <div 
                 key={idx} 
-                className="group flex flex-shrink-0 items-center gap-2.5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                className="group flex items-center gap-2.5 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
               >
                 <div className="w-8 h-8 flex items-center justify-center text-slate-500 group-hover:text-accent transition-colors">
                   <Icon size={22} strokeWidth={2} />
@@ -38,7 +36,6 @@ export default function Integrations() {
               </div>
             );
           })}
-          </div>
         </div>
 
       </div>
