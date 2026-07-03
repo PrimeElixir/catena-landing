@@ -65,7 +65,7 @@ export default function OperatingModel() {
         <div className="mb-16">
           <div className="relative mb-16 px-4 max-w-4xl mx-auto">
             {/* The line */}
-            <div className="absolute top-1/2 left-0 w-full h-[3px] bg-slate-300 -translate-y-1/2 z-0"></div>
+            <div className="absolute top-1/2 left-0 w-full h-[3px] bg-slate-400 -translate-y-1/2 z-0"></div>
             
             {/* Nodes */}
             <div className="relative z-10 flex justify-between items-center w-full">
