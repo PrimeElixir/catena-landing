@@ -31,7 +31,7 @@ export default function PreviewSection() {
 
           <div className="flex flex-col sm:flex-row items-center gap-4 pt-4">
             <a 
-              href={process.env.NEXT_PUBLIC_READINESS_URL || "https://catena-demo-puce.vercel.app/"}
+              href={process.env.NEXT_PUBLIC_READINESS_URL || "https://document-readiness.catenaos.com"}
               target="_blank" 
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-6 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-full shadow-md shadow-accent/20 transition-all flex items-center justify-center gap-2 group"

@@ -48,7 +48,7 @@ export default function HeroSection() {
           </button>
           
           <a 
-            href={process.env.NEXT_PUBLIC_READINESS_URL || "https://catena-demo-puce.vercel.app/"}
+            href={process.env.NEXT_PUBLIC_READINESS_URL || "https://document-readiness.catenaos.com"}
             target="_blank" 
             rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-3.5 flex items-center justify-center gap-2 bg-surface hover:bg-surface/80 border border-border-glass text-text-primary font-medium rounded-full transition-all group"
