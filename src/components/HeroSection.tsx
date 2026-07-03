@@ -19,11 +19,7 @@ export default function HeroSection() {
   return (
     <section className="relative pt-40 pb-20 px-6 flex flex-col items-center overflow-hidden">
       
-      {/* Background Architectural Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] bg-accent rounded-full blur-[150px] animate-pulse opacity-5"></div>
-        <div className="absolute top-[25%] right-[-10%] w-[700px] h-[700px] bg-slate-700 rounded-full blur-[150px] opacity-15"></div>
-      </div>
+
 
       <div className="relative z-10 w-full max-w-6xl mx-auto flex flex-col items-center text-center">
         {/* Eyebrow */}
