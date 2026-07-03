@@ -80,9 +80,9 @@ export default function GovernedFabric() {
           <div className="w-[2px] h-16 border-l-2 border-dashed border-slate-400 opacity-60"></div>
           
           {/* Halted state */}
-          <div className="flex flex-col items-center opacity-40">
-            <Ban size={20} className="text-slate-500 mb-2" />
-            <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Sensitive Decision Halted</p>
+          <div className="flex flex-col items-center">
+            <Ban size={20} className="text-slate-600 mb-2" />
+            <p className="text-[10px] font-bold text-slate-600 uppercase tracking-widest">Sensitive Decision Halted</p>
           </div>
 
         </div>
