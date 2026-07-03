@@ -58,8 +58,18 @@ export default function GovernedFabric() {
           <div className="md:hidden w-[2px] h-8 bg-slate-300"></div>
 
           {/* Middle Tier: Model of Truth */}
-          <div className="relative z-10 glass-panel px-8 py-5 flex items-center justify-center border-accent/30 shadow-lg shadow-accent/5">
-            <h3 className="text-xl font-bold text-slate-900">Catena Model of Truth</h3>
+          <div className="relative z-10 flex items-center justify-center">
+            {/* Radiant glow behind the anchor node */}
+            <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-xl animate-pulse"></div>
+            
+            <div className="relative glass-panel px-10 py-6 flex items-center gap-4 border-accent/40 shadow-xl shadow-accent/10">
+              {/* Live status dot */}
+              <div className="relative flex items-center justify-center w-3 h-3">
+                <div className="absolute w-full h-full bg-accent rounded-full animate-ping opacity-75"></div>
+                <div className="relative w-full h-full bg-accent rounded-full"></div>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">Catena Model of Truth</h3>
+            </div>
           </div>
 
           {/* Line down to gate */}
