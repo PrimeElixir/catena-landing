@@ -148,6 +148,12 @@ export default function HeroSection() {
               </div>
             ) : (
               <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-2xl mx-auto">
+                <div className="text-center mb-8">
+                  <p className="text-lg font-semibold text-slate-800">
+                    Four hidden blockers. <span className="text-accent">Catena caught all four.</span>
+                  </p>
+                </div>
+
                 <ul className="space-y-5 mx-auto text-slate-700 font-medium text-[15px] leading-snug">
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
