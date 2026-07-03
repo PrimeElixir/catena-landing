@@ -14,17 +14,15 @@ export default function Header() {
         </div>
 
         {/* Navigation - Hidden on mobile for simplicity in prototype */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-text-secondary">
-          <a href="#platform" className="hover:text-text-primary transition-colors">Platform</a>
-          <a href="#how-it-works" className="hover:text-text-primary transition-colors">How it works</a>
-          <a href="#integrations" className="hover:text-text-primary transition-colors">Existing tools</a>
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+          <a href="/readiness" className="hover:text-slate-900 transition-colors">Document Readiness</a>
+          <a href="#how-it-works" className="hover:text-slate-900 transition-colors">How it works</a>
         </nav>
 
         {/* CTAs */}
         <div className="flex items-center gap-4">
-          <a href="#signin" className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors hidden sm:block">Sign in</a>
           <button className="bg-accent hover:bg-accent-hover text-white font-semibold py-2 px-5 rounded-full text-sm transition-colors shadow-md shadow-accent/20 hover:shadow-lg hover:shadow-accent/40">
-            Join the Pilot
+            Request Access
           </button>
         </div>
       </div>
