@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link2 } from 'lucide-react';
+import { Link } from 'lucide-react';
 
 export default function Header() {
   return (
@@ -7,8 +7,8 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded bg-accent/10 flex items-center justify-center text-accent">
-            <Link2 size={18} />
+          <div className="w-9 h-9 rounded-[10px] bg-white border border-slate-200 shadow-sm flex items-center justify-center text-indigo-600">
+            <Link size={18} strokeWidth={2.5} />
           </div>
           <span className="text-xl font-bold tracking-tight">Catena</span>
         </div>
