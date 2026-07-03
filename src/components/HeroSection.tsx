@@ -148,17 +148,11 @@ export default function HeroSection() {
               </div>
             ) : (
               <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-2xl mx-auto">
-                <div className="text-center mb-8">
-                  <p className="text-lg font-semibold text-slate-800">
-                    Four green checkmarks. Four hidden blockers. <span className="text-accent">Catena caught all four.</span>
-                  </p>
-                </div>
-
                 <ul className="space-y-5 mx-auto text-slate-700 font-medium text-[15px] leading-snug">
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="line-through text-slate-400">Release: signed</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="line-through text-slate-400">Release: signed</span> <span className="text-slate-500 font-bold mx-2">→</span> 
                       <span className="font-bold text-slate-900">Provider rejected it.</span> <span className="text-slate-500 font-normal">Catena generated their required form and re-sent it for signature.</span> 
                       <span className="text-accent italic font-semibold ml-1">· moving</span>
                     </div>
@@ -166,7 +160,7 @@ export default function HeroSection() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="line-through text-slate-400">Records: received</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="line-through text-slate-400">Records: received</span> <span className="text-slate-500 font-bold mx-2">→</span> 
                       <span className="font-bold text-slate-900">Complete only through March</span> <span className="text-slate-500 font-normal">— treatment ran to July. Catena re-requested the full chart.</span> 
                       <span className="text-accent italic font-semibold ml-1">· moving</span>
                     </div>
@@ -174,7 +168,7 @@ export default function HeroSection() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="line-through text-slate-400">Demand: drafted</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="line-through text-slate-400">Demand: drafted</span> <span className="text-slate-500 font-bold mx-2">→</span> 
                       <span className="font-bold text-amber-700">Can't go out until the release clears.</span> <span className="text-slate-500 font-normal">Catena held it and flagged the dependency.</span> 
                       <span className="text-amber-600 italic font-semibold ml-1">· blocked, correctly</span>
                     </div>
@@ -182,7 +176,7 @@ export default function HeroSection() {
                   <li className="flex items-start gap-3">
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0"></div>
                     <div>
-                      <span className="line-through text-slate-400">Follow-up: sent</span> <span className="text-slate-300 mx-1">→</span> 
+                      <span className="line-through text-slate-400">Follow-up: sent</span> <span className="text-slate-500 font-bold mx-2">→</span> 
                       <span className="font-bold text-slate-900">Client's reply needs legal judgment.</span> <span className="text-slate-500 font-normal">Catena packaged the file and routed it to the attorney.</span> 
                       <span className="text-slate-500 italic font-semibold ml-1">· human review</span>
                     </div>
