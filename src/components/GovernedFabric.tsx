@@ -21,6 +21,8 @@ export default function GovernedFabric() {
           
           {/* Top Tier: The 3 Actors */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 w-full relative z-10">
+            {/* Mobile continuous vertical line running behind the cards */}
+            <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-slate-300 -translate-x-1/2 -z-10 md:hidden"></div>
             
             {/* AI Workers */}
             <div className="glass-panel p-6 flex flex-col items-center justify-center text-center">
