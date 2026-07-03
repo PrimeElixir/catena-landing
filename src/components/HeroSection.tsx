@@ -137,8 +137,8 @@ export default function HeroSection() {
                   <li className="flex items-center gap-3"><Check size={16} className="text-slate-400" /> Client follow-up — sent ✓</li>
                 </ul>
 
-                <div className="mt-10 pt-8 border-t border-slate-100 text-center">
-                  <div className="inline-block px-4 py-1.5 bg-slate-100 text-slate-500 rounded-full text-sm font-medium mb-6">
+                <div className="mt-6 pt-6 border-t border-slate-100 text-center">
+                  <div className="inline-block px-4 py-1.5 bg-slate-100 text-slate-500 rounded-full text-sm font-medium mb-2">
                     42 tasks logged
                   </div>
                   <h3 className="text-2xl font-bold text-slate-800">
@@ -167,7 +167,7 @@ export default function HeroSection() {
                   </li>
                 </ul>
 
-                <div className="mt-10 pt-8 border-t border-slate-100 text-center">
+                <div className="mt-6 pt-6 border-t border-slate-100 text-center">
                   <h3 className="text-2xl font-bold text-accent mb-3">
                     3 matters moving <span className="text-slate-300 font-light mx-1">·</span> <span className="text-slate-800">1 sent to human review</span>
                   </h3>
@@ -181,7 +181,7 @@ export default function HeroSection() {
           </div>
         </div>
         
-        <p className="text-center text-xs text-slate-400 mt-6 italic">
+        <p className="text-center text-xs text-slate-400 mt-3 italic">
           Illustrative of a document-readiness scenario — not live firm data.
         </p>
 
