@@ -47,15 +47,15 @@ export default function GovernedFabric() {
           {/* Lines converging from 3 columns to center */}
           <div className="hidden md:block relative w-full h-16 z-0">
             {/* Horizontal collector line */}
-            <div className="absolute top-8 left-1/6 right-1/6 w-2/3 mx-auto h-[2px] bg-slate-200"></div>
+            <div className="absolute top-8 left-[16.66%] w-[66.66%] h-[2px] bg-slate-300"></div>
             {/* Vertical drops from cards */}
-            <div className="absolute top-0 left-1/6 w-[2px] h-8 bg-slate-200 -ml-[1px]"></div>
-            <div className="absolute top-0 left-1/2 w-[2px] h-16 bg-slate-200 -ml-[1px]"></div>
-            <div className="absolute top-0 right-1/6 w-[2px] h-8 bg-slate-200 -mr-[1px]"></div>
+            <div className="absolute top-0 left-[16.66%] w-[2px] h-8 bg-slate-300 -ml-[1px]"></div>
+            <div className="absolute top-0 left-1/2 w-[2px] h-16 bg-slate-300 -ml-[1px]"></div>
+            <div className="absolute top-0 right-[16.66%] w-[2px] h-8 bg-slate-300 -mr-[1px]"></div>
           </div>
           
           {/* Mobile connecting line */}
-          <div className="md:hidden w-[2px] h-8 bg-slate-200"></div>
+          <div className="md:hidden w-[2px] h-8 bg-slate-300"></div>
 
           {/* Middle Tier: Model of Truth */}
           <div className="relative z-10 glass-panel px-8 py-5 flex items-center justify-center border-accent/30 shadow-lg shadow-accent/5">
@@ -63,7 +63,7 @@ export default function GovernedFabric() {
           </div>
 
           {/* Line down to gate */}
-          <div className="w-[2px] h-16 bg-slate-200"></div>
+          <div className="w-[2px] h-16 bg-slate-300"></div>
 
           {/* Bottom Tier: Human Gate */}
           <div className="relative z-10 bg-slate-900 border border-amber-500/50 shadow-xl shadow-amber-900/10 rounded-xl px-8 py-5 flex items-center gap-4">
@@ -77,7 +77,7 @@ export default function GovernedFabric() {
           </div>
 
           {/* Dashed line down to halted decision */}
-          <div className="w-[2px] h-16 border-l-2 border-dashed border-slate-300 opacity-50"></div>
+          <div className="w-[2px] h-16 border-l-2 border-dashed border-slate-400 opacity-60"></div>
           
           {/* Halted state */}
           <div className="flex flex-col items-center opacity-40">
