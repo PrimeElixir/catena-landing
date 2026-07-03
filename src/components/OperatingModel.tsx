@@ -35,7 +35,7 @@ export default function OperatingModel() {
   }, []);
 
   return (
-    <section id="how-it-works" className="py-32 px-6">
+    <section id="how-it-works" className="py-16 md:py-32 px-6 overflow-hidden">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
         
         {/* Left: The Circular Animation Diagram */}
@@ -60,36 +60,56 @@ export default function OperatingModel() {
               const angleDeg = (idx * (360 / loopSteps.length)) - 90;
               const angleRad = angleDeg * (Math.PI / 180);
               
-              // Radius of the orbit (adjust based on container size)
-              // Responsive radius (smaller on mobile)
-              const radius = 175; // For desktop (450/2 = 225, giving some padding)
+              // Radius of the orbit
+              const radiusMobile = 120;
+              const radiusDesktop = 180;
               
-              // Calculate coordinates using JS Math for safer browser compatibility
-              const x = Math.cos(angleRad) * radius;
-              const y = Math.sin(angleRad) * radius;
+              const xMobile = Math.cos(angleRad) * radiusMobile;
+              const yMobile = Math.sin(angleRad) * radiusMobile;
+
+              const xDesktop = Math.cos(angleRad) * radiusDesktop;
+              const yDesktop = Math.sin(angleRad) * radiusDesktop;
 
               const isActive = idx === activeIndex;
 
               return (
-                <div 
-                  key={step}
-                  className={clsx(
-                    "absolute transition-all duration-500 flex items-center justify-center",
-                    isActive ? "z-20 scale-105 opacity-100" : "z-0 scale-100 opacity-60"
-                  )}
-                  style={{
-                    transform: `translate(${x}px, ${y}px)`
-                  }}
-                >
-                  <div className={clsx(
-                    "px-4 py-2 md:px-5 md:py-2.5 rounded-full text-xs md:text-sm font-semibold border shadow-sm transition-colors duration-300 text-center",
-                    isActive 
-                      ? "bg-accent text-white border-accent shadow-accent/20" 
-                      : "bg-white text-slate-500 border-slate-200"
-                  )}>
-                    {step}
+                <React.Fragment key={step}>
+                  {/* Mobile Node */}
+                  <div 
+                    className={clsx(
+                      "absolute transition-all duration-500 flex md:hidden items-center justify-center",
+                      isActive ? "z-20 scale-105 opacity-100" : "z-0 scale-100 opacity-60"
+                    )}
+                    style={{ transform: `translate(${xMobile}px, ${yMobile}px)` }}
+                  >
+                    <div className={clsx(
+                      "px-3 py-1.5 rounded-full text-[10px] font-semibold border shadow-sm transition-colors duration-300 text-center whitespace-nowrap",
+                      isActive 
+                        ? "bg-accent text-white border-accent shadow-accent/20" 
+                        : "bg-white text-slate-500 border-slate-200"
+                    )}>
+                      {step}
+                    </div>
                   </div>
-                </div>
+
+                  {/* Desktop Node */}
+                  <div 
+                    className={clsx(
+                      "absolute transition-all duration-500 hidden md:flex items-center justify-center",
+                      isActive ? "z-20 scale-105 opacity-100" : "z-0 scale-100 opacity-60"
+                    )}
+                    style={{ transform: `translate(${xDesktop}px, ${yDesktop}px)` }}
+                  >
+                    <div className={clsx(
+                      "px-5 py-2.5 rounded-full text-sm font-semibold border shadow-sm transition-colors duration-300 text-center whitespace-nowrap",
+                      isActive 
+                        ? "bg-accent text-white border-accent shadow-accent/20" 
+                        : "bg-white text-slate-500 border-slate-200"
+                    )}>
+                      {step}
+                    </div>
+                  </div>
+                </React.Fragment>
               );
             })}
 

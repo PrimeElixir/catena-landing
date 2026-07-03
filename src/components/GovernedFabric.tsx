@@ -3,7 +3,7 @@ import { Cpu, Database, Users, Hand, Ban } from 'lucide-react';
 
 export default function GovernedFabric() {
   return (
-    <section className="py-32 px-6 bg-slate-50 border-y border-border-glass">
+    <section className="py-16 md:py-32 px-6 bg-slate-50 border-y border-border-glass">
       <div className="max-w-5xl mx-auto">
         
         {/* Header & Intro */}

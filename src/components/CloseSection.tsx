@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function CloseSection() {
   return (
-    <section className="py-32 px-6">
+    <section className="py-16 md:py-32 px-6">
       <div className="max-w-3xl mx-auto text-center">
         
         <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-slate-900 mb-8">
