@@ -1,5 +1,7 @@
-import React from 'react';
-import { Play, CheckCircle2, Circle, ArrowRight } from 'lucide-react';
+"use client";
+
+import React, { useState } from 'react';
+import { Play, CheckCircle2, Circle, Check } from 'lucide-react';
 import clsx from 'clsx';
 
 const spineNodes = [
@@ -12,6 +14,8 @@ const spineNodes = [
 ];
 
 export default function HeroSection() {
+  const [lens, setLens] = useState<'activity' | 'movement'>('activity');
+
   return (
     <section className="relative pt-40 pb-20 px-6 flex flex-col items-center overflow-hidden">
       
@@ -39,7 +43,7 @@ export default function HeroSection() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-4 mb-24">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-32">
           <button className="w-full sm:w-auto px-8 py-3.5 bg-accent hover:bg-accent-hover text-white font-semibold rounded-full shadow-md shadow-accent/20 transition-all transform hover:scale-105">
             Request Access
           </button>
@@ -50,18 +54,43 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Invariant anchor */}
-        <div className="w-full flex justify-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-serif italic font-medium text-slate-800 tracking-tight border-l-4 border-accent pl-6 py-2">
+        {/* The Toggle Section */}
+        <div className="w-full flex flex-col items-center mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-4">
             Activity is not movement.
           </h2>
+          <p className="text-lg text-slate-500 font-light mb-8">
+            Same firm, same week. Switch the lens.
+          </p>
+          
+          {/* Toggle Switch */}
+          <div className="inline-flex items-center p-1 bg-slate-100 rounded-full border border-slate-200 shadow-inner mb-12">
+            <button 
+              onClick={() => setLens('activity')}
+              className={clsx(
+                "px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
+                lens === 'activity' ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+              )}
+            >
+              Activity
+            </button>
+            <button 
+              onClick={() => setLens('movement')}
+              className={clsx(
+                "px-8 py-2.5 rounded-full text-sm font-semibold transition-all duration-300",
+                lens === 'movement' ? "bg-white text-slate-900 shadow-sm" : "text-slate-500 hover:text-slate-700"
+              )}
+            >
+              Movement
+            </button>
+          </div>
         </div>
 
-        {/* The Spine Visual */}
-        <div className="w-full glass-panel p-8 md:p-12 text-left relative overflow-hidden">
+        {/* The Panel Visual */}
+        <div className="w-full max-w-4xl glass-panel p-8 md:p-12 text-left relative overflow-hidden transition-all duration-500">
           
           {/* Horizontal Spine Line */}
-          <div className="relative mb-16 px-4">
+          <div className="relative mb-16 px-4 hidden md:block">
             {/* The line */}
             <div className="absolute top-1/2 left-0 w-full h-[2px] bg-slate-200 -translate-y-1/2 z-0"></div>
             
@@ -96,36 +125,65 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Two Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-8 mt-12 border-t border-slate-100">
-            {/* Activity Column */}
-            <div>
-              <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-6">Activity</h3>
-              <ul className="space-y-4">
-                {['Message sent', 'Upload received', 'Link created', 'Calendar event'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-500 font-medium">
-                    <Circle size={16} className="text-slate-300" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
+          {/* Toggleable Content Area */}
+          <div className="flex flex-col items-center max-w-2xl mx-auto min-h-[300px] justify-center">
+            
+            {lens === 'activity' ? (
+              <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <ul className="space-y-4 max-w-md mx-auto text-slate-600 font-medium">
+                  <li className="flex items-center gap-3"><Check size={16} className="text-slate-400" /> Medical release — signed ✓</li>
+                  <li className="flex items-center gap-3"><Check size={16} className="text-slate-400" /> Records — received ✓</li>
+                  <li className="flex items-center gap-3"><Check size={16} className="text-slate-400" /> Demand package — drafted ✓</li>
+                  <li className="flex items-center gap-3"><Check size={16} className="text-slate-400" /> Client follow-up — sent ✓</li>
+                </ul>
 
-            {/* Movement Column */}
-            <div>
-              <h3 className="text-sm font-bold text-accent uppercase tracking-widest mb-6">Movement</h3>
-              <ul className="space-y-4">
-                {['Lead recovered', 'Blocker cleared', 'Matter ready', 'Invoice issued', 'Payment collected'].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-slate-800 font-semibold">
-                    <CheckCircle2 size={18} className="text-accent" />
-                    {item}
+                <div className="mt-10 pt-8 border-t border-slate-100 text-center">
+                  <div className="inline-block px-4 py-1.5 bg-slate-100 text-slate-500 rounded-full text-sm font-medium mb-6">
+                    42 tasks logged
+                  </div>
+                  <h3 className="text-2xl font-bold text-slate-800">
+                    0 matters advanced this week
+                  </h3>
+                </div>
+              </div>
+            ) : (
+              <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <ul className="space-y-4 max-w-lg mx-auto text-slate-700 font-medium">
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
+                    <div>Release — <span className="font-semibold text-slate-900">rejected by provider</span> <span className="text-slate-400 font-normal">· corrected form re-sent</span></div>
                   </li>
-                ))}
-              </ul>
-            </div>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
+                    <div>Records — <span className="font-semibold text-slate-900">came back partial</span> <span className="text-slate-400 font-normal">· full chart re-requested</span></div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 flex-shrink-0"></div>
+                    <div>Demand — <span className="font-semibold text-amber-700">blocked until the release is accepted</span> <span className="text-slate-400 font-normal">· flagged</span></div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-400 mt-2 flex-shrink-0"></div>
+                    <div>1 item — <span className="font-semibold text-slate-900">routed to an attorney for judgment</span></div>
+                  </li>
+                </ul>
+
+                <div className="mt-10 pt-8 border-t border-slate-100 text-center">
+                  <h3 className="text-2xl font-bold text-accent mb-3">
+                    3 matters moving <span className="text-slate-300 font-light mx-1">·</span> <span className="text-slate-800">1 sent to human review</span>
+                  </h3>
+                  <p className="text-sm text-slate-500 font-medium">
+                    The same week, through the movement lens.
+                  </p>
+                </div>
+              </div>
+            )}
+            
           </div>
-
         </div>
+        
+        <p className="text-center text-xs text-slate-400 mt-6 italic">
+          Illustrative of a document-readiness scenario — not live firm data.
+        </p>
 
       </div>
     </section>
