@@ -124,12 +124,12 @@ export default function OperatingModel() {
           </h2>
           
           <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-light">
-            Rather than tracking static tasks on a checklist, Catena watches the continuous flow of execution. It senses changes, commits them to a single operational truth, finds the outcome that's blocked, routes the next approved step, governs the action, captures proof, and records whether the outcome actually moved.
+            Rather than tracking static tasks on a checklist, CatenaOS watches the continuous flow of execution. It senses changes, commits them to a single operational truth, finds the outcome that's blocked, routes the next approved step, governs the action, captures proof, and records whether the outcome actually moved.
           </p>
           
           <div className="pt-6 border-t border-slate-200">
             <p className="text-sm text-slate-500 font-medium tracking-wide uppercase">
-              Catena doesn't count work as done until the business state changes.
+              CatenaOS doesn't count work as done until the business state changes.
             </p>
           </div>
         </div>

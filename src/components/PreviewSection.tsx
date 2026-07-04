@@ -19,7 +19,7 @@ export default function PreviewSection() {
               A document is never simply missing or present. It can be wrong, partial, unreadable, unsigned, stale, rejected, or sitting in the file unreviewed — and every one of those still shows up as "handled."
             </p>
             <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-light mt-4">
-              Catena works the loop around each required document: it catches the real blocker, runs the next approved step, captures proof, and keeps the matter moving toward a resolution instead of another reminder.
+              CatenaOS works the loop around each required document: it catches the real blocker, runs the next approved step, captures proof, and keeps the matter moving toward a resolution instead of another reminder.
             </p>
           </div>
 
@@ -106,7 +106,7 @@ export default function PreviewSection() {
           </div>
           
           <p className="text-center text-xs text-slate-400 mt-4 italic">
-            Illustrative of Catena's document-readiness workflow.
+            Illustrative of CatenaOS's document-readiness workflow.
           </p>
         </div>
 

@@ -42,9 +42,9 @@ export async function POST(request: Request) {
 
     // Send the email using Resend
     const data = await resend.emails.send({
-      from: 'Catena Intake <onboarding@resend.dev>', // Update this when you have a verified domain
+      from: 'CatenaOS Intake <onboarding@resend.dev>', // Update this when you have a verified domain
       to: process.env.CONTACT_EMAIL || 'brian.mcleod@primeelixirco.com', // Update with your actual destination email
-      subject: `Catena Landing: New Submission from ${name} [${path}]`,
+      subject: `CatenaOS Landing: New Submission from ${name} [${path}]`,
       text: textContent,
       html: htmlContent,
     });

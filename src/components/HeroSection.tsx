@@ -30,12 +30,12 @@ export default function HeroSection() {
         {/* Headline */}
         <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-[1.1] text-text-primary max-w-4xl">
           Your tools track activity.<br/>
-          <span className="text-accent">Catena moves outcomes.</span>
+          <span className="text-accent">CatenaOS moves outcomes.</span>
         </h1>
 
         {/* Subhead */}
         <p className="text-lg md:text-xl text-text-secondary max-w-3xl mb-12 leading-relaxed font-light">
-          Every system in your firm records its own slice of the work — the call, the signature, the upload, the invoice — and each one says "done." The matter still doesn't move. Catena is the layer that turns those scattered signals into governed outcome loops and drives them to a real result.
+          Every system in your firm records its own slice of the work — the call, the signature, the upload, the invoice — and each one says "done." The matter still doesn't move. CatenaOS is the layer that turns those scattered signals into governed outcome loops and drives them to a real result.
         </p>
 
         {/* CTAs */}
@@ -154,7 +154,7 @@ export default function HeroSection() {
               <div className="w-full space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 max-w-2xl mx-auto">
                 <div className="text-center mb-8">
                   <p className="text-lg font-semibold text-slate-800">
-                    Four hidden blockers. <span className="text-accent">Catena caught all four.</span>
+                    Four hidden blockers. <span className="text-accent">CatenaOS caught all four.</span>
                   </p>
                 </div>
 
@@ -163,7 +163,7 @@ export default function HeroSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="line-through text-slate-400">Release: signed</span> <span className="text-slate-500 font-bold mx-2">→</span> 
-                      <span className="font-bold text-slate-900">Provider rejected it.</span> <span className="text-slate-500 font-normal">Catena generated their required form and re-sent it for signature.</span> 
+                      <span className="font-bold text-slate-900">Provider rejected it.</span> <span className="text-slate-500 font-normal">CatenaOS generated their required form and re-sent it for signature.</span> 
                       <span className="text-accent italic font-semibold ml-1">· moving</span>
                     </div>
                   </li>
@@ -171,7 +171,7 @@ export default function HeroSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="line-through text-slate-400">Records: received</span> <span className="text-slate-500 font-bold mx-2">→</span> 
-                      <span className="font-bold text-slate-900">Complete only through March</span> <span className="text-slate-500 font-normal">— treatment ran to July. Catena re-requested the full chart.</span> 
+                      <span className="font-bold text-slate-900">Complete only through March</span> <span className="text-slate-500 font-normal">— treatment ran to July. CatenaOS re-requested the full chart.</span> 
                       <span className="text-accent italic font-semibold ml-1">· moving</span>
                     </div>
                   </li>
@@ -179,7 +179,7 @@ export default function HeroSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="line-through text-slate-400">Demand: drafted</span> <span className="text-slate-500 font-bold mx-2">→</span> 
-                      <span className="font-bold text-slate-700">Can't go out until the release clears.</span> <span className="text-slate-500 font-normal">Catena held it and flagged the dependency.</span> 
+                      <span className="font-bold text-slate-700">Can't go out until the release clears.</span> <span className="text-slate-500 font-normal">CatenaOS held it and flagged the dependency.</span> 
                       <span className="text-slate-500 italic font-semibold ml-1">· blocked, correctly</span>
                     </div>
                   </li>
@@ -187,7 +187,7 @@ export default function HeroSection() {
                     <div className="w-1.5 h-1.5 rounded-full bg-slate-500 mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="line-through text-slate-400">Follow-up: sent</span> <span className="text-slate-500 font-bold mx-2">→</span> 
-                      <span className="font-bold text-slate-900">Client's reply needs legal judgment.</span> <span className="text-slate-500 font-normal">Catena packaged the file and routed it to the attorney.</span> 
+                      <span className="font-bold text-slate-900">Client's reply needs legal judgment.</span> <span className="text-slate-500 font-normal">CatenaOS packaged the file and routed it to the attorney.</span> 
                       <span className="text-slate-500 italic font-semibold ml-1">· human review</span>
                     </div>
                   </li>

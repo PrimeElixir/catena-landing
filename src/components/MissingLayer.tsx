@@ -139,7 +139,7 @@ export default function MissingLayer() {
         <div className="max-w-4xl mx-auto pt-8 md:pt-16 border-t border-slate-200 text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.1]">
             Activity is not movement.<br/>
-            <span className="text-accent">Catena is the layer that moves.</span>
+            <span className="text-accent">CatenaOS is the layer that moves.</span>
           </h2>
         </div>
 

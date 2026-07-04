@@ -12,7 +12,7 @@ export default function GovernedFabric() {
             It knows when not to act.
           </h2>
           <p className="text-xl text-slate-600 font-light max-w-2xl mx-auto">
-            Catena doesn't assume AI should do everything.
+            CatenaOS doesn't assume AI should do everything.
           </p>
         </div>
 
@@ -70,7 +70,7 @@ export default function GovernedFabric() {
                 <div className="absolute w-full h-full bg-accent rounded-full animate-ping opacity-75"></div>
                 <div className="relative w-full h-full bg-accent rounded-full"></div>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 tracking-tight">Catena Model of Truth</h3>
+              <h3 className="text-xl font-bold text-slate-900 tracking-tight">CatenaOS Model of Truth</h3>
             </div>
           </div>
 

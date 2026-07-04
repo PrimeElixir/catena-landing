@@ -84,7 +84,7 @@ export default function RequestAccessModal() {
 
   const placeholders: Record<string, string> = {
     pilot: "Where do your matters get stuck waiting on documents? A sentence or two is plenty.",
-    question: "What would you like to know? e.g. can Catena handle [X]?",
+    question: "What would you like to know? e.g. can CatenaOS handle [X]?",
     media: "Tell us about the show or event and what you'd want to cover.",
     partnership: "Tell us a bit about you and what you're exploring.",
     other: "What's on your mind?",
@@ -141,7 +141,7 @@ export default function RequestAccessModal() {
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               
               <div className="bg-slate-50 text-slate-600 text-sm p-4 rounded-xl leading-relaxed border border-slate-100">
-                We're onboarding a small number of firms into the Document Readiness preview — and we're always glad to talk to anyone curious about what Catena is building. Tell us a bit below and we'll be in touch personally.
+                We're onboarding a small number of firms into the Document Readiness preview — and we're always glad to talk to anyone curious about what CatenaOS is building. Tell us a bit below and we'll be in touch personally.
               </div>
 
               {/* Routing Field */}
@@ -158,7 +158,7 @@ export default function RequestAccessModal() {
                 >
                   <option value="" disabled>Select an option...</option>
                   <option value="pilot">I might be a fit for the pilot</option>
-                  <option value="question">I have a question about Catena</option>
+                  <option value="question">I have a question about CatenaOS</option>
                   <option value="media">Media, podcast, or event</option>
                   <option value="partnership">Partnership or investment</option>
                   <option value="other">Something else</option>

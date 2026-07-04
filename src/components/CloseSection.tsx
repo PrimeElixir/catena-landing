@@ -13,7 +13,7 @@ export default function CloseSection() {
         </h2>
         
         <p className="text-lg md:text-xl text-slate-700 leading-relaxed font-light mb-12">
-          Catena is built as an outcome execution system. We start by mapping one recurring stall, proving whether the loop can actually move it, and expanding only where the operating truth supports it.
+          CatenaOS is built as an outcome execution system. We start by mapping one recurring stall, proving whether the loop can actually move it, and expanding only where the operating truth supports it.
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">

@@ -12,7 +12,7 @@ export default function Header() {
           <div className="w-9 h-9 rounded-[10px] bg-white border border-slate-200 shadow-sm flex items-center justify-center text-indigo-600">
             <Link size={18} strokeWidth={2.5} />
           </div>
-          <span className="text-xl font-bold tracking-tight">Catena</span>
+          <span className="text-xl font-bold tracking-tight">CatenaOS</span>
         </div>
 
         {/* Navigation - Hidden on mobile for simplicity in prototype */}

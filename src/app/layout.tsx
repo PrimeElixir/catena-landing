@@ -9,7 +9,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Catena | Autonomous Legal Operations",
+  title: "CatenaOS | Autonomous Legal Operations",
   description: "The Autonomous Spine for Legal Operations.",
 };
 
