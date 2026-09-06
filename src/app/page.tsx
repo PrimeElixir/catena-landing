@@ -23,12 +23,12 @@ export default function Home() {
           </h1>
           <figure className="hero-art">
             <Image
-              src="/media/catena-operation-v2.webp"
-              width={1536}
-              height={1024}
+              src="/media/catena-operation-v3.png"
+              width={1024}
+              height={687}
               sizes="(max-width: 800px) calc(100vw - 44px), (max-width: 1296px) 48vw, 560px"
               preload
-              alt="Ivory record folders connected by a continuous teal paper path, with an unresolved item marked along the way."
+              alt="Layered ivory, sage and teal folders linked by paper paths, with a central break before an open tray."
             />
             <figcaption>
               <span>From records received to readiness explained.</span>
