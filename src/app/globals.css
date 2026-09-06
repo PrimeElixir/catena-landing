@@ -235,7 +235,7 @@ main:focus {
   display: none;
 }
 .hero {
-  padding-top: 79px;
+  padding-top: 50px;
 }
 .hero .eyebrow {
   margin-bottom: 29px;
@@ -253,15 +253,47 @@ main:focus {
 .hero h1 em {
   display: inline-block;
 }
-.hero-bottom {
+.hero-stage {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 70px;
-  align-items: end;
-  margin-top: 43px;
+  grid-template-columns: 1fr 1.04fr;
+  column-gap: 48px;
+  row-gap: 25px;
+  align-items: start;
+}
+.hero-stage h1 {
+  font-size: clamp(45px, 4.6vw, 63px);
+}
+.hero-art {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  min-width: 0;
+}
+.hero-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+}
+.hero-art figcaption {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 7px 20px;
+  padding-top: 14px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.hero-art figcaption span:last-child {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.hero-message {
+  min-width: 0;
 }
 .hero-promise {
-  font-size: 23px;
+  font-size: 21px;
   line-height: 1.45;
   letter-spacing: -0.02em;
 }
@@ -272,7 +304,11 @@ main:focus {
   margin-top: 18px;
 }
 .hero-invitation {
-  padding-bottom: 3px;
+  margin-top: 25px;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 12px;
 }
 .hero-invitation .button {
   min-width: 325px;
@@ -284,7 +320,7 @@ main:focus {
   margin: 13px 0 9px;
 }
 .hero-foot {
-  margin-top: 59px;
+  margin-top: 45px;
   padding-block: 19px;
   border-top: 1px solid var(--line);
   display: flex;
@@ -298,77 +334,72 @@ main:focus {
 }
 .proof-layout {
   display: grid;
-  grid-template-columns: 0.93fr 1fr;
-  gap: 74px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 55px;
   align-items: center;
 }
-.readiness-figure {
+.operation-film {
+  min-width: 0;
   background: var(--ink);
   color: var(--paper);
-  padding: 35px 37px 26px;
   border-radius: 2px;
+  overflow: hidden;
 }
-.readiness-figure figcaption {
+.film-heading {
   display: flex;
   justify-content: space-between;
-  align-items: start;
-  gap: 16px;
-  color: #c0d1c4;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 23px 26px;
 }
-.readiness-figure .eyebrow {
-  font-size: 11px;
-}
-.figure-index {
-  font-size: 11px;
-  white-space: nowrap;
-}
-.readiness-figure h3 {
+.film-heading h3 {
   font-family: var(--font-serif), Georgia, serif;
-  font-size: 35px;
+  font-size: 25px;
   font-weight: 400;
-  line-height: 1.13;
   letter-spacing: -0.025em;
-  margin-top: 29px;
 }
-.evidence-questions {
-  list-style: none;
-  padding: 0;
-  margin: 25px 0 0;
-}
-.evidence-questions li {
-  display: flex;
-  gap: 19px;
-  padding: 19px 0;
-  border-top: 1px solid #40584d;
-}
-.evidence-number {
+.film-heading span {
   font-size: 11px;
-  color: #bcd0c1;
-  padding-top: 4px;
+  color: #c5d4ca;
 }
-.evidence-questions h4 {
-  font-size: 15px;
-  font-weight: 500;
+.operation-film video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: var(--paper);
 }
-.evidence-questions p {
+.operation-film video::cue {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+.operation-film figcaption {
+  padding: 17px 26px 0;
+  font-size: 11px;
+  color: #c5d4ca;
+}
+.film-transcript {
+  padding: 0 26px 18px;
+}
+.film-transcript summary {
+  cursor: pointer;
+  padding-block: 12px;
+  font-size: 13px;
+}
+.film-transcript p {
+  margin-top: 13px;
   font-size: 14px;
   line-height: 1.7;
   color: #c5d4ca;
-  margin-top: 7px;
 }
-.figure-foot {
-  display: flex;
-  gap: 13px;
-  align-items: center;
-  color: #c5d4ca;
-  font-size: 11px;
-  padding-top: 8px;
+.film-transcript strong {
+  color: var(--paper);
+  font-weight: 500;
 }
-.figure-rule {
-  height: 1px;
-  background: #788d7d;
-  flex: 1;
-  min-width: 15px;
+.operation-film :focus-visible {
+  outline-color: var(--paper);
+  outline-offset: -3px;
 }
 .ownership-layout {
   display: grid;
@@ -852,16 +883,13 @@ main:focus {
     padding-inline: 74px;
   }
   .hero h1 {
-    font-size: 91px;
+    font-size: 68px;
   }
   .hero {
-    padding-top: 94px;
-  }
-  .hero-bottom {
-    margin-top: 49px;
+    padding-top: 64px;
   }
   .hero-foot {
-    margin-top: 69px;
+    margin-top: 49px;
   }
 }
 @media (max-width: 1100px) {
@@ -871,9 +899,8 @@ main:focus {
   .desktop-nav {
     gap: 25px;
   }
-  .hero-bottom {
-    gap: 38px;
-    grid-template-columns: 1fr 330px;
+  .hero-stage {
+    column-gap: 30px;
   }
   .hero-promise {
     font-size: 21px;
@@ -883,9 +910,6 @@ main:focus {
   }
   .proof-layout {
     gap: 40px;
-  }
-  .readiness-figure {
-    padding: 30px;
   }
   .ownership-layout {
     gap: 40px;
@@ -924,9 +948,13 @@ main:focus {
   .hero h1 {
     font-size: 58px;
   }
-  .hero-bottom {
+  .hero-stage {
     grid-template-columns: 1fr;
     gap: 27px;
+  }
+  .hero-art {
+    grid-column: auto;
+    grid-row: auto;
   }
   .hero-description {
     max-width: 620px;
@@ -950,10 +978,6 @@ main:focus {
   }
   .section-intro p:not(.eyebrow) {
     max-width: 620px;
-  }
-  .readiness-figure {
-    max-width: 610px;
-    width: 100%;
   }
   .ownership-layout {
     grid-template-columns: 1fr;
@@ -1072,8 +1096,7 @@ main:focus {
     letter-spacing: -0.045em;
     line-height: 1.07;
   }
-  .hero-bottom {
-    margin-top: 27px;
+  .hero-stage {
     gap: 26px;
   }
   .hero-promise {
@@ -1122,36 +1145,20 @@ main:focus {
     font-size: 15px;
     margin-top: 19px;
   }
-  .readiness-figure {
-    padding: 25px 23px 23px;
+  .film-heading {
+    padding: 20px;
   }
-  .readiness-figure figcaption {
-    gap: 9px;
+  .film-heading h3 {
+    font-size: 24px;
   }
-  .readiness-figure .eyebrow {
-    font-size: 11px;
-    letter-spacing: 0.08em;
+  .operation-film video::cue {
+    font-size: 12px;
   }
-  .figure-index {
-    font-size: 11px;
+  .operation-film figcaption {
+    padding-inline: 20px;
   }
-  .readiness-figure h3 {
-    font-size: 33px;
-    margin-top: 26px;
-  }
-  .evidence-questions li {
-    gap: 14px;
-    padding-block: 17px;
-  }
-  .evidence-questions h4 {
-    font-size: 16px;
-  }
-  .evidence-questions p {
-    font-size: 14px;
-  }
-  .figure-foot {
-    font-size: 11px;
-    gap: 10px;
+  .film-transcript {
+    padding-inline: 20px;
   }
   .responsibility-list > div {
     padding-left: 32px;
@@ -1326,6 +1333,28 @@ main:focus {
   .mobile-nav,
   .desktop-nav {
     display: none !important;
+  }
+  .operation-film video {
+    display: none;
+  }
+  .operation-film {
+    background: #fff;
+    color: #111;
+    border: 1px solid #ccc;
+    overflow: visible;
+  }
+  .operation-film figcaption,
+  .film-heading span,
+  .film-transcript p,
+  .film-transcript strong {
+    color: #111;
+  }
+  .film-transcript::details-content {
+    display: block;
+    content-visibility: visible;
+  }
+  .film-transcript:not([open]) > p {
+    display: block;
   }
   .wrap {
     max-width: none;

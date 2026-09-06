@@ -51,60 +51,71 @@ export function SiteFooter() {
   );
 }
 
-export function ReadinessExplanation() {
+export function OperatingModelFilm() {
   return (
-    <figure className="readiness-figure" aria-labelledby="explanation-title">
-      <figcaption>
-        <span className="eyebrow">Illustration of the operating model</span>
-      </figcaption>
-      <h3 id="explanation-title">
-        A file’s readiness
-        <br />
-        should be explainable.
-      </h3>
-      <ol className="evidence-questions">
-        <li>
-          <span className="evidence-number" aria-hidden="true">
-            01
-          </span>
-          <div>
-            <h4>What is still missing?</h4>
-            <p>
-              The conditions keeping the file from Demand Ready, grounded in the
-              firm’s requirements.
-            </p>
-          </div>
-        </li>
-        <li>
-          <span className="evidence-number" aria-hidden="true">
-            02
-          </span>
-          <div>
-            <h4>What does Catena carry next?</h4>
-            <p>
-              The next owned work, including follow-up, corrections and bounded
-              assignments.
-            </p>
-          </div>
-        </li>
-        <li>
-          <span className="evidence-number" aria-hidden="true">
-            03
-          </span>
-          <div>
-            <h4>What needs the firm?</h4>
-            <p>
-              The decision, its context and the authority that remains with your
-              firm.
-            </p>
-          </div>
-        </li>
-      </ol>
-      <div className="figure-foot">
-        <span>From received</span>
-        <span className="figure-rule" aria-hidden="true" />
-        <span>To evidence-backed readiness</span>
+    <figure className="operation-film" aria-labelledby="film-title">
+      <div className="film-heading">
+        <h3 id="film-title">Received is the beginning.</h3>
+        <span>30 seconds · No sound</span>
       </div>
+      <video
+        controls
+        playsInline
+        preload="none"
+        width="1280"
+        height="720"
+        poster="/media/records-to-demand-explainer-poster-v2.webp"
+        aria-label="How Catena carries the work from received records toward Demand Readiness"
+      >
+        <source
+          src="/media/records-to-demand-explainer-v2.mp4"
+          type="video/mp4"
+        />
+        <track
+          kind="captions"
+          src="/media/records-to-demand-explainer-v2.vtt"
+          srcLang="en"
+          label="English"
+          default
+        />
+        <p>
+          <a href="/media/records-to-demand-explainer-v2.mp4">
+            Watch the short film
+          </a>{" "}
+          or read the visual transcript below.
+        </p>
+      </video>
+      <figcaption>Illustration of the operating model.</figcaption>
+      <details className="film-transcript">
+        <summary>Read the visual transcript</summary>
+        <p>
+          <strong>The records arrived. The file may still need more.</strong>{" "}
+          Three record sheets travel along a teal ribbon into an open folio.
+          Arrival does not mark the file complete.
+        </p>
+        <p>
+          <strong>
+            A missing bill. An unresolved correction. A decision for the firm.
+          </strong>{" "}
+          An empty bill outline, a moving correction strip and a separate firm
+          decision sheet remain visibly unresolved.
+        </p>
+        <p>
+          <strong>
+            Catena carries follow-up and keeps the next work owned.
+          </strong>{" "}
+          Paper assignments move between trays labeled “Follow-up” and “Bounded
+          work,” pausing and continuing along the same teal ribbon.
+        </p>
+        <p>
+          <strong>
+            Readiness needs an explanation. The firm owns the demand.
+          </strong>{" "}
+          Sheets gather in an open folio labeled “Readiness evidence.” Across a
+          visible boundary, a separate “Firm decisions” sheet remains with the
+          firm. The illustration does not declare a file ready.
+        </p>
+      </details>
     </figure>
   );
 }

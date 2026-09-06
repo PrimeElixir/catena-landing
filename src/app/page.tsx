@@ -1,8 +1,9 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Arrow,
   ClosingInvitation,
-  ReadinessExplanation,
+  OperatingModelFilm,
   StartSteps,
 } from "@/components/Site";
 
@@ -14,36 +15,43 @@ export default function Home() {
           <span className="lane-mark" aria-hidden="true" />
           Records-to-Demand · For plaintiff PI firms
         </p>
-        <h1>
-          The records arrived.
-          <br />
-          <em>The file still isn’t ready.</em>
-        </h1>
-        <div className="hero-bottom">
-          <div>
+        <div className="hero-stage">
+          <h1>
+            The records arrived.
+            <br />
+            <em>The file still isn’t ready.</em>
+          </h1>
+          <figure className="hero-art">
+            <Image
+              src="/media/catena-operation-v2.webp"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 800px) calc(100vw - 44px), (max-width: 1296px) 48vw, 560px"
+              preload
+              alt="Ivory record folders connected by a continuous teal paper path, with an unresolved item marked along the way."
+            />
+            <figcaption>
+              <span>From records received to readiness explained.</span>
+              <span>Editorial illustration</span>
+            </figcaption>
+          </figure>
+          <div className="hero-message">
             <p className="hero-promise">
-              Turn on Records-to-Demand.
-              <br />
-              Catena runs the lane.
+              Turn on Records-to-Demand. Catena runs the lane.
             </p>
             <p className="hero-description">
               Catena is a managed operations platform. CatenaOS carries the
               records-and-bills operation, from requirements and authorized
               requests through follow-up, corrections and Demand Readiness.
             </p>
-          </div>
-          <div className="hero-invitation">
-            <Link className="button" href="/records-to-demand">
-              See what your firm could hand off <Arrow />
-            </Link>
-            <p className="action-note">
-              Explore the work Catena carries
-              <br className="desktop-break" /> and the decisions your firm
-              keeps.
-            </p>
-            <Link className="text-link" href="#proof">
-              What a ready file must show <span aria-hidden="true">↓</span>
-            </Link>
+            <div className="hero-invitation">
+              <Link className="button" href="/records-to-demand">
+                See what your firm could hand off <Arrow />
+              </Link>
+              <Link className="text-link" href="#proof">
+                What a ready file must show <span aria-hidden="true">↓</span>
+              </Link>
+            </div>
           </div>
         </div>
         <div className="hero-foot">
@@ -58,11 +66,7 @@ export default function Home() {
             <p className="eyebrow">
               A completed request is only part of the answer
             </p>
-            <h2>
-              Know what still stands
-              <br className="desktop-break" /> between the file
-              <br className="desktop-break" /> and the demand.
-            </h2>
+            <h2>A file’s readiness should be explainable.</h2>
             <p>
               A document can arrive with a missing bill, an unresolved
               correction or a decision that still belongs to the firm.
@@ -75,7 +79,7 @@ export default function Home() {
               Explore the readiness standard <Arrow />
             </Link>
           </div>
-          <ReadinessExplanation />
+          <OperatingModelFilm />
         </div>
       </section>
       <section className="section wrap" id="ownership">

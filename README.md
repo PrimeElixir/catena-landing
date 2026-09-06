@@ -26,7 +26,7 @@ The native Node tests use injected fake configuration and mocked provider respon
 
 Legacy `/contact` and `/about` paths temporarily redirect to their replacements. Relevant old homepage anchors remain available. The historical `jordan-pi-operating-map` directory is outside this website build and is excluded from direct Vercel deployments.
 
-Fonts are served locally. Their licenses and source manifest are in `public/fonts`. The readiness graphic is an illustration of the operating model, not a product screenshot or customer result. No advertising pixels or visitor analytics are installed in this application.
+Fonts are served locally. Their licenses and source manifest are in `public/fonts`. The hero uses original generated editorial paper artwork. The 30-second silent film is original motion geometry illustrating the operating model, not a product screenshot or customer result. Its MP4, static poster and English WebVTT captions live in `public/media`; a visual transcript is available in the page. Native controls support pause, seeking and captions. The film does not autoplay and uses `preload="none"`; the hero has reserved dimensions and responsive image optimization. Original files, generation prompts and motion source are retained with the release work package. No advertising pixels or visitor analytics are installed in this application.
 
 ## Inquiry delivery
 
@@ -46,7 +46,7 @@ Brian owns inquiry review and reply. Existing contact/firm records and suppressi
 
 ## Deployment and release
 
-Use the existing `prime-elixir/catena-landing` Vercel project. Protected preview deployments are prepared directly with the CLI. Keep Vercel Standard Protection enabled and confirm anonymous access is blocked. Non-production builds emit noindex metadata, a noindex header and a disallow-all robots file.
+Use the existing `prime-elixir/catena-landing` Vercel project. Protected preview deployments are prepared directly with the CLI. Keep Vercel Standard Protection enabled and confirm access requires authentication or an explicitly authorized review bypass. Never commit bypass tokens. Non-production builds emit noindex metadata, a noindex header and a disallow-all robots file.
 
 Public release requires approval of the exact pages, assets, redirects, inquiry behavior and test actions. Do not promote a preview build to production: build for the production environment so indexability and delivery configuration are evaluated correctly. Record the current production deployment before changing aliases, then verify the actual live routes and inbox receipt after release. Keep the prior deployment available for rollback.
 
