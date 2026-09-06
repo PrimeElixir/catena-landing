@@ -1,0 +1,60 @@
+{
+  "retrieved": "2026-09-05",
+  "license": "SIL Open Font License 1.1",
+  "fonts": [
+    {
+      "font": "inter-latin-variable.woff2",
+      "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz,wght%5D.ttf",
+      "license": "inter-OFL.txt",
+      "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+      "source_sha256": "29160a80ff49ddcab2c97711247e08b1fab27a484a329ce8b813d820dc559031",
+      "woff2_sha256": "2f99fed44ebb15809c01544a2fe4c51ef6153dcb31eecc654b040e2e9f389041",
+      "axes": {
+        "opsz": 18,
+        "wght": [
+          400,
+          600
+        ]
+      },
+      "bytes": 49472
+    },
+    {
+      "font": "source-serif-4-latin-variable.woff2",
+      "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/SourceSerif4%5Bopsz,wght%5D.ttf",
+      "license": "sourceserif4-OFL.txt",
+      "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/OFL.txt",
+      "source_sha256": "97b2d4da6e3cb494b5a1e66ae176914d852ccabef49e0c02c0df25f3e39aca0b",
+      "woff2_sha256": "9b01901e61a4ac15b962a445e61f0d2fc8388531b8407a2206cf4cf2787559a0",
+      "axes": {
+        "opsz": [
+          8,
+          60
+        ],
+        "wght": [
+          400,
+          600
+        ]
+      },
+      "bytes": 130784
+    },
+    {
+      "font": "source-serif-4-latin-italic-variable.woff2",
+      "upstream": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/SourceSerif4-Italic%5Bopsz,wght%5D.ttf",
+      "license": "sourceserif4-OFL.txt",
+      "license_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/sourceserif4/OFL.txt",
+      "source_sha256": "15fbc7e4679489a501998c3669272637a6646388ef7e4bd77eebb5bf967a1f42",
+      "woff2_sha256": "1155e14ff710e10b070820f6918d323ba8c18a7b2eb0c6163127c3eb4a22d095",
+      "axes": {
+        "opsz": [
+          8,
+          60
+        ],
+        "wght": [
+          400,
+          600
+        ]
+      },
+      "bytes": 110136
+    }
+  ]
+}

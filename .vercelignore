@@ -1,0 +1,8 @@
+.git
+.next
+.env*
+node_modules
+tests
+jordan-pi-operating-map
+*.log
+*.tsbuildinfo

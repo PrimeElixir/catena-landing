@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Catena public website
 
-## Getting Started
+The commercial website for Catena, the managed operations platform by Prime Elixir. Records-to-Demand is the first lane. This repository does not implement the operating platform or admit live matters.
 
-First, run the development server:
+## Development and validation
 
-```bash
+Use Node.js 22 or later. Read `AGENTS.md` and the relevant bundled Next.js documentation before changing framework code.
+
+```powershell
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm test
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The native Node tests use injected fake configuration and mocked provider responses. They do not send emails or require live credentials.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Buyer journey
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `/`: the offer, ownership, readiness standard, fit and first conversation.
+- `/records-to-demand`: an ungated, printable brief to share with a buyer and operating owner.
+- `/conversation`: business-contact inquiry with direct email and no-JavaScript alternatives.
+- `/privacy`: how website inquiries are handled.
 
-## Learn More
+Legacy `/contact` and `/about` paths temporarily redirect to their replacements. Relevant old homepage anchors remain available. The historical `jordan-pi-operating-map` directory is outside this website build and is excluded from direct Vercel deployments.
 
-To learn more about Next.js, take a look at the following resources:
+Fonts are served locally. Their licenses and source manifest are in `public/fonts`. The readiness graphic is an illustration of the operating model, not a product screenshot or customer result. No advertising pixels or visitor analytics are installed in this application.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Inquiry delivery
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`POST /api/contact` accepts JSON business-contact fields only: `name`, `email`, `firm`, `role`, optional `monthlyVolume`, and an empty `website` honeypot. It requires a UUID v4 `Idempotency-Key`. The browser reuses the key when retrying unchanged details. The endpoint bounds request size, validates values, checks request origin and uses a bounded provider timeout. HTTP 202 requires explicit provider acceptance; it does not prove inbox delivery.
 
-## Deploy on Vercel
+The sender remains disabled unless all of these are present:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Vercel's actual `VERCEL_ENV` is `production`.
+- `CONTACT_FORM_ENABLED` equals `true`.
+- `RESEND_API_KEY` is configured securely.
+- `CONTACT_FROM` is a verified company-domain sender, not a provider testing address.
+- `CONTACT_EMAIL` is the accountable recipient mailbox.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Copy `.env.example` only as configuration guidance. Never commit credentials or set a development environment to pretend it is production. Preview and local builds cannot send, even if inherited provider credentials exist. Before activation, verify the sender, recipient ownership and a durable Vercel edge rate limit. A controlled delivery test needs explicit authorization and must be excluded from business counts. No automatic subscriber enrollment or acknowledgement email is implemented.
+
+Brian owns inquiry review and reply. Existing contact/firm records and suppression context are reconciled through the established commercial process; a form acceptance is not a qualified opportunity.
+
+## Deployment and release
+
+Use the existing `prime-elixir/catena-landing` Vercel project. Protected preview deployments are prepared directly with the CLI. Keep Vercel Standard Protection enabled and confirm anonymous access is blocked. Non-production builds emit noindex metadata, a noindex header and a disallow-all robots file.
+
+Public release requires approval of the exact pages, assets, redirects, inquiry behavior and test actions. Do not promote a preview build to production: build for the production environment so indexability and delivery configuration are evaluated correctly. Record the current production deployment before changing aliases, then verify the actual live routes and inbox receipt after release. Keep the prior deployment available for rollback.
+
+Website publication is separate from the operating platform's production admission. No DNS, mail, old replay or unrelated project retirement is included in an ordinary website deployment.
