@@ -8,6 +8,9 @@ const ROLES = {
   "managing-partner": "Managing partner / owner",
   attorney: "Attorney",
   operations: "Operations",
+  "pre-lit-lead": "Pre-lit lead",
+  "paralegal-case-manager": "Paralegal / case manager",
+  "records-specialist": "Records specialist",
   other: "Other",
 } as const;
 const VOLUMES = {

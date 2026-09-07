@@ -141,8 +141,9 @@ export function StartSteps() {
         </span>
         <h3>Discuss your operation</h3>
         <p>
-          Start with your current records-and-bills process and what you would
-          like Catena to take on. No client files are needed for this conversation.
+          In 15 minutes with Brian, compare your current records-and-bills
+          process and whether a founding Catena engagement is worth exploring.
+          No preparation or client files needed.
         </p>
       </li>
       <li>
@@ -188,8 +189,10 @@ export function ClosingInvitation() {
           </Link>
         </div>
         <p>
-          Start with your current process and whether a founding cohort makes
-          sense. No client files needed.
+          In 15 minutes with Brian, compare your current process and whether a
+          founding Catena engagement is worth exploring. No preparation or
+          client files needed. You can also reply to your existing email or
+          LinkedIn conversation.
         </p>
       </div>
     </section>

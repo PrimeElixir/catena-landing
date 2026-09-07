@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { RequirementExample } from "@/components/RequirementExample";
 import {
   Arrow,
   ClosingInvitation,
@@ -21,6 +22,24 @@ export default function Home() {
             <br />
             <em>The file still isn’t ready.</em>
           </h1>
+          <div className="hero-message">
+            <p className="hero-promise">
+              Turn on Records-to-Demand. Catena runs the lane.
+            </p>
+            <p className="hero-description">
+              Records-to-Demand is a managed service delivered by CatenaOS.
+              Catena requests records and bills, works through gaps and
+              corrections, and shows why the file is or is not Demand Ready.
+            </p>
+            <div className="hero-invitation">
+              <Link className="button" href="/records-to-demand">
+                See what your firm could hand off <Arrow />
+              </Link>
+              <Link className="text-link" href="/conversation">
+                Discuss your firm’s fit in 15 minutes <Arrow />
+              </Link>
+            </div>
+          </div>
           <figure className="hero-art">
             <Image
               src="/media/catena-operation-v3.png"
@@ -35,24 +54,6 @@ export default function Home() {
               <span>Editorial illustration</span>
             </figcaption>
           </figure>
-          <div className="hero-message">
-            <p className="hero-promise">
-              Turn on Records-to-Demand. Catena runs the lane.
-            </p>
-            <p className="hero-description">
-              Records-to-Demand is a managed service delivered by CatenaOS.
-              Catena requests records and bills, works through gaps and
-              corrections, and shows why the file is or is not Demand Ready.
-            </p>
-            <div className="hero-invitation">
-              <Link className="button" href="/records-to-demand">
-                See what your firm could hand off <Arrow />
-              </Link>
-              <Link className="text-link" href="#proof">
-                What a ready file must show <span aria-hidden="true">↓</span>
-              </Link>
-            </div>
-          </div>
         </div>
         <div className="hero-foot">
           <span>One defined operation. A clear boundary.</span>
@@ -80,7 +81,10 @@ export default function Home() {
               Explore the readiness standard <Arrow />
             </Link>
           </div>
-          <OperatingModelFilm />
+          <div className="proof-example-stack">
+            <OperatingModelFilm />
+            <RequirementExample />
+          </div>
         </div>
       </section>
       <section className="section wrap" id="ownership">
@@ -88,53 +92,43 @@ export default function Home() {
         <div className="section-heading">
           <p className="eyebrow">Records-to-Demand, managed by Catena</p>
           <h2>
-            Catena runs the operation.
+            Less daily chase.
             <br />
-            <em>Your firm owns the demand.</em>
+            <em>A clear readiness answer.</em>
           </h2>
         </div>
         <div className="ownership-layout">
           <p className="large-note">
-            CatenaOS handles the records-and-bills work from first request to a
-            readiness decision. Your team keeps professional judgment and
-            drafts the demand.
+            Even a well-run team carries recurring records-and-bills work.
+            Handing off that operation creates room for the work that needs
+            your firm’s attention.
           </p>
           <div className="responsibility-list">
             <div>
               <span className="row-number">01</span>
-              <h3>Establish and maintain requirements</h3>
+              <h3>The work your team carries today</h3>
               <p>
-                Define the records, bills, and treatment periods the file needs
-                under your firm’s criteria. Keep those requirements current as
-                the matter changes.
+                Carry the requests, chase missing returns, resolve corrections,
+                and establish whether the file is ready. Receiving documents
+                still leaves that work with your team.
               </p>
             </div>
             <div>
               <span className="row-number">02</span>
-              <h3>Request records and bills</h3>
+              <h3>The operation Catena takes on</h3>
               <p>
-                Send authorized requests, follow up on outstanding returns,
-                and work through delays. Your team does not have to manage the
-                daily chase.
+                CatenaOS runs that records-and-bills operation under your firm’s
+                agreed criteria, from authorized requests through gaps,
+                corrections and an evidence-backed readiness decision.
               </p>
             </div>
             <div>
               <span className="row-number">03</span>
-              <h3>Check returns and resolve gaps</h3>
+              <h3>What changes for your team</h3>
               <p>
-                Check what comes back against what was requested. Pursue
-                missing records, incomplete date ranges, and incorrect bills,
-                bringing professional decisions to your firm with context.
-              </p>
-            </div>
-            <div>
-              <span className="row-number">04</span>
-              <h3>Determine Demand Readiness</h3>
-              <p>
-                Determine whether the file meets your firm’s readiness
-                criteria. Show the evidence behind the decision, identify
-                remaining gaps, and reopen readiness when new information
-                changes the answer.
+                Your team handles professional decisions with supporting
+                context, instead of supervising each request and correction.
+                Agreed reviews and approvals remain part of the work.
               </p>
             </div>
           </div>

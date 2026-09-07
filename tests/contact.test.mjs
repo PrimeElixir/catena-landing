@@ -79,6 +79,27 @@ async function expectRejected(req, status, code) {
   assert.equal(calls.length, 0);
 }
 
+for (const [role, label] of [
+  ["pre-lit-lead", "Pre-lit lead"],
+  ["paralegal-case-manager", "Paralegal / case manager"],
+  ["records-specialist", "Records specialist"],
+]) {
+  test(`practitioner inquiry accepts ${role} and preserves its email label with volume omitted`, async () => {
+    const { calls, dependencies } = harness();
+    const requiredDetails = { ...details };
+    delete requiredDetails.monthlyVolume;
+    const response = await handleContactRequest(
+      request({ ...requiredDetails, role }), dependencies,
+    );
+    assert.equal(response.status, 202);
+    assert.equal(calls.length, 1);
+    const message = JSON.parse(calls[0].options.body);
+    assert.ok(message.text.includes(`Role: ${label}`));
+    assert.deepEqual(message.to, [config.to]);
+    assert.equal("attachments" in message, false);
+  });
+}
+
 test("valid inquiry is accepted only with a provider ID, without exposing contact or provider data", async () => {
   const { calls, dependencies } = harness();
   const response = await handleContactRequest(request(), dependencies);

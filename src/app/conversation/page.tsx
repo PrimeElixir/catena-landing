@@ -27,9 +27,18 @@ export default function Conversation() {
           <em>look like at your firm?</em>
         </h1>
         <p className="page-deck">
-          Start a conversation about your current operation and whether Catena
-          fits. We’ll review your inquiry and reply by email about the next
-          step.
+          In 15 minutes with Brian, compare how your firm handles
+          records-to-demand work today and whether a founding Catena engagement
+          is worth exploring. No preparation or client files needed.
+        </p>
+        <p className="conversation-response">
+          Brian will review your inquiry and reply by email to arrange the next
+          step. You can also reply to your existing email or LinkedIn
+          conversation, or email{" "}
+          <a href="mailto:brian.mcleod@primeelixirco.com">
+            brian.mcleod@primeelixirco.com
+          </a>{" "}
+          directly.
         </p>
       </header>
       <div className="conversation-layout">
@@ -58,14 +67,6 @@ export default function Conversation() {
             Start with your current process. Together, we can identify who
             should join scoping if there is a fit. No client or matter
             information is needed for this conversation.
-          </p>
-          <p>
-            You can also continue an existing email or LinkedIn conversation, or
-            email{" "}
-            <a href="mailto:brian.mcleod@primeelixirco.com">
-              brian.mcleod@primeelixirco.com
-            </a>{" "}
-            directly.
           </p>
           <p>
             Live work begins only after onboarding, agreed operating conditions

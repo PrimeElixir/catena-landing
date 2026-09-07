@@ -290,7 +290,20 @@ main:focus {
   letter-spacing: 0.08em;
 }
 .hero-message {
+  grid-column: 1;
+  grid-row: 2;
   min-width: 0;
+}
+.conversation-response {
+  max-width: 720px;
+  margin-top: 20px;
+  font-size: 16px;
+  color: var(--muted);
+}
+.conversation-response a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .hero-promise {
   font-size: 21px;
@@ -331,6 +344,11 @@ main:focus {
 }
 .proof-section {
   background: var(--sage);
+}
+.proof-example-stack {
+  min-width: 0;
+  display: grid;
+  gap: 24px;
 }
 .proof-layout {
   display: grid;
@@ -964,6 +982,10 @@ main:focus {
     gap: 27px;
   }
   .hero-art {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .hero-message {
     grid-column: auto;
     grid-row: auto;
   }

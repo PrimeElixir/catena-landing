@@ -182,8 +182,10 @@ export default function LaneBrief() {
           look like at your firm?
         </h2>
         <p>
-          Start a conversation about your current operation and whether Catena
-          fits.
+          In 15 minutes with Brian, compare your current operation and whether a
+          founding Catena engagement is worth exploring. No preparation or
+          client files needed. You can also reply to your existing email or
+          LinkedIn conversation.
         </p>
         <div className="actions">
           <Link className="button" href="/conversation">
@@ -195,7 +197,8 @@ export default function LaneBrief() {
         </div>
         <p className="form-privacy">
           Founding cohort conversations are open. Detailed scope and terms are
-          discussed directly. Live delivery requires separate admission.
+          discussed directly. Live work begins only after onboarding, agreed
+          operating conditions and separate go-live approval.
         </p>
       </section>
     </main>

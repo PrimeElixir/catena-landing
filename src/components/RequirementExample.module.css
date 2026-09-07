@@ -1,0 +1,68 @@
+.example {
+  container-type: inline-size;
+  box-sizing: border-box;
+  min-width: 0;
+  width: 100%;
+  color: #182e2a;
+  background: #fdfcf8;
+  border: 1px solid #cbd2c6;
+  border-radius: 2px;
+  font-family: var(--font-inter), Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+.example * { box-sizing: border-box; }
+.example p, .example h3, .example h4, .example ol { margin: 0; }
+.header { padding: 24px 24px 20px; }
+.label {
+  color: #50625b;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+.example .title {
+  margin-top: 8px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+.example .provenance { margin-top: 10px; font-size: 13px; color: #50625b; }
+.steps { list-style: none; padding: 0 24px; display: grid; }
+.step {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid #cbd2c6;
+}
+.number { font-size: 13px; font-weight: 600; line-height: 24px; color: #50625b; }
+.example .stepTitle { font-size: 16px; line-height: 1.4; font-weight: 600; margin-bottom: 5px; }
+.example strong { font-weight: 600; }
+.gap strong, .gap .number { color: #874728; }
+.resolution strong, .resolution .number { color: #165f52; }
+.consequence { padding: 20px 24px 24px; background: #e3ebe2; border-top: 1px solid #cbd2c6; }
+.example .result { font-weight: 600; line-height: 1.4; margin-bottom: 10px; }
+.consequence p:last-child { color: #344b42; }
+@container (min-width: 520px) {
+  .header { padding: 24px 24px 20px; }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0 24px; column-gap: 24px; }
+  .step { padding: 20px 0; }
+  .consequence { display: grid; grid-template-columns: 1fr 1.4fr; gap: 24px; padding: 22px 24px; }
+  .example .result { margin-bottom: 0; }
+}
+@container (max-width: 340px) {
+  .header { padding: 20px 16px 16px; }
+  .example .title { font-size: 28px; }
+  .steps { padding: 0 16px; }
+  .step { gap: 8px; grid-template-columns: 20px minmax(0, 1fr); padding: 14px 0; }
+  .consequence { padding: 18px 16px 20px; }
+}
+@media print {
+  .example { break-inside: avoid; border-color: #888; }
+}

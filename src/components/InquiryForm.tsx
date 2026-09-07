@@ -176,6 +176,9 @@ export function InquiryForm() {
           <option value="managing-partner">Managing partner / owner</option>
           <option value="attorney">Attorney</option>
           <option value="operations">Operations</option>
+          <option value="pre-lit-lead">Pre-lit lead</option>
+          <option value="paralegal-case-manager">Paralegal / case manager</option>
+          <option value="records-specialist">Records specialist</option>
           <option value="other">Other</option>
         </select>
       </label>
