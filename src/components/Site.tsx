@@ -55,8 +55,8 @@ export function OperatingModelFilm() {
   return (
     <figure className="operation-film" aria-labelledby="film-title">
       <div className="film-heading">
-        <h3 id="film-title">Received is the beginning.</h3>
-        <span>30 seconds · No sound</span>
+        <h3 id="film-title">Catena runs Records-to-Demand.</h3>
+        <span>42 seconds · No sound</span>
       </div>
       <video
         controls
@@ -64,56 +64,68 @@ export function OperatingModelFilm() {
         preload="none"
         width="1280"
         height="720"
-        poster="/media/records-to-demand-explainer-poster-v2.webp"
-        aria-label="How Catena carries the work from received records toward Demand Readiness"
+        poster="/media/records-to-demand-explainer-poster-v3.webp"
+        aria-label="Catena requests records and bills, resolves gaps and explains the readiness decision"
       >
         <source
-          src="/media/records-to-demand-explainer-v2.mp4"
+          src="/media/records-to-demand-explainer-v3.mp4"
           type="video/mp4"
         />
         <track
           kind="captions"
-          src="/media/records-to-demand-explainer-v2.vtt"
+          src="/media/records-to-demand-explainer-v3.vtt"
           srcLang="en"
           label="English"
           default
         />
         <p>
-          <a href="/media/records-to-demand-explainer-v2.mp4">
+          <a href="/media/records-to-demand-explainer-v3.mp4">
             Watch the short film
           </a>{" "}
           or read the visual transcript below.
         </p>
       </video>
-      <figcaption>Illustration of the operating model.</figcaption>
+      <figcaption>Illustrative example of the service and its readiness decision.</figcaption>
       <details className="film-transcript">
         <summary>Read the visual transcript</summary>
         <p>
-          <strong>The records arrived. The file may still need more.</strong>{" "}
-          Three record sheets travel along a teal ribbon into an open folio.
-          Arrival does not mark the file complete.
+          <strong>Turn on Records-to-Demand. Catena runs the lane.</strong>{" "}
+          One example file stays in view. Catena maintains its requirements and
+          sends authorized requests for records and bills.
         </p>
         <p>
           <strong>
-            A missing bill. An unresolved correction. A decision for the firm.
+            Catena checks what comes back.
           </strong>{" "}
-          An empty bill outline, a moving correction strip and a separate firm
-          decision sheet remain visibly unresolved.
+          Records arrive, but the required bill is missing. Catena checks the
+          return against the requirements. The example file is not ready.
         </p>
         <p>
           <strong>
-            Catena carries follow-up and keeps the next work owned.
+            Catena works through gaps and corrections.
           </strong>{" "}
-          Paper assignments move between trays labeled “Follow-up” and “Bounded
-          work,” pausing and continuing along the same teal ribbon.
+          A returned bill needs correction. Catena requests the correction and
+          checks the corrected return. Completing that work alone does not
+          establish readiness.
         </p>
         <p>
           <strong>
-            Readiness needs an explanation. The firm owns the demand.
+            When Catena says ready, it shows why.
           </strong>{" "}
-          Sheets gather in an open folio labeled “Readiness evidence.” Across a
-          visible boundary, a separate “Firm decisions” sheet remains with the
-          firm. The illustration does not declare a file ready.
+          In this illustrative example, required records and the corrected bill
+          have been accepted, and required firm decisions have been recorded.
+          Catena evaluates those conditions under the firm’s criteria and
+          explains the Demand Ready decision.
+        </p>
+        <p>
+          <strong>New evidence can change readiness.</strong>{" "}
+          New information introduces a gap. Catena reopens the readiness
+          decision and identifies what needs attention.
+        </p>
+        <p>
+          <strong>Your firm keeps professional judgment and drafts the demand.</strong>{" "}
+          The example file remains on Catena’s side of a visible boundary. Policy,
+          professional judgment, drafting and strategy remain with the firm.
         </p>
       </details>
     </figure>

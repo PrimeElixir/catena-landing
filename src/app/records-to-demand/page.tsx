@@ -28,9 +28,9 @@ export default function LaneBrief() {
           <em>could hand off.</em>
         </h1>
         <p className="page-deck">
-          A records-and-bills operation, carried through Demand Readiness. See
-          what Catena owns, what stays with your firm, and what you should be
-          able to inspect before relying on it.
+          Records-to-Demand is the service. CatenaOS runs it. See the work
+          Catena performs, why a file is or is not ready, and which decisions
+          require your firm’s authority.
         </p>
         <div className="brief-meta">
           <span>For plaintiff personal injury firms</span>
@@ -42,28 +42,29 @@ export default function LaneBrief() {
         <div>
           <p className="eyebrow">01 / Catena’s responsibility</p>
           <h2>
-            Carry the operation
+            Run the operation
             <br />
-            across the gaps.
+            through Demand Readiness.
           </h2>
         </div>
         <div>
           <p>
-            CatenaOS carries Records-to-Demand by default. It maintains the
-            requirements and unresolved conditions, keeps the next work owned,
-            and routes bounded assignments to AI, operators or vendors where
-            needed.
+            CatenaOS runs your records-and-bills operation. It maintains what
+            is needed, makes authorized requests, checks what comes back and
+            works through gaps and corrections. Catena determines whether the
+            file meets your firm’s readiness criteria and explains why.
           </p>
           <ul>
             <li>
               Establish the records and bills required under the firm’s policy.
             </li>
-            <li>Carry authorized requests, follow-up and waits.</li>
+            <li>Execute authorized requests and follow-up.</li>
             <li>Handle corrections, missing information and recovery.</li>
-            <li>Keep assignments and unresolved conditions owned.</li>
+            <li>Check returned records and bills against what is required.</li>
             <li>
               Evaluate Demand Readiness and explain the evidence behind it.
             </li>
+            <li>Reopen readiness when new evidence changes the answer.</li>
           </ul>
           <div className="brief-authority">
             <h3>One operating responsibility</h3>

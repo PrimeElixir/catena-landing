@@ -40,9 +40,9 @@ export default function Home() {
               Turn on Records-to-Demand. Catena runs the lane.
             </p>
             <p className="hero-description">
-              Catena is a managed operations platform. CatenaOS carries the
-              records-and-bills operation, from requirements and authorized
-              requests through follow-up, corrections and Demand Readiness.
+              Records-to-Demand is a managed service delivered by CatenaOS.
+              Catena requests records and bills, works through gaps and
+              corrections, and shows why the file is or is not Demand Ready.
             </p>
             <div className="hero-invitation">
               <Link className="button" href="/records-to-demand">
@@ -72,8 +72,9 @@ export default function Home() {
               correction or a decision that still belongs to the firm.
             </p>
             <p>
-              Catena’s job is to keep those conditions owned, carry the next
-              work and explain whether the file is Demand Ready.
+              Catena checks what came back, works through gaps and corrections,
+              and determines whether the file meets your firm’s readiness
+              criteria. When Catena says ready, it shows why.
             </p>
             <Link className="text-link" href="/records-to-demand#readiness">
               Explore the readiness standard <Arrow />
@@ -85,52 +86,55 @@ export default function Home() {
       <section className="section wrap" id="ownership">
         <span className="anchor-alias" id="how-it-works" />
         <div className="section-heading">
-          <p className="eyebrow">The operation Catena carries</p>
+          <p className="eyebrow">Records-to-Demand, managed by Catena</p>
           <h2>
-            Software carries the operation.
+            Catena runs the operation.
             <br />
-            <em>People step in by assignment.</em>
+            <em>Your firm owns the demand.</em>
           </h2>
         </div>
         <div className="ownership-layout">
           <p className="large-note">
-            Continuity across the work,
-            <br />
-            including the parts
-            <br />
-            that need another pass.
+            CatenaOS handles the records-and-bills work from first request to a
+            readiness decision. Your team keeps professional judgment and
+            drafts the demand.
           </p>
           <div className="responsibility-list">
             <div>
               <span className="row-number">01</span>
-              <h3>Establish the requirements</h3>
+              <h3>Establish and maintain requirements</h3>
               <p>
-                Maintain what records and bills the file needs under the firm’s
-                requirements.
+                Define the records, bills, and treatment periods the file needs
+                under your firm’s criteria. Keep those requirements current as
+                the matter changes.
               </p>
             </div>
             <div>
               <span className="row-number">02</span>
-              <h3>Carry requests and follow-up</h3>
+              <h3>Request records and bills</h3>
               <p>
-                Move authorized requests through waits, follow-up and recovery,
-                with unresolved work kept owned.
+                Send authorized requests, follow up on outstanding returns,
+                and work through delays. Your team does not have to manage the
+                daily chase.
               </p>
             </div>
             <div>
               <span className="row-number">03</span>
-              <h3>Resolve gaps and corrections</h3>
+              <h3>Check returns and resolve gaps</h3>
               <p>
-                Route bounded work to AI, operators or vendors where needed.
-                Bring firm decisions back with context.
+                Check what comes back against what was requested. Pursue
+                missing records, incomplete date ranges, and incorrect bills,
+                bringing professional decisions to your firm with context.
               </p>
             </div>
             <div>
               <span className="row-number">04</span>
-              <h3>Explain Demand Readiness</h3>
+              <h3>Determine Demand Readiness</h3>
               <p>
-                Evaluate the file against its governing conditions and make the
-                supporting evidence inspectable.
+                Determine whether the file meets your firm’s readiness
+                criteria. Show the evidence behind the decision, identify
+                remaining gaps, and reopen readiness when new information
+                changes the answer.
               </p>
             </div>
           </div>
@@ -207,10 +211,11 @@ export default function Home() {
             <details>
               <summary>Where do people participate?</summary>
               <p>
-                CatenaOS carries the operation by default and routes bounded
-                assignments to AI, operators or vendors where needed. Decisions
-                involving firm policy or professional judgment stay with the
-                firm.
+                Catena uses AI, operators and approved external services and
+                systems where needed to perform specific work within the
+                operation. Catena handles their day-to-day coordination.
+                Decisions involving firm policy or professional judgment stay
+                with your firm.
               </p>
             </details>
             <details>
