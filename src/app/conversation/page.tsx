@@ -50,12 +50,14 @@ export default function Conversation() {
         <aside className="form-aside">
           <h2>A useful first conversation.</h2>
           <p>
-            What work keeps coming back to the firm? Who owns readiness today?
-            What would you need to verify before relying on Catena?
+            How does your team handle records requests, bills and readiness
+            today? What would you like Catena to take on, and what would you
+            need to verify before relying on it?
           </p>
           <p>
-            Bring the buyer and the person responsible for the operation. No
-            client or matter information is needed to discuss fit.
+            Start with your current process. Together, we can identify who
+            should join scoping if there is a fit. No client or matter
+            information is needed for this conversation.
           </p>
           <p>
             You can also continue an existing email or LinkedIn conversation, or
@@ -65,7 +67,10 @@ export default function Conversation() {
             </a>{" "}
             directly.
           </p>
-          <p>Live work begins only after separate admission.</p>
+          <p>
+            Live work begins only after onboarding, agreed operating conditions
+            and separate go-live approval.
+          </p>
           <Link className="text-link" href="/records-to-demand">
             Review the lane scope <Arrow />
           </Link>
