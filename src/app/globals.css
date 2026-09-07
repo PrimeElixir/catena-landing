@@ -676,10 +676,17 @@ main:focus {
   margin-top: 17px;
 }
 .brief-row ul {
-  padding-left: 20px;
+  list-style: disc outside;
+  padding-inline-start: 1.4em;
   color: var(--muted);
   font-size: 16px;
-  margin: 0;
+  margin-block: 18px;
+}
+.brief-row li {
+  padding-inline-start: 4px;
+}
+.brief-row li::marker {
+  color: var(--teal);
 }
 .brief-row li + li {
   margin-top: 12px;
@@ -708,6 +715,7 @@ main:focus {
 }
 .proof-pair ul {
   font-size: 16px;
+  margin-block: 0;
 }
 .brief-section .start-steps {
   margin-top: 34px;
@@ -1394,6 +1402,9 @@ main:focus {
   .brief-row p,
   .brief-row ul {
     font-size: 10pt;
+  }
+  .brief-row li::marker {
+    color: #111;
   }
   .brief-authority {
     background: none;
