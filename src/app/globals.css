@@ -1151,6 +1151,11 @@ main:focus {
   .film-heading h3 {
     font-size: 24px;
   }
+  .operation-film video {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    object-position: top;
+  }
   .operation-film video::cue {
     font-size: 12px;
   }
