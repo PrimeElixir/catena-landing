@@ -242,12 +242,14 @@ export default function Home() {
         <div>
           <p>
             Brian McLeod founded Prime Elixir and created CatenaOS. His
-            background includes engineering leadership in payments and
-            revenue-critical systems at Disney Streaming.
+            background spans engineering leadership at Disney Streaming,
+            Payspan and Logility, with experience in resilient payments,
+            high-volume platforms and understanding how systems affect users.
           </p>
           <p>
-            That experience informs Catena’s focus on operating responsibility,
-            evidence and exceptions.
+            That experience informs Catena’s focus on operating responsibility
+            and evidence: a system can complete an action while the underlying
+            work remains unresolved.
           </p>
           <a className="text-link" href="https://www.primeelixirco.com/">
             About the company <Arrow />
