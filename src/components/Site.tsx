@@ -141,8 +141,8 @@ export function StartSteps() {
         </span>
         <h3>Discuss your operation</h3>
         <p>
-          Bring the buyer and the person who owns readiness. Identify the
-          recurring work and the burden you want carried.
+          Start with your current records-and-bills process and what you would
+          like Catena to take on. No client files are needed for this conversation.
         </p>
       </li>
       <li>
@@ -151,18 +151,18 @@ export function StartSteps() {
         </span>
         <h3>Inspect and scope</h3>
         <p>
-          Review the evidence you would need, define the bounded lane and
-          establish the decisions your firm retains.
+          Together, involve the right people at your firm, review the evidence
+          you would need, and agree scope, systems and responsibilities.
         </p>
       </li>
       <li>
         <span className="step-number" aria-hidden="true">
           03
         </span>
-        <h3>Start after admission</h3>
+        <h3>Prepare for live work</h3>
         <p>
-          Agree scope and terms directly. Live work begins only after separate
-          admission.
+          Complete onboarding and the agreed operating conditions. Live work
+          begins only after separate go-live approval.
         </p>
       </li>
     </ol>
@@ -179,18 +179,18 @@ export function ClosingInvitation() {
           <br />
           to hand off the operation?
         </h2>
-        <p>
-          Start a conversation about your current operation and whether Catena
-          fits.
-        </p>
         <div className="actions">
           <Link className="button button-light" href="/conversation">
-            Explore this for your firm <Arrow />
+            Discuss your firm’s fit <Arrow />
           </Link>
           <Link className="text-link" href="/records-to-demand">
             Read the lane brief <Arrow />
           </Link>
         </div>
+        <p>
+          Start with your current process and whether a founding cohort makes
+          sense. No client files needed.
+        </p>
       </div>
     </section>
   );

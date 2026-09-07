@@ -172,68 +172,63 @@ export default function Home() {
         <span className="anchor-alias" id="integrations" />
         <div className="wrap fit-layout">
           <div className="section-intro">
-            <p className="eyebrow">A recurring operation worth carrying</p>
+            <p className="eyebrow">For plaintiff personal injury firms</p>
             <h2>
-              For firms with
+              Keep control of your cases.
               <br />
-              work that keeps
-              <br />
-              <em>coming back.</em>
+              <em>Let Catena run Records-to-Demand.</em>
             </h2>
-            <ul className="fit-points">
-              <li>
-                Plaintiff PI and recurring pre-suit records-and-bills work.
-              </li>
-              <li>Repeatable work with unresolved daily coordination.</li>
-              <li>A buyer and an identifiable operating or readiness owner.</li>
-            </ul>
+            <p>
+              For firms with a steady flow of pre-suit matters and a team still
+              managing records requests, missing bills, corrections, and the
+              final readiness check.
+            </p>
+            <p>
+              Catena takes responsibility for that operation. Your firm keeps
+              professional judgment and drafts the demand.
+            </p>
           </div>
           <div className="faq">
             <details>
-              <summary>What changes in our current workflow?</summary>
+              <summary>What will our team still need to do?</summary>
               <p>
-                Scoping starts with the work your firm needs carried, your
-                requirements, and the systems, staff and vendors involved. We
-                establish Catena’s operating responsibility and the decisions
-                that remain with you. Existing arrangements, including potential
-                consolidation, are part of that discussion.
+                Your firm sets policy and readiness criteria, makes professional
+                decisions, maintains client relationships, and drafts the demand.
+                You also complete the reviews and approvals agreed during
+                onboarding. Catena runs the daily records-and-bills operation
+                and brings decisions that need your authority with supporting
+                context.
               </p>
             </details>
             <details>
-              <summary>Is this just records retrieval?</summary>
+              <summary>Do we need to change our systems or vendors?</summary>
               <p>
-                Records-to-Demand includes requirements, requests, waits,
-                follow-up, corrections, recovery and readiness evaluation. A
-                returned request is one event within the operation. The file’s
-                readiness still needs an evidence-backed explanation.
+                We review your current systems and vendors during scoping, then
+                agree what can stay, what needs to change, and how Catena will
+                get authorized access. Compatibility and any vendor changes are
+                confirmed for your firm before live work.
               </p>
             </details>
             <details>
-              <summary>Where do people participate?</summary>
+              <summary>How do we evaluate Catena before relying on it?</summary>
               <p>
-                Catena uses AI, operators and approved external services and
-                systems where needed to perform specific work within the
-                operation. Catena handles their day-to-day coordination.
-                Decisions involving firm policy or professional judgment stay
-                with your firm.
+                Before live work, review the scope, example readiness decisions,
+                supporting evidence, and access and data-handling arrangements.
+                Initial delivery includes full review of readiness decisions
+                against your firm’s agreed criteria. Routine re-review is reduced
+                only when calibration supports it and your firm agrees. A
+                material failure returns the operation to full review.
               </p>
             </details>
             <details>
-              <summary>What do we review before relying on it?</summary>
+              <summary>How do we get started?</summary>
               <p>
-                The lane scope, the evidence supporting readiness, the
-                conditions that require your decision, and the access and
-                data-handling arrangements for your firm. Specific systems and
-                access requirements are established during scoping.
-              </p>
-            </details>
-            <details>
-              <summary>Can we start live work immediately?</summary>
-              <p>
-                We are speaking with firms about the founding Records-to-Demand
-                cohort. Scope and terms are discussed directly. Live delivery
-                begins only after separate admission; signing alone does not
-                start live work.
+                Start with a conversation about your current process and whether
+                a founding cohort fits. No client files are needed for that
+                conversation. Together, we involve the appropriate firm
+                participants, define scope, agree responsibilities, and complete
+                onboarding. Live work starts only after the agreed operating
+                conditions are met and separate go-live approval is complete.
               </p>
             </details>
           </div>

@@ -483,6 +483,9 @@ main:focus {
   background: var(--white);
   border-block: 1px solid #d6ded0;
 }
+.fit-section h2 {
+  font-size: clamp(36px, 3.5vw, 48px);
+}
 .fit-layout {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;

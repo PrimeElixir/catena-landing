@@ -154,9 +154,11 @@ export default function LaneBrief() {
         </div>
         <div>
           <p>
-            The first lane is for plaintiff PI firms with recurring pre-suit
-            records-and-bills volume, repeatable work and an identifiable buyer
-            and operating or readiness owner.
+            The first lane is for plaintiff PI firms with a steady flow of
+            pre-suit matters and a team managing records requests, missing bills,
+            corrections, and the final readiness check. Catena takes
+            responsibility for that operation; your firm keeps professional
+            judgment and drafts the demand.
           </p>
           <p>
             Your current systems, staff and vendors are scoping inputs. We
