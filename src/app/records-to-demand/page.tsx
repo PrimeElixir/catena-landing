@@ -200,6 +200,12 @@ export default function LaneBrief() {
           discussed directly. Live work begins only after onboarding, agreed
           operating conditions and separate go-live approval.
         </p>
+        <p className="print-contact">
+          To discuss your firm’s fit, email{" "}
+          <a href="mailto:brian.mcleod@primeelixirco.com">
+            brian.mcleod@primeelixirco.com
+          </a>.
+        </p>
       </section>
     </main>
   );

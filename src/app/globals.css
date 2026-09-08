@@ -1358,7 +1358,15 @@ main:focus {
     transition: none !important;
   }
 }
+.print-contact {
+  display: none;
+}
 @media print {
+  .print-contact {
+    display: block;
+    overflow-wrap: anywhere;
+    break-inside: avoid;
+  }
   body {
     background: #fff;
     color: #111;
