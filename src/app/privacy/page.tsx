@@ -43,13 +43,15 @@ export default function Privacy() {
           provides the connected calendar, company email, and Teams meeting.
           Loading the calendar also connects your browser to Cal.com. See the{" "}
           <a href="https://cal.com/privacy">Cal.com privacy notice</a> and{" "}
-          <a href="https://privacy.microsoft.com/privacystatement">Microsoft privacy statement</a>.
-          Previously submitted form inquiries were delivered through Resend and
-          may include role and an optional matter-volume range. Company email and
-          relevant business records are used to respond and manage follow-up.
-          People responsible for the inquiry and service providers supporting
-          hosting, email and business-record management may process this
-          information for those purposes.
+          <a href="https://privacy.microsoft.com/privacystatement">
+            Microsoft privacy statement
+          </a>
+          . Previously submitted form inquiries were delivered through Resend
+          and may include role and an optional matter-volume range. Company
+          email and relevant business records are used to respond and manage
+          follow-up. People responsible for the inquiry and service providers
+          supporting hosting, email and business-record management may process
+          this information for those purposes.
         </p>
         <p>
           Business correspondence is retained as needed to respond, maintain an

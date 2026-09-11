@@ -23,7 +23,9 @@ export function SiteHeader() {
         </Link>
       </nav>
       <div className="mobile-header-actions">
-        <Link className="mobile-booking" href="/conversation">Book · 15 min <Arrow /></Link>
+        <Link className="mobile-booking" href="/conversation">
+          Book · 15 min <Arrow />
+        </Link>
         <MobileNavigation />
       </div>
     </header>
@@ -92,46 +94,42 @@ export function OperatingModelFilm() {
       <details className="film-transcript">
         <summary>Read the visual transcript</summary>
         <p>
-          <strong>Turn on Records-to-Demand. Catena runs the lane.</strong>{" "}
-          One example file stays in view. Catena maintains its requirements and
+          <strong>Turn on Records-to-Demand. Catena runs the lane.</strong> One
+          example file stays in view. Catena maintains its requirements and
           sends authorized requests for records and bills.
         </p>
         <p>
-          <strong>
-            Catena checks what comes back.
-          </strong>{" "}
-          Records arrive, but the required bill is missing. Catena checks the
-          return against the requirements. The example file is not ready.
+          <strong>Catena checks what comes back.</strong> Records arrive, but
+          the required bill is missing. Catena checks the return against the
+          requirements. The example file is not ready.
+        </p>
+        <p>
+          <strong>Catena works through gaps and corrections.</strong> A returned
+          bill needs correction. Catena requests the correction and checks the
+          corrected return. Completing that work alone does not establish
+          readiness.
+        </p>
+        <p>
+          <strong>When Catena says ready, it shows why.</strong> In this
+          illustrative example, required records and the corrected bill have
+          been accepted, and required firm decisions have been recorded. Catena
+          evaluates those conditions under the firm’s criteria and explains the
+          Demand Ready decision.
+        </p>
+        <p>
+          <strong>New evidence can change readiness.</strong> New information
+          introduces a gap. Catena reopens the readiness decision and identifies
+          what needs attention.
         </p>
         <p>
           <strong>
-            Catena works through gaps and corrections.
+            Your firm keeps professional judgment and drafts the demand.
           </strong>{" "}
-          A returned bill needs correction. Catena requests the correction and
-          checks the corrected return. Completing that work alone does not
-          establish readiness.
-        </p>
-        <p>
-          <strong>
-            When Catena says ready, it shows why.
-          </strong>{" "}
-          In this illustrative example, required records and the corrected bill
-          have been accepted, and required firm decisions have been recorded.
-          Catena evaluates those conditions under the firm’s criteria and
-          explains the Demand Ready decision.
-        </p>
-        <p>
-          <strong>New evidence can change readiness.</strong>{" "}
-          New information introduces a gap. Catena reopens the readiness
-          decision and identifies what needs attention.
-        </p>
-        <p>
-          <strong>Your firm keeps professional judgment and drafts the demand.</strong>{" "}
-          The example file remains on Catena’s side of a visible boundary. Policy,
-          professional judgment, drafting and strategy remain with the firm.
+          The example file remains on Catena’s side of a visible boundary.
+          Policy, professional judgment, drafting and strategy remain with the
+          firm.
         </p>
       </details>
     </figure>
   );
 }
-
