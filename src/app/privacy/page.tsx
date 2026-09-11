@@ -24,12 +24,12 @@ export default function Privacy() {
         </p>
       </header>
       <div className="legal-copy">
-        <h2>Business inquiries</h2>
+        <h2>Conversations and business inquiries</h2>
         <p>
-          If you use the inquiry form, we receive your name, business email,
-          firm, role and any optional matter-volume range you choose. We use
-          those details to review your inquiry, reply and maintain the business
-          conversation.
+          When you book a conversation, we receive your name, business email,
+          firm, selected time, and scheduling details. We use this information
+          to arrange the meeting, send confirmation and scheduling updates,
+          respond to your inquiry, and maintain the business conversation.
         </p>
         <p>
           Please do not send client identities, case files, treatment
@@ -38,8 +38,14 @@ export default function Privacy() {
         </p>
         <h2>How the information is handled</h2>
         <p>
-          The website is hosted on Vercel. Form inquiries are processed through
-          Resend for delivery to Prime Elixir’s company email. Company email and
+          The website is hosted on Vercel. The conversation page loads a Cal.com
+          calendar. Cal.com processes scheduling information, and Microsoft
+          provides the connected calendar, company email, and Teams meeting.
+          Loading the calendar also connects your browser to Cal.com. See the{" "}
+          <a href="https://cal.com/privacy">Cal.com privacy notice</a> and{" "}
+          <a href="https://privacy.microsoft.com/privacystatement">Microsoft privacy statement</a>.
+          Previously submitted form inquiries were delivered through Resend and
+          may include role and an optional matter-volume range. Company email and
           relevant business records are used to respond and manage follow-up.
           People responsible for the inquiry and service providers supporting
           hosting, email and business-record management may process this

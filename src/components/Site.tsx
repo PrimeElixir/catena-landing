@@ -16,13 +16,16 @@ export function SiteHeader() {
         catena<span aria-hidden="true">.</span>
       </Link>
       <nav aria-label="Main navigation" className="desktop-nav">
-        <Link href="/records-to-demand">The lane</Link>
-        <Link href="/#proof">Readiness</Link>
+        <Link href="/records-to-demand">Records-to-Demand</Link>
+        <Link href="/#ownership">Responsibilities</Link>
         <Link className="nav-inquiry" href="/conversation">
-          Explore Catena for your firm <Arrow />
+          Book a conversation <Arrow />
         </Link>
       </nav>
-      <MobileNavigation />
+      <div className="mobile-header-actions">
+        <Link className="mobile-booking" href="/conversation">Book · 15 min <Arrow /></Link>
+        <MobileNavigation />
+      </div>
     </header>
   );
 }
@@ -42,7 +45,7 @@ export function SiteFooter() {
       </div>
       <nav aria-label="Footer navigation">
         <Link href="/records-to-demand">Records-to-Demand</Link>
-        <Link href="/conversation">Inquire</Link>
+        <Link href="/conversation">Book a conversation</Link>
         <a href="https://www.primeelixirco.com/">Company</a>
         <Link href="/privacy">Privacy</Link>
       </nav>
@@ -55,7 +58,7 @@ export function OperatingModelFilm() {
   return (
     <figure className="operation-film" aria-labelledby="film-title">
       <div className="film-heading">
-        <h3 id="film-title">Catena runs Records-to-Demand.</h3>
+        <h2 id="film-title">Watch Catena run Records-to-Demand</h2>
         <span>42 seconds · No sound</span>
       </div>
       <video
@@ -85,7 +88,7 @@ export function OperatingModelFilm() {
           or read the visual transcript below.
         </p>
       </video>
-      <figcaption>Illustrative example of the service and its readiness decision.</figcaption>
+      <figcaption>Operating-model illustration. Not product output.</figcaption>
       <details className="film-transcript">
         <summary>Read the visual transcript</summary>
         <p>
@@ -132,69 +135,3 @@ export function OperatingModelFilm() {
   );
 }
 
-export function StartSteps() {
-  return (
-    <ol className="start-steps">
-      <li>
-        <span className="step-number" aria-hidden="true">
-          01
-        </span>
-        <h3>Discuss your operation</h3>
-        <p>
-          In 15 minutes with Brian, compare your current records-and-bills
-          process and whether a founding Catena engagement is worth exploring.
-          No preparation or client files needed.
-        </p>
-      </li>
-      <li>
-        <span className="step-number" aria-hidden="true">
-          02
-        </span>
-        <h3>Inspect and scope</h3>
-        <p>
-          Together, involve the right people at your firm, review the evidence
-          you would need, and agree scope, systems and responsibilities.
-        </p>
-      </li>
-      <li>
-        <span className="step-number" aria-hidden="true">
-          03
-        </span>
-        <h3>Prepare for live work</h3>
-        <p>
-          Complete onboarding and the agreed operating conditions. Live work
-          begins only after separate go-live approval.
-        </p>
-      </li>
-    </ol>
-  );
-}
-
-export function ClosingInvitation() {
-  return (
-    <section className="closing-section">
-      <div className="wrap">
-        <p className="eyebrow">Records-to-Demand at your firm</p>
-        <h2>
-          What would it mean
-          <br />
-          to hand off the operation?
-        </h2>
-        <div className="actions">
-          <Link className="button button-light" href="/conversation">
-            Discuss your firm’s fit <Arrow />
-          </Link>
-          <Link className="text-link" href="/records-to-demand">
-            Read the lane brief <Arrow />
-          </Link>
-        </div>
-        <p>
-          In 15 minutes with Brian, compare your current process and whether a
-          founding Catena engagement is worth exploring. No preparation or
-          client files needed. You can also reply to your existing email or
-          LinkedIn conversation.
-        </p>
-      </div>
-    </section>
-  );
-}

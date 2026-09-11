@@ -19,18 +19,26 @@ The native Node tests use injected fake configuration and mocked provider respon
 
 ## Buyer journey
 
-- `/`: the offer, ownership, readiness standard, fit and first conversation.
+- `/`: the full operation in an existing film, one supporting exception, responsibilities, fit, and a conversation.
 - `/records-to-demand`: an ungated, printable brief to share with a buyer and operating owner.
-- `/conversation`: business-contact inquiry with direct email and no-JavaScript alternatives.
+- `/conversation`: a 15-minute Cal.com booking with timezone, confirmation, rescheduling, cancellation, and direct booking/email alternatives.
 - `/privacy`: how website inquiries are handled.
 
 Legacy `/contact` and `/about` paths temporarily redirect to their replacements. Relevant old homepage anchors remain available. The historical `jordan-pi-operating-map` directory is outside this website build and is excluded from direct Vercel deployments.
 
-Fonts are served locally. Their licenses and source manifest are in `public/fonts`. The hero uses the selected editorial paper artwork, preserved in its original composition. The 42-second silent film is original motion geometry illustrating the records-and-bills service, an evidence-backed readiness decision and reopening when evidence changes, not a product screenshot or customer result. Its MP4, static poster and English WebVTT captions live in `public/media`; a visual transcript is available in the page. Native controls support pause, seeking and captions. The film does not autoplay and uses `preload="none"`; the hero has reserved dimensions and responsive image optimization. Original files, asset provenance and motion source are retained with the release work package. No advertising pixels or visitor analytics are installed in this application.
+Fonts are served locally. Their licenses and source manifest are in `public/fonts`. The hero uses the existing 42-second silent film, replacing the abstract artwork and the separate film section. It illustrates the complete operation, readiness, and reopening when evidence changes; it is labeled as an illustration, not product output. Its MP4, poster, and English WebVTT captions live in `public/media`. Native controls support pause, seeking, fullscreen, and captions, with a visual transcript below. The film does not autoplay and uses `preload="none"`. No advertising pixels or visitor analytics are installed in this application.
 
-## Inquiry delivery
+## Scheduling
 
-`POST /api/contact` accepts JSON business-contact fields only: `name`, `email`, `firm`, `role`, optional `monthlyVolume`, and an empty `website` honeypot. It requires a UUID v4 `Idempotency-Key`. The browser reuses the key when retrying unchanged details. The endpoint bounds request size, validates values, checks request origin and uses a bounded provider timeout. HTTP 202 requires explicit provider acceptance; it does not prove inbox delivery.
+`src/lib/booking.ts` holds the public booking path and email fallback. The client component uses the pinned official `@calcom/embed-react` package on the conversation route only. Event details remain visible so visitors can inspect the selected time before confirmation. The direct Cal.com link and email are server-rendered and remain available without JavaScript or if the embed fails. No Cal.com API key is needed in this website.
+
+The event is `https://cal.com/consult-recovery/catena-15min` (event ID 7028013), titled **Catena · Records-to-Demand conversation**. Cal.com owns availability, connected calendar conflict checks, Microsoft Teams links, confirmations, rescheduling, and cancellations. Current configuration: 15 minutes, 24-hour minimum notice, 15-minute after-buffer, automatic confirmation, required name/business email/firm. The assigned host and calendar can change when a salesperson joins; website calls to action do not promise Brian as host.
+
+Live scheduler tests create calendar entries and emails. Use only authorized internal contact details, clearly mark tests, cancel the appointments afterward, and exclude them from commercial counts. Verify delivery and Teams-link creation as well as the browser confirmation. Scheduling works on previews too; the legacy inquiry endpoint's preview restriction does not apply to Cal.com.
+
+## Legacy inquiry endpoint
+
+The website now routes inquiries to booking and direct email. `POST /api/contact` remains for compatibility with older loaded pages. It accepts JSON business-contact fields only: `name`, `email`, `firm`, `role`, optional `monthlyVolume`, and an empty `website` honeypot. It requires a UUID v4 `Idempotency-Key`. The endpoint bounds request size, validates values, checks request origin and uses a bounded provider timeout. HTTP 202 requires explicit provider acceptance; it does not prove inbox delivery.
 
 The sender remains disabled unless all of these are present:
 

@@ -21,10 +21,10 @@ export function MobileNavigation() {
         Menu <span aria-hidden="true">+</span>
       </summary>
       <nav aria-label="Mobile navigation">
-        <Link href="/records-to-demand">The lane</Link>
-        <Link href="/#proof">Readiness</Link>
+        <Link href="/records-to-demand">Records-to-Demand</Link>
+        <Link href="/#ownership">Responsibilities</Link>
         <Link href="/conversation">
-          Explore Catena for your firm <span aria-hidden="true">↗</span>
+          Book a 15-minute conversation <span aria-hidden="true">↗</span>
         </Link>
         <a href="https://www.primeelixirco.com/">The company</a>
       </nav>

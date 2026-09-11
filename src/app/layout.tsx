@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Catena",
   },
   description:
-    "Explore the records-and-bills operation Catena carries through Demand Readiness, and the decisions your firm keeps. A managed operations platform by Prime Elixir.",
+    "Catena runs Records-to-Demand: records and billing operations from the first request through evidence-backed proof of demand readiness. A managed operations platform by Prime Elixir.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: "https://www.catenaos.com",
     title: "Catena | Records-to-Demand",
     description:
-      "Turn on Records-to-Demand. Catena runs the lane. Explore the work your firm could hand off.",
+      "Records and billing operations from the first request through evidence-backed proof of demand readiness.",
     images: [
       {
         url: "/catena-social.png",
