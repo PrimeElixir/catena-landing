@@ -20,13 +20,14 @@ export function MobileNavigation() {
       <summary>
         Menu <span aria-hidden="true" className="menu-glyph">+</span>
       </summary>
-      <nav aria-label="Mobile navigation">
-        <Link href="/#assignment">How assignment works</Link>
-        <Link href="/#ownership">Pre-lit responsibilities</Link>
+      <nav aria-label="Mobile navigation" className="mobile-nav-panel">
+        <Link href="/#example-matter">How it works</Link>
+        <Link href="/#assignment">Starting offer &amp; pricing</Link>
+        <Link href="/#ownership">Scope &amp; deliverables</Link>
         <Link href="/records-to-demand">Records-to-Demand brief</Link>
-        <Link href="/#founding-partners">Founding partners</Link>
+        <Link href="/security">Security &amp; data handling</Link>
         <Link href="/conversation" className="mobile-menu-cta">
-          Book a 15-minute conversation <span aria-hidden="true">↗</span>
+          Book a 15-minute fit call <span aria-hidden="true">↗</span>
         </Link>
         <a href="https://www.primeelixirco.com/">Prime Elixir (Company)</a>
       </nav>

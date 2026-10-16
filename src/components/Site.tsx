@@ -21,73 +21,13 @@ export function SiteHeader() {
           <span className="brand-tag">Pre-Lit Operations Platform</span>
         </div>
         <nav aria-label="Main navigation" className="desktop-nav">
-          <div className="nav-dropdown-group">
-            <Link className="nav-dropdown-trigger" href="/#ownership">
-              Platform &amp; Scope{" "}
-              <span className="nav-caret" aria-hidden="true">
-                ▾
-              </span>
-            </Link>
-            <div className="nav-dropdown-menu" role="region" aria-label="Platform capabilities">
-              <div className="nav-dropdown-grid">
-                <div className="nav-dropdown-col">
-                  <span className="nav-dropdown-kicker">Pre-Lit Responsibilities</span>
-                  <Link href="/#ownership" className="nav-dropdown-item">
-                    <strong>01 · Intake &amp; Case Assessment</strong>
-                    <span>Collect facts, coverage &amp; prepare assessments for review</span>
-                  </Link>
-                  <Link href="/records-to-demand" className="nav-dropdown-item">
-                    <strong>02 · Treatment &amp; Records Follow-Through</strong>
-                    <span>Carry requests, CPT billing audits &amp; deficiency resolution</span>
-                  </Link>
-                  <Link href="/#ownership" className="nav-dropdown-item">
-                    <strong>03 · Qualified Demand Preparation</strong>
-                    <span>Assemble chronology, specials &amp; demand draft for review</span>
-                  </Link>
-                </div>
-                <div className="nav-dropdown-col nav-dropdown-col-highlight">
-                  <span className="nav-dropdown-kicker">Operational Spine</span>
-                  <Link href="/#continuity" className="nav-dropdown-item">
-                    <strong>CatenaOS Operational Context</strong>
-                    <span>Shared requirements, verified evidence &amp; next-action ownership across covered matters</span>
-                  </Link>
-                  <Link href="/records-to-demand" className="nav-dropdown-promo">
-                    <span>Foundational Lane Brief</span>
-                    <strong>Inspect Records-to-Demand ↗</strong>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="nav-dropdown-group">
-            <Link className="nav-dropdown-trigger" href="/#assignment">
-              Assignment Modes{" "}
-              <span className="nav-caret" aria-hidden="true">
-                ▾
-              </span>
-            </Link>
-            <div className="nav-dropdown-menu nav-dropdown-menu-compact" role="region" aria-label="Assignment modes">
-              <span className="nav-dropdown-kicker">Firm-Controlled Routing</span>
-              <Link href="/#assignment" className="nav-dropdown-item">
-                <strong>01 · Defined Set</strong>
-                <span>Start with a bounded group of 10–25 eligible files</span>
-              </Link>
-              <Link href="/#assignment" className="nav-dropdown-item">
-                <strong>02 · 30+ Day Stall / Overflow Rule</strong>
-                <span>Auto-route stalled provider chases or capacity spikes</span>
-              </Link>
-              <Link href="/#assignment" className="nav-dropdown-item">
-                <strong>03 · Standing Caseload</strong>
-                <span>Continuous pre-lit execution across a segment or pod</span>
-              </Link>
-            </div>
-          </div>
-
+          <Link href="/#example-matter">How it works</Link>
+          <Link href="/#assignment">Starting offer</Link>
+          <Link href="/#ownership">Scope</Link>
           <Link href="/records-to-demand">Records-to-Demand</Link>
-          <Link href="/#founding-partners">Founding Partners</Link>
+          <Link href="/security">Security</Link>
           <Link className="nav-inquiry" href="/conversation">
-            Book a conversation <Arrow />
+            Book a 15-min fit call <Arrow />
           </Link>
         </nav>
         <div className="mobile-header-actions">
@@ -116,11 +56,12 @@ export function SiteFooter() {
           </p>
         </div>
         <nav aria-label="Footer navigation" className="footer-nav">
-          <Link href="/#assignment">How assignment works</Link>
-          <Link href="/#ownership">Pre-lit responsibilities</Link>
+          <Link href="/#example-matter">How it works</Link>
+          <Link href="/#assignment">Starting offer &amp; economics</Link>
+          <Link href="/#ownership">Pre-lit scope</Link>
           <Link href="/records-to-demand">Records-to-Demand brief</Link>
-          <Link href="/#founding-partners">Founding partners</Link>
-          <Link href="/conversation">Book a conversation</Link>
+          <Link href="/security">Security &amp; data handling</Link>
+          <Link href="/conversation">Book a fit call</Link>
           <a href="https://www.primeelixirco.com/">Prime Elixir</a>
           <Link href="/privacy">Privacy</Link>
         </nav>
@@ -148,7 +89,9 @@ export function OperatingModelFilm() {
     <figure className="operation-film" aria-labelledby="film-title">
       <div className="film-heading">
         <div>
-          <span className="film-kicker">Foundational Lane Walkthrough</span>
+          <span className="film-kicker">
+            Illustrative Workflow Walkthrough · Synthetic Data
+          </span>
           <h3 id="film-title">
             Watch how Catena resolves gaps and stages the demand (42s)
           </h3>
@@ -162,7 +105,7 @@ export function OperatingModelFilm() {
         width="1280"
         height="720"
         poster="/media/records-to-demand-explainer-poster-v3.webp"
-        aria-label="Catena requests records and bills, resolves gaps and prepares the demand package for review"
+        aria-label="Constructed walkthrough showing how Catena requests records and bills, resolves gaps, and prepares the demand package for review"
       >
         <source
           src="/media/records-to-demand-explainer-v3.mp4"
@@ -191,9 +134,10 @@ export function OperatingModelFilm() {
         </summary>
         <div className="transcript-content">
           <p>
-            <strong>1. Matter routing &amp; admission.</strong> Route a defined
-            set, overflow rule, or caseload. Catena establishes required
-            providers, date ranges, and governing criteria under your policy.
+            <strong>1. Matter routing &amp; admission.</strong> Start with a
+            selected group of matters or an overflow rule. Catena establishes
+            required providers, date ranges, and governing criteria under your
+            policy.
           </p>
           <p>
             <strong>2. Return verification.</strong> Medical records arrive, but

@@ -111,6 +111,7 @@ export default function LaneBrief() {
           <a href="#readiness">02 · Inspectable Evidence</a>
           <a href="#authority">03 · Firm Authority</a>
           <a href="#evaluation">04 · Founding Onboarding</a>
+          <a href="#resources">05 · Buyer Checklists</a>
         </nav>
 
         <section className="surface-card brief-section" id="scope">
@@ -120,9 +121,9 @@ export default function LaneBrief() {
               <h2>Five stages from assignment to demand ready.</h2>
             </div>
             <p className="section-lead">
-              Route a defined set of matters, an overflow/30-day stall rule, or
-              a standing segment. Click any stage to inspect the operational
-              work Catena carries:
+              Start with a selected group of 10–25 eligible matters, or expand
+              to a standing 30+ day stall rule. Click any stage to inspect the
+              operational work Catena carries:
             </p>
           </div>
 
@@ -161,7 +162,8 @@ export default function LaneBrief() {
             <p className="section-lead">
               A document arriving in a folder does not mean a requirement is
               satisfied. CatenaOS shows what is required, what is verified, and
-              what blocks readiness.
+              what blocks readiness—separating external provider waiting time
+              from Catena verification and preparation time.
             </p>
           </div>
 
@@ -211,8 +213,8 @@ export default function LaneBrief() {
           <details className="brief-example">
             <summary>
               <span>
-                Inspect example walkthrough: Billing deficiency + August MRI
-                referral
+                Inspect illustrative walkthrough: Billing deficiency + August
+                MRI referral (Synthetic data)
               </span>
               <span className="accordion-icon" aria-hidden="true">
                 +
@@ -303,58 +305,207 @@ export default function LaneBrief() {
           <span id="start" className="anchor-alias" />
           <div className="section-header-compact">
             <div>
-              <p className="eyebrow">04 · Founding Partner Onboarding</p>
-              <h2>Start with a bounded set of files.</h2>
+              <p className="eyebrow">04 · Founding Partner Onboarding &amp; Economics</p>
+              <h2>Start with a selected group of 10–25 matters.</h2>
             </div>
             <p className="section-lead">
               Evaluate Catena on real pre-lit work alongside your named
-              operational counterpart before expanding to a standing rule.
+              operational counterpart under transparent, bounded commercial
+              terms before expanding to a standing rule.
             </p>
           </div>
 
           <div className="evidence-pair">
             <div className="evidence-card">
-              <h3>Step 01 · Scope &amp; Setup</h3>
+              <h3>Step 01 · Scope, Stack &amp; Plain Economics</h3>
               <ul>
                 <li>
-                  <strong>Select initial matters:</strong> Choose a defined set
-                  of eligible files or set a 30+ day stall rule.
+                  <strong>Select initial matters:</strong> Choose a defined
+                  starting group of 10–25 eligible files (or set a 30+ day stall
+                  rule).
                 </li>
                 <li>
-                  <strong>Connect existing stack:</strong> Confirm CMS access,
-                  retrieval vendor or Catena supplier mode, and decision owners.
+                  <strong>Connect existing stack:</strong> Confirm CMS/folder
+                  access, retrieval vendor or Catena supplier mode, and firm
+                  decision owners.
                 </li>
                 <li>
-                  <strong>Agree written terms:</strong> Cost recovery + fixed
-                  shared acquisition contribution, with no separate platform
-                  subscription.
+                  <strong>Plain-language pricing:</strong> Agreed per-matter
+                  operating charge (cost recovery) + pass-through provider fees
+                  at cost + fixed monthly founding program fee.{" "}
+                  <strong>No per-seat software subscription</strong> and a
+                  written pre-approved cost ceiling.
                 </li>
               </ul>
             </div>
             <div className="evidence-card">
-              <h3>Step 02 · Calibration &amp; Operation</h3>
+              <h3>Step 02 · Calibration, Review &amp; Handover</h3>
               <ul>
                 <li>
-                  <strong>Side-by-side review:</strong> Verify initial readiness
-                  and demand preparation states with your operational
-                  counterpart.
+                  <strong>Side-by-side calibration:</strong> Verify initial
+                  readiness and demand preparation states with your named
+                  operational lead.
                 </li>
                 <li>
                   <strong>Live visibility:</strong> Track status, linked
-                  evidence, and next-step ownership in CatenaOS.
+                  evidence, and next-step ownership in CatenaOS without logging
+                  into a separate billing portal.
                 </li>
                 <li>
-                  <strong>Complete flexibility:</strong> Keep a selective
-                  routing rule, expand scope, or transfer matters back under
-                  structured handover.
+                  <strong>No lock-in:</strong> Keep a selective starting group,
+                  expand to standing rules, or conclude at the end of any
+                  monthly cycle with complete structured handover.
                 </li>
               </ul>
             </div>
           </div>
+        </section>
 
-          <div className="actions">
+        <section className="surface-card brief-section" id="resources">
+          <div className="section-header-compact">
+            <div>
+              <p className="eyebrow">05 · Practical Buyer Resources &amp; Checklists</p>
+              <h2>Inspection frameworks for plaintiff PI operations.</h2>
+            </div>
+            <p className="section-lead">
+              Use these three operational checklists internally to audit demand
+              readiness, diagnose stalled records queues, or evaluate any
+              delegated pre-lit partner.
+            </p>
+          </div>
+
+          <div className="brief-accordion-grid">
+            <details className="faq-item" open>
+              <summary>
+                <div className="faq-summary-text">
+                  <strong>01 · Demand-Readiness Verification Checklist</strong>
+                  <span>
+                    How to verify that a matter is genuinely ready for attorney
+                    valuation—not merely &ldquo;documents received&rdquo;
+                  </span>
+                </div>
+                <span className="accordion-icon" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <div className="faq-answer">
+                <ul>
+                  <li>
+                    <strong>Provider &amp; facility match:</strong> Every known
+                    treating provider, imaging center, ER, EMS, and specialist
+                    referenced inside intake or clinical notes has an explicit
+                    requirement entry.
+                  </li>
+                  <li>
+                    <strong>Date-range continuity:</strong> Returned clinical
+                    notes cover the full authorized treatment window without
+                    unexplained gaps between initial evaluation and discharge or
+                    cutoff.
+                  </li>
+                  <li>
+                    <strong>Itemized CPT / HCPCS billing verification:</strong>{" "}
+                    Every billing return includes line-item service dates,
+                    procedure codes, and charges—rejecting bare balance-forward
+                    statements.
+                  </li>
+                  <li>
+                    <strong>Mid-stream referral check:</strong> Recent progress
+                    notes are audited for pending specialist or imaging
+                    referrals so demands are not drafted prematurely unless the
+                    firm explicitly approves a treatment cutoff.
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                <div className="faq-summary-text">
+                  <strong>
+                    02 · Guide to Diagnosing Stalled Records &amp; Billing Work
+                  </strong>
+                  <span>
+                    Why pre-lit files stall past 30 days and how to separate
+                    external provider delay from internal follow-through gaps
+                  </span>
+                </div>
+                <span className="accordion-icon" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <div className="faq-answer">
+                <ul>
+                  <li>
+                    <strong>Silent authorization rejections:</strong> Providers
+                    or copy services frequently hold requests due to expired
+                    HIPAA dates, missing facility-specific forms, or unapproved
+                    prepayment invoices without notifying the paralegal queue.
+                  </li>
+                  <li>
+                    <strong>Split clinical &amp; billing departments:</strong>{" "}
+                    Medical records and itemized billing ledgers often route to
+                    separate departments or third-party billing vendors; closing
+                    a request upon the first PDF return leaves billing missing.
+                  </li>
+                  <li>
+                    <strong>Uninspected returns sitting in folders:</strong>{" "}
+                    Measuring time between PDF receipt and page-level audit
+                    reveals whether delays come from slow providers or overloaded
+                    internal staff unable to review incoming files promptly.
+                  </li>
+                </ul>
+              </div>
+            </details>
+
+            <details className="faq-item">
+              <summary>
+                <div className="faq-summary-text">
+                  <strong>
+                    03 · How to Evaluate Delegated Pre-Lit Operations
+                  </strong>
+                  <span>
+                    Questions every plaintiff PI firm should ask before routing
+                    live matters to an external execution partner
+                  </span>
+                </div>
+                <span className="accordion-icon" aria-hidden="true">
+                  +
+                </span>
+              </summary>
+              <div className="faq-answer">
+                <ul>
+                  <li>
+                    <strong>Can we start with a bounded cohort?</strong> Can the
+                    firm assign 10–25 matters first without replacing its CMS,
+                    retrieval vendor, or internal staff?
+                  </li>
+                  <li>
+                    <strong>Who catches and fixes deficiencies?</strong> When a
+                    provider sends a bare balance summary, does the vendor hand
+                    the problem back to your paralegal or pursue the billing
+                    office directly?
+                  </li>
+                  <li>
+                    <strong>How are legal decisions protected?</strong> Are
+                    treatment cutoffs, deficiency waivers, and valuation choices
+                    explicitly routed back to your firm with linked source pages?
+                  </li>
+                  <li>
+                    <strong>What happens on exit or handover?</strong> Does every
+                    verified record, status log, and draft live inside your
+                    firm’s systems with a clean monthly walk-away option?
+                  </li>
+                </ul>
+              </div>
+            </details>
+          </div>
+
+          <div className="actions" style={{ marginTop: "24px" }}>
             <Link className="button" href="/conversation">
-              Book a 15-minute conversation <Arrow />
+              Book a 15-minute fit call <Arrow />
+            </Link>
+            <Link className="text-link" href="/security">
+              Inspect security &amp; data governance <Arrow />
             </Link>
             <Link className="text-link" href="/">
               Back to Catena overview <Arrow />
@@ -363,7 +514,7 @@ export default function LaneBrief() {
 
           <div className="print-contact">
             <p>
-              Book a 15-minute conversation:{" "}
+              Book a 15-minute fit call:{" "}
               <a href={BOOKING_URL}>{BOOKING_URL}</a>
             </p>
             <p>
