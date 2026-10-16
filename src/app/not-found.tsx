@@ -11,15 +11,15 @@ export default function NotFound() {
         <em>to the right place.</em>
       </h1>
       <p>
-        This address doesn’t lead to a current page. Explore Records-to-Demand
-        or return to the Catena homepage.
+        This address doesn’t lead to a current page. Return to the Catena
+        platform overview or inspect the Records-to-Demand brief.
       </p>
       <div className="actions">
-        <Link className="button" href="/records-to-demand">
-          See what your firm could hand off <Arrow />
+        <Link className="button" href="/">
+          Return to Catena overview <Arrow />
         </Link>
-        <Link className="text-link" href="/">
-          Back to Catena <Arrow />
+        <Link className="text-link" href="/records-to-demand">
+          Inspect Records-to-Demand <Arrow />
         </Link>
       </div>
     </main>

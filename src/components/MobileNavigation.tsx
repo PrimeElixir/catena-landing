@@ -18,15 +18,17 @@ export function MobileNavigation() {
       }}
     >
       <summary>
-        Menu <span aria-hidden="true">+</span>
+        Menu <span aria-hidden="true" className="menu-glyph">+</span>
       </summary>
       <nav aria-label="Mobile navigation">
-        <Link href="/records-to-demand">Records-to-Demand</Link>
-        <Link href="/#ownership">Responsibilities</Link>
-        <Link href="/conversation">
+        <Link href="/#assignment">How assignment works</Link>
+        <Link href="/#ownership">Pre-lit responsibilities</Link>
+        <Link href="/records-to-demand">Records-to-Demand brief</Link>
+        <Link href="/#founding-partners">Founding partners</Link>
+        <Link href="/conversation" className="mobile-menu-cta">
           Book a 15-minute conversation <span aria-hidden="true">↗</span>
         </Link>
-        <a href="https://www.primeelixirco.com/">The company</a>
+        <a href="https://www.primeelixirco.com/">Prime Elixir (Company)</a>
       </nav>
     </details>
   );

@@ -20,26 +20,26 @@ const isPublicRelease = process.env.VERCEL_ENV === "production";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.catenaos.com"),
   title: {
-    default: "Catena | Records-to-Demand for plaintiff PI firms",
+    default: "Catena | Managed Pre-Lit Operations Platform for Plaintiff PI",
     template: "%s | Catena",
   },
   description:
-    "Catena runs Records-to-Demand: records and billing operations from the first request through evidence-backed proof of demand readiness. A managed operations platform by Prime Elixir.",
+    "Catena runs the pre-lit work. You choose the matters. From intake and case assessment through treatment and records follow-through to demand preparation, your firm keeps legal judgment and final authority.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     siteName: "Catena",
     locale: "en_US",
     url: "https://www.catenaos.com",
-    title: "Catena | Records-to-Demand",
+    title: "Catena | Managed Pre-Lit Operations Platform",
     description:
-      "Records and billing operations from the first request through evidence-backed proof of demand readiness.",
+      "Catena runs the pre-lit work you entrust to us—from intake and case assessment through treatment and records follow-through to qualified demand preparation.",
     images: [
       {
         url: "/catena-social.png",
         width: 1200,
         height: 630,
-        alt: "Catena. Turn on Records-to-Demand. Catena runs the lane.",
+        alt: "Catena — Managed Pre-Lit Operations Platform for Plaintiff PI Firms",
       },
     ],
   },
@@ -55,8 +55,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${serif.variable}`}>
-      <body>
+    <html
+      lang="en"
+      className={`${inter.variable} ${serif.variable}`}
+      suppressHydrationWarning
+    >
+      <body suppressHydrationWarning>
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
