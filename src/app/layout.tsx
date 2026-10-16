@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Catena",
   },
   description:
-    "Catena runs the pre-lit work. You choose the matters. Give your team relief from requests, follow-ups, billing corrections, and demand preparation while keeping matter ownership and legal judgment.",
+    "Catena runs the pre-lit work. You choose the matters. From intake and case assessment through treatment and records follow-through to demand preparation, your firm keeps legal judgment and final authority.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: "https://www.catenaos.com",
     title: "Catena | Managed Pre-Lit Operations Platform",
     description:
-      "Give your team relief from pre-lit follow-through. Catena carries requests, follow-ups, corrections, and demand preparation on the matters you assign.",
+      "Catena runs the pre-lit work you entrust to us—from intake and case assessment through treatment and records follow-through to qualified demand preparation.",
     images: [
       {
         url: "/catena-social.png",
@@ -49,37 +49,6 @@ export const metadata: Metadata = {
     : { index: false, follow: false },
 };
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://www.catenaos.com/#organization",
-      name: "Catena (by Prime Elixir)",
-      url: "https://www.catenaos.com",
-      parentOrganization: {
-        "@type": "Organization",
-        name: "Prime Elixir",
-        url: "https://www.primeelixirco.com/",
-      },
-      founder: {
-        "@type": "Person",
-        name: "Brian McLeod",
-      },
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.catenaos.com/#service",
-      name: "Catena Managed Pre-Lit Operations Platform",
-      provider: { "@id": "https://www.catenaos.com/#organization" },
-      serviceType: "Managed Pre-Litigation Operations for Plaintiff Personal Injury Law Firms",
-      areaServed: "US",
-      description:
-        "Managed pre-litigation execution covering intake and case assessment, treatment and records follow-through, and qualified demand preparation for plaintiff personal injury firms.",
-    },
-  ],
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -92,10 +61,6 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body suppressHydrationWarning>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>

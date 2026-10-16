@@ -2,7 +2,7 @@
 
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { useEffect, useState } from "react";
-import { BOOKING_PATH, BOOKING_URL, CONTACT_EMAIL } from "@/lib/booking";
+import { BOOKING_PATH } from "@/lib/booking";
 
 const namespace = "catena-15min";
 const config = {
@@ -21,7 +21,7 @@ export function BookingCalendar() {
     let unsubscribe: (() => void) | undefined;
     const timeout = window.setTimeout(() => {
       if (active) setStatus("unavailable");
-    }, 9000);
+    }, 20000);
 
     getCalApi({ namespace })
       .then((cal) => {
@@ -35,7 +35,6 @@ export function BookingCalendar() {
           if (active) setStatus("unavailable");
         };
         cal("on", { action: "linkReady", callback: ready });
-        cal("on", { action: "__iframeReady", callback: ready });
         cal("on", { action: "linkFailed", callback: failed });
         const ui = {
           theme: "light" as const,
@@ -43,13 +42,13 @@ export function BookingCalendar() {
           layout: "month_view" as const,
           cssVarsPerTheme: {
             light: {
-              "cal-brand": "#0f3d30",
-              "cal-brand-emphasis": "#0a2920",
+              "cal-brand": "#165f52",
+              "cal-brand-emphasis": "#124d43",
               "cal-brand-text": "#ffffff",
             },
             dark: {
-              "cal-brand": "#0f3d30",
-              "cal-brand-emphasis": "#0a2920",
+              "cal-brand": "#165f52",
+              "cal-brand-emphasis": "#124d43",
               "cal-brand-text": "#ffffff",
             },
           },
@@ -57,7 +56,6 @@ export function BookingCalendar() {
         cal("ui", ui);
         unsubscribe = () => {
           cal("off", { action: "linkReady", callback: ready });
-          cal("off", { action: "__iframeReady", callback: ready });
           cal("off", { action: "linkFailed", callback: failed });
         };
       })
@@ -74,40 +72,18 @@ export function BookingCalendar() {
 
   return (
     <div className="booking-calendar">
-      {status !== "ready" && (
-        <div className="calendar-status-banner" role="status" aria-live="polite">
-          <div>
-            <strong>
-              {status === "loading"
-                ? "Loading live calendar slots…"
-                : "Prefer not to wait on the embedded calendar?"}
-            </strong>
-            <p>
-              {status === "loading"
-                ? "If your browser blocks embedded schedulers, you can open our Cal.com page directly in one click."
-                : "Open our scheduling page directly on Cal.com to pick a 15-minute slot immediately, or email us."}
-            </p>
-          </div>
-          <div className="calendar-banner-actions">
-            <a
-              className="button"
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Open scheduler on Cal.com ↗
-            </a>
-            <a className="button-secondary" href={`mailto:${CONTACT_EMAIL}`}>
-              Email {CONTACT_EMAIL}
-            </a>
-          </div>
-        </div>
-      )}
+      <p className="calendar-status helper" role="status" aria-live="polite">
+        {status === "loading"
+          ? "Loading available times…"
+          : status === "unavailable"
+            ? "Calendar taking too long? Use the direct booking link below, or email us."
+            : ""}
+      </p>
       <Cal
         namespace={namespace}
         calLink={BOOKING_PATH}
         config={config}
-        style={{ width: "100%", minHeight: "640px", height: "100%" }}
+        style={{ width: "100%", height: "100%" }}
       />
     </div>
   );
