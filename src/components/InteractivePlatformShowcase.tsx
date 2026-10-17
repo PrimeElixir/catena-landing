@@ -224,7 +224,7 @@ export function HeroControlPlane() {
 
   return (
     <div
-      className="control-plane hero-story-card"
+      className="hero-story-card"
       aria-label="Matter #2048 follow-through example"
     >
       {showVideo ? (
@@ -253,7 +253,8 @@ export function HeroControlPlane() {
           <div className="cp-video-footer">
             <span>
               <strong>42-second walkthrough:</strong> How Catena resolves missing
-              CPT bills, reopens state on new treatment, and stages the demand.
+              CPT bills, pauses readiness on new treatment, and routes the
+              decision.
             </span>
             <button
               type="button"
@@ -267,50 +268,114 @@ export function HeroControlPlane() {
       ) : (
         <div className="matter-story-window">
           <div className="matter-story-header">
-            <span className="matter-story-title">
-              Matter #2048 · MVA · 4 providers
-            </span>
+            <div className="matter-story-meta">
+              <span className="matter-story-id">#2048</span>
+              <span className="matter-story-name">MVA bodily injury</span>
+              <span className="matter-story-providers">4 providers</span>
+            </div>
+            <div className="matter-story-badges">
+              <span className="matter-status-chip">
+                <span className="matter-status-dot" aria-hidden="true" />
+                Catena carrying
+              </span>
+              <span
+                className="matter-owner-avatar"
+                title="S. Jenkins (Firm Paralegal)"
+              >
+                SJ
+              </span>
+            </div>
           </div>
 
           <div className="matter-story-events">
             <div className="matter-story-row">
               <span className="matter-story-date">07/31</span>
-              <p className="matter-story-text">
-                Peachtree Ortho returned a balance summary. Catena rejected it,
-                requested the itemized ledger, verified 14 service lines.
-              </p>
+              <div className="matter-story-rail" aria-hidden="true">
+                <span className="matter-story-dot" />
+              </div>
+              <div className="matter-story-body">
+                <div className="matter-actor-line">
+                  <span className="matter-actor-catena">CATENA</span>
+                </div>
+                <p className="matter-story-text">
+                  Peachtree Ortho returned a balance summary. Catena rejected
+                  it, requested the itemized ledger, verified 14 service lines.
+                </p>
+              </div>
             </div>
 
             <div className="matter-story-row">
               <span className="matter-story-date">08/14</span>
-              <p className="matter-story-text">
-                Follow-up note referenced a new lumbar MRI. Catena reopened
-                readiness; verified records stay locked.
-              </p>
+              <div className="matter-story-rail" aria-hidden="true">
+                <span className="matter-story-dot" />
+              </div>
+              <div className="matter-story-body">
+                <div className="matter-actor-line">
+                  <span className="matter-actor-catena">CATENA</span>
+                </div>
+                <p className="matter-story-text">
+                  A follow-up note referenced a new lumbar MRI. Catena paused
+                  readiness; verified records stay locked.
+                </p>
+              </div>
             </div>
 
-            <div className="matter-story-row matter-story-row-decision">
-              <span className="matter-story-date matter-story-date-today">
-                Today
-              </span>
-              <p className="matter-story-text matter-story-decision-text">
-                Decision for the firm: hold the demand for MRI results, or
-                proceed with the 07/31 cutoff?
-              </p>
+            <div className="matter-story-row matter-story-row-last">
+              <span className="matter-story-date">08/14</span>
+              <div className="matter-story-rail" aria-hidden="true">
+                <span className="matter-story-dot" />
+              </div>
+              <div className="matter-story-body">
+                <div className="matter-actor-line">
+                  <span className="matter-actor-catena">CATENA</span>
+                  <span className="matter-actor-arrow" aria-hidden="true">
+                    →
+                  </span>
+                  <span className="matter-actor-firm">S. JENKINS</span>
+                </div>
+                <p className="matter-story-text">
+                  One question sent to the firm with both options and the
+                  records attached: hold the demand for MRI results, or proceed
+                  on the 07/31 cutoff.
+                </p>
+                <div className="matter-awaiting-tag">
+                  <svg
+                    className="matter-awaiting-icon"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.5 3h11v7.5H6.5L3.5 13v-2.5h-1V3Z"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span>
+                    Awaiting the firm’s call · everything else continues
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="matter-story-footer">
             <p className="matter-story-attribution">
-              <strong>S. Jenkins keeps the file.</strong> Catena carried the
-              follow-through.
+              <strong>Nothing to monitor.</strong> Catena brings the decision to
+              you.
             </p>
             <button
               type="button"
               className="matter-walkthrough-btn"
               onClick={() => setShowVideo(true)}
             >
-              <span aria-hidden="true">▶</span> Watch the 42s walkthrough
+              <span className="matter-play-icon" aria-hidden="true">
+                ▶
+              </span>{" "}
+              Watch the 42s walkthrough
             </button>
           </div>
         </div>
