@@ -6,23 +6,32 @@ import {
 } from "@/components/Site";
 import {
   AssignmentExplorer,
-  HeroScopeDrawer,
   MidStreamInteractiveStepList,
   ResponsibilityExplorer,
 } from "@/components/InteractivePlatformShowcase";
 
 const workflowDrilldowns = [
   {
-    headline: "Keep your paralegals in matter ownership",
-    subline: "Relieve recurring execution without replacing staff",
+    headline: "Zero reconstruction when contributors change",
+    subline: "CatenaOS preserves context across covered matters",
     answer:
-      "Well-run firms use Catena to take recurring execution and coordination off their team’s plate without changing matter ownership. An individual paralegal remains your firm’s matter owner while Catena pursues outstanding requests, reconciles billing gaps, and carries the delegated responsibilities.",
+      "CatenaOS maintains the operational context—requirements, verified evidence, firm policy, recorded decisions, and next-action ownership—across agreed matters and sources, including covered matters your own team executes. If a case manager with 80 files is out tomorrow, nobody spends days reconstructing status from emails and notes.",
   },
   {
-    headline: "Keep your CMS and retrieval vendor",
-    subline: "Works alongside Clio, Filevine, CASEpeer & your supplier",
+    headline: "Structured handover record at any point",
+    subline: "Every requirement, verified source & decision stays portable",
     answer:
-      "Catena works alongside your existing practice management software and document storage. For records and billing retrieval, we agree during scoping whether Catena coordinates through your incumbent retrieval vendor or manages a supplier directly within the engagement.",
+      "Whether a matter transitions back to your internal team after readiness or you adjust routing scope, Catena provides a structured handover of the current requirement state, verified records and billing ledgers, open deficiencies, and logged firm decisions.",
+  },
+  {
+    headline: "Side-by-side calibration before you rely on it",
+    subline: "Verify readiness & decision routing on candidate files first",
+    answer:
+      "We review candidate matters, agreed responsibilities, system connections, and decision-routing boundaries together before live work begins. Initial delivery includes full review of readiness and preparation states alongside your named operational counterpart.",
+    link: {
+      href: "/records-to-demand#evaluation",
+      label: "Review the evaluation & calibration process",
+    },
   },
   {
     headline: "Auto-route 30+ day stalls or capacity overflow",
@@ -31,93 +40,79 @@ const workflowDrilldowns = [
       "We agree on the routing trigger, the responsibilities Catena will carry, and the capacity band we hold for your firm. We begin with a defined initial set of matters so your team sees how we operate and reviews decisions with us, then transition into the continuing routing rule.",
   },
   {
-    headline: "Zero reconstruction when contributors change",
-    subline: "CatenaOS preserves context across covered matters",
-    answer:
-      "CatenaOS maintains the operational context—requirements, verified evidence, firm policy, recorded decisions, and next-action ownership—across agreed matters and sources, including covered matters your own team executes. If a case manager with 80 files is out tomorrow, nobody spends days reconstructing status from emails and notes.",
-  },
-  {
     headline: "Transparent Founding Partner economics",
     subline: "Cost recovery + shared acquisition contribution",
     answer:
       "During the founding engagement, partners pay agreed cost recovery for the operating work Catena carries on assigned matters plus a fixed shared acquisition contribution. The supported operating view across agreed matters is included with no separate platform subscription during the founding program.",
-  },
-  {
-    headline: "Side-by-side calibration before you rely on it",
-    subline: "Verify readiness & decision routing on candidate files first",
-    answer:
-      "We review candidate matters, agreed responsibilities, system connections, and decision-routing boundaries together before live work begins. Initial delivery includes full review of readiness and preparation states alongside your named operational counterpart, with structured handover available at any point.",
-    link: {
-      href: "/records-to-demand#evaluation",
-      label: "Review the evaluation & calibration process",
-    },
   },
 ];
 
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1} className="page-shell">
-      {/* SECTION 1: HERO (Fast 3-Second Sell + Interactive Dual-Mode Stage) */}
+      {/* SECTION 1: HERO (Economy + Live Matter Demo + 3-Column Strip) */}
       <section className="hero-surface" aria-labelledby="hero-title">
         <div className="hero wrap">
           <div className="hero-copy">
             <p className="eyebrow">
-              Managed Pre-Lit Operations Platform · Plaintiff PI
+              Managed Pre-Lit Operations · Plaintiff PI
             </p>
             <h1 id="hero-title">
-              Catena runs the pre-lit work.{" "}
-              <em>You choose the matters.</em>
+              We carry pre-lit.{" "}
+              <em>You keep your firm.</em>
             </h1>
             <p className="hero-description">
-              Start with a defined set of matters. Set a rule for overflow,
-              backlog, or files stalled more than 30 days—or have Catena carry
-              the pre-lit work across your caseload.
+              Catena is accountable for intake, treatment and records, and
+              demand preparation on the matters you assign — alongside the
+              paralegals and systems you already have.
             </p>
 
-            {/* Apollo-style 3-Second Value Bullets */}
-            <ul className="hero-quick-points" aria-label="Core platform commitments">
-              <li>
-                <span className="qp-icon" aria-hidden="true">✓</span>
-                <span>
-                  <strong>Intake through demand ready</strong> — Required
-                  records, itemized bills, and a demand prepared for your review
-                </span>
-              </li>
-              <li>
-                <span className="qp-icon" aria-hidden="true">✓</span>
-                <span>
-                  <strong>Works alongside your team</strong> — Keep your
-                  paralegals, existing systems, and live matter visibility
-                </span>
-              </li>
-              <li>
-                <span className="qp-icon" aria-hidden="true">✓</span>
-                <span>
-                  <strong>Your firm keeps final authority</strong> — Client
-                  relationship, legal judgment, and settlement stay with you
-                </span>
-              </li>
-            </ul>
-
-            {/* Progressive Drilldown for Full Verbatim Scope & Authority Statement */}
-            <HeroScopeDrawer />
+            <p className="hero-scarcity">
+              <span className="cp-live-indicator" aria-hidden="true" />
+              <span>Now taking 3–5 founding plaintiff PI firms.</span>
+            </p>
 
             <div className="actions">
               <Link className="button" href="/conversation">
-                Book a 15-minute conversation <Arrow />
+                Book 15 minutes <Arrow />
               </Link>
-              <Link className="button-secondary" href="/#assignment">
-                Explore assignment modes
-              </Link>
+              <a className="button-secondary" href="#live-matter-demo">
+                See a live matter
+              </a>
             </div>
-            <p className="helper">
-              Founding Partner conversations open · No preparation or client
-              files needed for the first call.
-            </p>
           </div>
 
-          <div className="hero-media">
+          <div className="hero-media" id="live-matter-demo">
             <OperatingModelLedger />
+          </div>
+        </div>
+
+        {/* THREE-COLUMN STRIP DIRECTLY UNDER HERO */}
+        <div className="hero-pillar-strip wrap" aria-label="Core operating commitments">
+          <div className="hero-pillar-col">
+            <span className="hero-pillar-kicker">01 · Accountable for the result</span>
+            <p>
+              A returned record isn’t a ready file, and a lead isn’t a signed
+              case. Catena carries each assigned matter to the agreed state —
+              intake assessed and ready for your acceptance, treatment and
+              records followed through, demand prepared for your review.
+            </p>
+          </div>
+          <div className="hero-pillar-col">
+            <span className="hero-pillar-kicker">02 · You choose the matters</span>
+            <p>
+              Start with 10–25 files. Set a rule for overflow or files stalled
+              past 30 days. Or assign a standing segment of your caseload.
+            </p>
+          </div>
+          <div className="hero-pillar-col">
+            <span className="hero-pillar-kicker">03 · Your firm keeps the firm</span>
+            <p>
+              Paralegals keep their files. Your practice software stays. Keep
+              your retrieval vendors or use ours, with provider charges passed
+              through on the invoice. Matter acceptance, valuation, and
+              settlement stay with your attorneys.
+            </p>
           </div>
         </div>
       </section>
@@ -223,15 +218,16 @@ export default function Home() {
           <div className="workflow-split-grid">
             {/* Left: Visual Architecture & Continuity Card */}
             <div className="workflow-left-col">
-              <p className="eyebrow">Operational Context · CatenaOS</p>
+              <p className="eyebrow">Operational Continuity · CatenaOS</p>
               <h2 id="continuity-title">
-                Don’t reorganize your firm. Just add Catena.
+                When staff or queues shift, no file loses its place.
               </h2>
               <p className="workflow-lead">
-                Catena works alongside your existing systems and preserves
-                requirements, evidence, policy, and next-action ownership across
-                covered matters—so even when staff or contributors change,
-                nobody spends days reconstructing the caseload.
+                CatenaOS preserves requirements, verified source evidence,
+                recorded firm decisions, and next-action ownership across
+                covered matters—so if a case manager is out tomorrow or a file
+                transfers back to your team, nobody spends days reconstructing
+                status from emails and notes.
               </p>
 
               {/* Visual Architecture Diagram */}

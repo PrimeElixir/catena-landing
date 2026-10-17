@@ -668,11 +668,59 @@ p {
 }
 
 .hero-description {
-  margin-top: 1.15rem;
-  max-width: 52ch;
+  margin-top: 1.25rem;
+  max-width: 48ch;
   color: var(--ink-secondary);
-  font-size: 1.12rem;
-  line-height: 1.58;
+  font-size: 1.16rem;
+  line-height: 1.56;
+}
+
+.hero-scarcity {
+  margin-top: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.85rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line-strong);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.hero-pillar-strip {
+  margin-top: clamp(2rem, 3.5vw, 3rem);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  padding-top: clamp(1.5rem, 2.5vw, 2.25rem);
+  border-top: 1px solid var(--line-strong);
+}
+
+.hero-pillar-col {
+  padding: 1.35rem 1.45rem;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 24px rgba(12, 21, 18, 0.04);
+}
+
+.hero-pillar-kicker {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.55rem;
+}
+
+.hero-pillar-col p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.56;
+  color: var(--ink-secondary);
 }
 
 .hero-quick-points {
@@ -2538,6 +2586,7 @@ p {
   }
 
   .hero,
+  .hero-pillar-strip,
   .section-header-compact,
   .assignment-grid,
   .resp-playbook,
