@@ -221,9 +221,6 @@ export function HeroScopeDrawer() {
 
 export function HeroControlPlane() {
   const [showVideo, setShowVideo] = useState(false);
-  const [selectedDecision, setSelectedDecision] = useState<
-    null | "hold" | "cutoff"
-  >(null);
 
   return (
     <div
@@ -397,84 +394,40 @@ export function HeroControlPlane() {
               <div className="matter-story-row matter-story-row-last">
                 <span className="matter-story-date">08/14</span>
                 <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-node matter-story-node-copper" />
+                  <span className="matter-story-node" />
                 </div>
                 <div className="matter-story-body">
-                  <div className="matter-decision-box">
-                    <div className="matter-decision-top">
-                      <div className="matter-actor-line">
-                        <span className="matter-actor-catena">CATENA</span>
-                        <span className="matter-actor-arrow" aria-hidden="true">
-                          →
-                        </span>
-                        <span className="matter-actor-firm">S. JENKINS</span>
-                      </div>
-                      <span className="matter-awaiting-tag">
-                        <span
-                          className="matter-awaiting-dot"
-                          aria-hidden="true"
-                        />
-                        {selectedDecision
-                          ? "Firm decision logged"
-                          : "Awaiting the firm’s call"}
-                      </span>
-                    </div>
-
-                    <p className="matter-decision-prompt">
-                      Hold the demand for MRI results, or proceed on the 07/31
-                      cutoff?
-                    </p>
-
-                    <div
-                      className="matter-decision-actions"
-                      role="group"
-                      aria-label="Firm decision options"
+                  <div className="matter-actor-line">
+                    <span className="matter-actor-catena">CATENA</span>
+                    <span className="matter-actor-arrow" aria-hidden="true">
+                      →
+                    </span>
+                    <span className="matter-actor-firm">S. JENKINS</span>
+                  </div>
+                  <p className="matter-story-text">
+                    One question sent to the firm with both options and the
+                    records attached: hold the demand for MRI results, or
+                    proceed on the 07/31 cutoff.
+                  </p>
+                  <div className="matter-awaiting-tag">
+                    <svg
+                      className="matter-awaiting-icon"
+                      width="13"
+                      height="13"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
                     >
-                      <button
-                        type="button"
-                        className={`matter-decision-btn ${
-                          selectedDecision === "hold"
-                            ? "matter-decision-btn-active"
-                            : ""
-                        }`}
-                        onClick={() =>
-                          setSelectedDecision(
-                            selectedDecision === "hold" ? null : "hold",
-                          )
-                        }
-                      >
-                        <span>Hold for MRI results</span>
-                        <span className="matter-btn-sub">
-                          Track Atlanta Spine
-                        </span>
-                      </button>
-                      <button
-                        type="button"
-                        className={`matter-decision-btn ${
-                          selectedDecision === "cutoff"
-                            ? "matter-decision-btn-active"
-                            : ""
-                        }`}
-                        onClick={() =>
-                          setSelectedDecision(
-                            selectedDecision === "cutoff" ? null : "cutoff",
-                          )
-                        }
-                      >
-                        <span>Proceed with 07/31 cutoff</span>
-                        <span className="matter-btn-sub">
-                          Stage demand package
-                        </span>
-                      </button>
-                    </div>
-
-                    {selectedDecision && (
-                      <p className="matter-decision-confirm">
-                        {selectedDecision === "hold"
-                          ? "✓ S. Jenkins selected Hold for MRI — Catena is following up with Atlanta Spine & Imaging."
-                          : "✓ S. Jenkins approved 07/31 cutoff — Catena is assembling the demand package for review."}
-                      </p>
-                    )}
+                      <path
+                        d="M2.5 3h11v7.5H6.5L3.5 13v-2.5h-1V3Z"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span>
+                      Awaiting the firm’s call · everything else continues
+                    </span>
                   </div>
                 </div>
               </div>
