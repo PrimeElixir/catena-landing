@@ -225,7 +225,7 @@ export function HeroControlPlane() {
   return (
     <div
       className="hero-app-frame"
-      aria-label="Matter #2048 live interface view"
+      aria-label="Matter #2048 follow-through example"
     >
       <div className="hero-story-card">
         {showVideo ? (
@@ -268,19 +268,11 @@ export function HeroControlPlane() {
           </div>
         ) : (
           <div className="matter-story-window">
-            {/* App Window Topbar */}
             <div className="matter-story-header">
               <div className="matter-story-meta">
-                <span className="matter-window-dots" aria-hidden="true">
-                  <span />
-                  <span />
-                  <span />
-                </span>
                 <span className="matter-story-id">#2048</span>
-                <span className="matter-story-sep" aria-hidden="true">
-                  /
-                </span>
                 <span className="matter-story-name">MVA bodily injury</span>
+                <span className="matter-story-providers">4 providers</span>
               </div>
               <div className="matter-story-badges">
                 <span className="matter-status-chip">
@@ -288,101 +280,40 @@ export function HeroControlPlane() {
                   Catena carrying
                 </span>
                 <span
-                  className="matter-owner-pill"
+                  className="matter-owner-avatar"
                   title="S. Jenkins (Firm Paralegal)"
                 >
-                  <span className="matter-owner-avatar">SJ</span>
-                  <span className="matter-owner-name">S. Jenkins</span>
+                  SJ
                 </span>
               </div>
             </div>
 
-            {/* 4-Provider Live Readiness Micro-Strip */}
-            <div
-              className="matter-provider-strip"
-              aria-label="4 providers tracked"
-            >
-              <span className="matter-provider-count">4 providers</span>
-              <div className="matter-provider-pills">
-                <span className="matter-prov-pill matter-prov-pill-done">
-                  <span aria-hidden="true">✓</span> Grady EMS
-                </span>
-                <span className="matter-prov-pill matter-prov-pill-done">
-                  <span aria-hidden="true">✓</span> Peachtree Ortho
-                </span>
-                <span className="matter-prov-pill matter-prov-pill-done">
-                  <span aria-hidden="true">✓</span> Metro PT
-                </span>
-                <span className="matter-prov-pill matter-prov-pill-pending">
-                  <span className="matter-prov-dot" aria-hidden="true" />{" "}
-                  Atlanta Spine
-                </span>
-              </div>
-            </div>
-
-            {/* Timeline Activity Feed */}
             <div className="matter-story-events">
               <div className="matter-story-row">
                 <span className="matter-story-date">07/31</span>
                 <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-node matter-story-node-check">
-                    ✓
-                  </span>
+                  <span className="matter-story-dot" />
                 </div>
                 <div className="matter-story-body">
                   <div className="matter-actor-line">
                     <span className="matter-actor-catena">CATENA</span>
-                    <span className="matter-actor-meta">
-                      Billing deficiency resolved
-                    </span>
                   </div>
                   <p className="matter-story-text">
                     Peachtree Ortho returned a balance summary. Catena rejected
                     it, requested the itemized ledger, verified 14 service
                     lines.
                   </p>
-                  <div className="matter-artifact-chip">
-                    <svg
-                      width="13"
-                      height="13"
-                      viewBox="0 0 16 16"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
-                        stroke="currentColor"
-                        strokeWidth="1.35"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M9 2v4h4"
-                        stroke="currentColor"
-                        strokeWidth="1.35"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    <span className="matter-artifact-name">
-                      Peachtree_Itemized_CPT.pdf
-                    </span>
-                    <span className="matter-artifact-meta">
-                      14 lines · $8,420 verified
-                    </span>
-                  </div>
                 </div>
               </div>
 
               <div className="matter-story-row">
                 <span className="matter-story-date">08/14</span>
                 <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-node" />
+                  <span className="matter-story-dot" />
                 </div>
                 <div className="matter-story-body">
                   <div className="matter-actor-line">
                     <span className="matter-actor-catena">CATENA</span>
-                    <span className="matter-actor-meta">
-                      Readiness guard triggered
-                    </span>
                   </div>
                   <p className="matter-story-text">
                     A follow-up note referenced a new lumbar MRI. Catena paused
@@ -394,7 +325,7 @@ export function HeroControlPlane() {
               <div className="matter-story-row matter-story-row-last">
                 <span className="matter-story-date">08/14</span>
                 <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-node" />
+                  <span className="matter-story-dot matter-story-dot-handoff" />
                 </div>
                 <div className="matter-story-body">
                   <div className="matter-actor-line">
@@ -409,6 +340,57 @@ export function HeroControlPlane() {
                     records attached: hold the demand for MRI results, or
                     proceed on the 07/31 cutoff.
                   </p>
+                  <div
+                    className="matter-attachments"
+                    aria-label="Attached records sent with question"
+                  >
+                    <span className="matter-attachment-pill">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
+                          stroke="currentColor"
+                          strokeWidth="1.35"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 2v4h4"
+                          stroke="currentColor"
+                          strokeWidth="1.35"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      Peachtree_CPT_Ledger.pdf
+                    </span>
+                    <span className="matter-attachment-pill">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
+                          stroke="currentColor"
+                          strokeWidth="1.35"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M9 2v4h4"
+                          stroke="currentColor"
+                          strokeWidth="1.35"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                      08-14_Ortho_FollowUp.pdf
+                    </span>
+                  </div>
                   <div className="matter-awaiting-tag">
                     <svg
                       className="matter-awaiting-icon"
@@ -433,7 +415,6 @@ export function HeroControlPlane() {
               </div>
             </div>
 
-            {/* App Footer */}
             <div className="matter-story-footer">
               <p className="matter-story-attribution">
                 <strong>Nothing to monitor.</strong> Catena brings the decision
