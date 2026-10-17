@@ -32,13 +32,13 @@ const ROUTING_MODES: Record<
   stall: {
     label: "30+ Day Stall / Overflow Rule",
     shortLabel: "30+ Day Stall Rule",
-    triggerBadge: "Auto-Routed · Stalled 34 Days",
+    triggerBadge: "Stall Rule · Day 34",
     ruleSummary:
       "Matters with unresolved provider returns > 30 days or paralegal capacity overflow route to Catena within agreed volume bands.",
-    activeCount: "14 overflow matters active",
+    activeCount: "Treatment & records follow-through",
     matterTitle: "MVA Bodily Injury · Matter #2048",
-    matterMeta: "DOI: 04/18 · 4 Providers · Clio Connected",
-    firmOwner: "S. Jenkins (Sr. Paralegal retains ownership)",
+    matterMeta: "DOI: 04/18 · 4 Providers",
+    firmOwner: "S. Jenkins (keeps the file)",
     providers: [
       {
         name: "Grady EMS & Trauma",
@@ -77,13 +77,13 @@ const ROUTING_MODES: Record<
   defined: {
     label: "Defined Matter Set",
     shortLabel: "Defined Set",
-    triggerBadge: "Selected Cohort · 15 Matters",
+    triggerBadge: "Selected Starting Group",
     ruleSummary:
       "Your firm selects a bounded initial group of eligible pre-suit matters and chooses which responsibilities Catena carries.",
-    activeCount: "15 cohort matters active",
+    activeCount: "Qualified demand preparation",
     matterTitle: "Commercial Rear-End · Matter #1982",
-    matterMeta: "DOI: 03/09 · 5 Providers · Filevine Connected",
-    firmOwner: "M. Alvarez (Case Manager retains ownership)",
+    matterMeta: "DOI: 03/09 · 5 Providers",
+    firmOwner: "M. Alvarez (keeps the file)",
     providers: [
       {
         name: "Northside Hospital ER",
@@ -122,13 +122,13 @@ const ROUTING_MODES: Record<
   standing: {
     label: "Standing Caseload Segment",
     shortLabel: "Standing Caseload",
-    triggerBadge: "Standing Pod · Pre-Lit Auto BI",
+    triggerBadge: "Standing Segment",
     ruleSummary:
       "Catena carries agreed responsibilities continuously across an eligible practice segment or attorney pod under your policy.",
-    activeCount: "Pod B caseload covered",
+    activeCount: "Intake + treatment follow-through",
     matterTitle: "Uninsured Motorist Claim · Matter #2104",
-    matterMeta: "DOI: 06/22 · Intake + Treatment Follow-Through",
-    firmOwner: "D. Brooks (Pod Lead Paralegal)",
+    matterMeta: "DOI: 06/22 · 3 Providers",
+    firmOwner: "D. Brooks (keeps the file)",
     providers: [
       {
         name: "Intake & Coverage Verification",
@@ -220,62 +220,14 @@ export function HeroScopeDrawer() {
 }
 
 export function HeroControlPlane() {
-  const [stageTab, setStageTab] = useState<"interactive" | "video">("interactive");
-  const [activeMode, setActiveMode] = useState<RoutingModeId>("stall");
-  const [expandedProv, setExpandedProv] = useState<number | null>(1);
-  const current = ROUTING_MODES[activeMode];
+  const [showVideo, setShowVideo] = useState(false);
 
   return (
-    <div className="control-plane" aria-label="Interactive CatenaOS operation view">
-      {/* Top Stage Switcher: Interactive UI vs Video Walkthrough */}
-      <div className="cp-stage-switcher">
-        <div className="cp-stage-pills" role="tablist" aria-label="Showcase view mode">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={stageTab === "interactive"}
-            className={`cp-stage-pill ${stageTab === "interactive" ? "cp-stage-pill-active" : ""}`}
-            onClick={() => setStageTab("interactive")}
-          >
-            <span className="cp-live-indicator" aria-hidden="true" />
-            Live Matter View · CatenaOS
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={stageTab === "video"}
-            className={`cp-stage-pill ${stageTab === "video" ? "cp-stage-pill-active" : ""}`}
-            onClick={() => setStageTab("video")}
-          >
-            <span aria-hidden="true">▶</span> Watch 42s Walkthrough
-          </button>
-        </div>
-
-        {stageTab === "interactive" && (
-          <div className="cp-tabs" role="tablist" aria-label="Assignment modes">
-            {(Object.keys(ROUTING_MODES) as RoutingModeId[]).map((key) => {
-              const isSelected = activeMode === key;
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  role="tab"
-                  aria-selected={isSelected}
-                  className={`cp-tab ${isSelected ? "cp-tab-active" : ""}`}
-                  onClick={() => {
-                    setActiveMode(key);
-                    setExpandedProv(0);
-                  }}
-                >
-                  {ROUTING_MODES[key].shortLabel}
-                </button>
-              );
-            })}
-          </div>
-        )}
-      </div>
-
-      {stageTab === "video" ? (
+    <div
+      className="control-plane hero-story-card"
+      aria-label="Matter #2048 follow-through example"
+    >
+      {showVideo ? (
         <div className="cp-video-stage">
           <video
             controls
@@ -306,112 +258,195 @@ export function HeroControlPlane() {
             <button
               type="button"
               className="cp-back-btn"
-              onClick={() => setStageTab("interactive")}
+              onClick={() => setShowVideo(false)}
             >
-              Back to interactive view ↗
+              ← Back to Matter #2048
             </button>
           </div>
         </div>
       ) : (
-        <div className="cp-window">
-          <div className="cp-window-header">
-            <div className="cp-window-title-group">
-              <div className="cp-window-dots" aria-hidden="true">
-                <span />
-                <span />
-                <span />
-              </div>
-              <div>
-                <p className="cp-matter-name">{current.matterTitle}</p>
-                <p className="cp-matter-sub">{current.matterMeta}</p>
-              </div>
-            </div>
-            <span className="cp-trigger-badge">{current.triggerBadge}</span>
+        <div className="matter-story-window">
+          <div className="matter-story-header">
+            <span className="matter-story-title">
+              Matter #2048 · MVA · 4 providers
+            </span>
           </div>
 
-          {/* Ownership & Routing Bar */}
-          <div className="cp-ownership-strip">
-            <div className="cp-owner-item">
-              <span className="cp-owner-label">Firm Matter Owner</span>
-              <span className="cp-owner-val">{current.firmOwner}</span>
+          <div className="matter-story-events">
+            <div className="matter-story-row">
+              <span className="matter-story-date">07/31</span>
+              <p className="matter-story-text">
+                Peachtree Ortho returned a balance summary. Catena rejected it,
+                requested the itemized ledger, verified 14 service lines.
+              </p>
             </div>
-            <div className="cp-owner-divider" aria-hidden="true" />
-            <div className="cp-owner-item">
-              <span className="cp-owner-label">Delegated Execution</span>
-              <span className="cp-owner-val cp-owner-catena">
-                Catena Operating Spine ({current.activeCount})
+
+            <div className="matter-story-row">
+              <span className="matter-story-date">08/14</span>
+              <p className="matter-story-text">
+                Follow-up note referenced a new lumbar MRI. Catena reopened
+                readiness; verified records stay locked.
+              </p>
+            </div>
+
+            <div className="matter-story-row matter-story-row-decision">
+              <span className="matter-story-date matter-story-date-today">
+                Today
               </span>
+              <p className="matter-story-text matter-story-decision-text">
+                Decision for the firm: hold the demand for MRI results, or
+                proceed with the 07/31 cutoff?
+              </p>
             </div>
           </div>
 
-          {/* Provider & Evidence Matrix with Click-to-Drilldown Rows */}
-          <div className="cp-matrix">
-            <div className="cp-matrix-head">
-              <span>Provider / Workstream (Click row to inspect)</span>
-              <span>Clinical Records</span>
-              <span>Itemized Billing</span>
-            </div>
-            {current.providers.map((prov, idx) => {
-              const isOpen = expandedProv === idx;
-              return (
-                <div
-                  key={prov.name}
-                  className={`cp-matrix-group ${isOpen ? "cp-matrix-group-open" : ""}`}
-                >
-                  <button
-                    type="button"
-                    className="cp-matrix-row"
-                    aria-expanded={isOpen}
-                    onClick={() => setExpandedProv(isOpen ? null : idx)}
-                  >
-                    <div className="cp-prov-name">
-                      <span className="cp-row-chevron" aria-hidden="true">
-                        {isOpen ? "▾" : "▸"}
-                      </span>
-                      {prov.name}
-                    </div>
-                    <div>
-                      <span className={`cp-chip cp-chip-${prov.recordsTone}`}>
-                        {prov.recordsState}
-                      </span>
-                    </div>
-                    <div>
-                      <span className={`cp-chip cp-chip-${prov.billingTone}`}>
-                        {prov.billingState}
-                      </span>
-                    </div>
-                  </button>
-                  {isOpen && (
-                    <div className="cp-matrix-drilldown">
-                      <span className="cp-drill-tag">Evidence Audit Log</span>
-                      <p>{prov.auditDetail}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Live Signal + Reserved Decision Split */}
-          <div className="cp-bottom-grid">
-            <div className="cp-signal-card">
-              <div className="cp-card-kicker">
-                <span className="cp-pulse-dot" aria-hidden="true" />
-                CatenaOS State Engine
-              </div>
-              <p className="cp-signal-title">{current.signalTitle}</p>
-              <p className="cp-signal-desc">{current.signalDetail}</p>
-            </div>
-
-            <div className="cp-decision-card">
-              <div className="cp-card-kicker cp-kicker-copper">
-                Reserved Firm Authority
-              </div>
-              <p className="cp-decision-text">{current.firmDecision}</p>
-            </div>
+          <div className="matter-story-footer">
+            <p className="matter-story-attribution">
+              <strong>S. Jenkins keeps the file.</strong> Catena carried the
+              follow-through.
+            </p>
+            <button
+              type="button"
+              className="matter-walkthrough-btn"
+              onClick={() => setShowVideo(true)}
+            >
+              <span aria-hidden="true">▶</span> Watch the 42s walkthrough
+            </button>
           </div>
         </div>
       )}
+    </div>
+  );
+}
+
+export function FullMatterExplorer() {
+  const [activeMode, setActiveMode] = useState<RoutingModeId>("stall");
+  const [expandedProv, setExpandedProv] = useState<number | null>(1);
+  const current = ROUTING_MODES[activeMode];
+
+  return (
+    <div className="control-plane" id="live-matter" aria-label="Interactive matter breakdown">
+      <div className="cp-stage-switcher">
+        <span className="matter-story-title">
+          Inspectable Matter Breakdown · Click any row or scenario
+        </span>
+        <div className="cp-tabs" role="tablist" aria-label="Assignment modes">
+          {(Object.keys(ROUTING_MODES) as RoutingModeId[]).map((key) => {
+            const isSelected = activeMode === key;
+            return (
+              <button
+                key={key}
+                type="button"
+                role="tab"
+                aria-selected={isSelected}
+                className={`cp-tab ${isSelected ? "cp-tab-active" : ""}`}
+                onClick={() => {
+                  setActiveMode(key);
+                  setExpandedProv(0);
+                }}
+              >
+                {ROUTING_MODES[key].shortLabel}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="cp-window">
+        <div className="cp-window-header">
+          <div className="cp-window-title-group">
+            <div className="cp-window-dots" aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </div>
+            <div>
+              <p className="cp-matter-name">{current.matterTitle}</p>
+              <p className="cp-matter-sub">{current.matterMeta}</p>
+            </div>
+          </div>
+          <span className="cp-trigger-badge">{current.triggerBadge}</span>
+        </div>
+
+        <div className="cp-ownership-strip">
+          <div className="cp-owner-item">
+            <span className="cp-owner-label">Firm Matter Owner</span>
+            <span className="cp-owner-val">{current.firmOwner}</span>
+          </div>
+          <div className="cp-owner-divider" aria-hidden="true" />
+          <div className="cp-owner-item">
+            <span className="cp-owner-label">Work Carried by Catena</span>
+            <span className="cp-owner-val cp-owner-catena">
+              {current.activeCount}
+            </span>
+          </div>
+        </div>
+
+        <div className="cp-matrix">
+          <div className="cp-matrix-head">
+            <span>Provider / Workstream (Click row to inspect)</span>
+            <span>Clinical Records</span>
+            <span>Itemized Billing</span>
+          </div>
+          {current.providers.map((prov, idx) => {
+            const isOpen = expandedProv === idx;
+            return (
+              <div
+                key={prov.name}
+                className={`cp-matrix-group ${isOpen ? "cp-matrix-group-open" : ""}`}
+              >
+                <button
+                  type="button"
+                  className="cp-matrix-row"
+                  aria-expanded={isOpen}
+                  onClick={() => setExpandedProv(isOpen ? null : idx)}
+                >
+                  <div className="cp-prov-name">
+                    <span className="cp-row-chevron" aria-hidden="true">
+                      {isOpen ? "▾" : "▸"}
+                    </span>
+                    {prov.name}
+                  </div>
+                  <div>
+                    <span className={`cp-chip cp-chip-${prov.recordsTone}`}>
+                      {prov.recordsState}
+                    </span>
+                  </div>
+                  <div>
+                    <span className={`cp-chip cp-chip-${prov.billingTone}`}>
+                      {prov.billingState}
+                    </span>
+                  </div>
+                </button>
+                {isOpen && (
+                  <div className="cp-matrix-drilldown">
+                    <span className="cp-drill-tag">Evidence Audit Log</span>
+                    <p>{prov.auditDetail}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="cp-bottom-grid">
+          <div className="cp-signal-card">
+            <div className="cp-card-kicker">
+              <span className="cp-pulse-dot" aria-hidden="true" />
+              Readiness Status
+            </div>
+            <p className="cp-signal-title">{current.signalTitle}</p>
+            <p className="cp-signal-desc">{current.signalDetail}</p>
+          </div>
+
+          <div className="cp-decision-card">
+            <div className="cp-card-kicker cp-kicker-copper">
+              Decision for the Firm
+            </div>
+            <p className="cp-decision-text">{current.firmDecision}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

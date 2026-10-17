@@ -76,9 +76,12 @@ export default function Home() {
               <Link className="button" href="/conversation">
                 Book 15 minutes <Arrow />
               </Link>
-              <a className="button-secondary" href="#live-matter-demo">
+              <Link
+                className="button-secondary"
+                href="/records-to-demand#live-matter"
+              >
                 See a live matter
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Arrow, OperatingModelFilm } from "@/components/Site";
+import { FullMatterExplorer } from "@/components/InteractivePlatformShowcase";
 import { PrintBrief } from "@/components/PrintBrief";
 import { BOOKING_URL, CONTACT_EMAIL } from "@/lib/booking";
 
@@ -163,6 +164,10 @@ export default function LaneBrief() {
               satisfied. CatenaOS shows what is required, what is verified, and
               what blocks readiness.
             </p>
+          </div>
+
+          <div style={{ marginBottom: "1.5rem" }}>
+            <FullMatterExplorer />
           </div>
 
           <div className="evidence-pair">

@@ -847,6 +847,125 @@ p {
     0 4px 16px rgba(12, 21, 18, 0.08);
 }
 
+.hero-story-card {
+  padding: 1.35rem 1.5rem;
+}
+
+.matter-story-window {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.matter-story-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.matter-story-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--emerald-bright);
+}
+
+.matter-story-events {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.matter-story-row {
+  display: grid;
+  grid-template-columns: 3.6rem 1fr;
+  gap: 0.85rem;
+  align-items: baseline;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.matter-story-row-decision {
+  background: rgba(245, 158, 11, 0.11);
+  border-color: rgba(245, 158, 11, 0.38);
+}
+
+.matter-story-date {
+  font-size: 0.78rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+  color: rgba(246, 245, 240, 0.64);
+}
+
+.matter-story-date-today {
+  color: #fbbf24;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.matter-story-text {
+  margin: 0;
+  font-size: 0.94rem;
+  line-height: 1.52;
+  color: rgba(246, 245, 240, 0.92);
+}
+
+.matter-story-decision-text {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.matter-story-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.matter-story-attribution {
+  margin: 0;
+  font-size: 0.88rem;
+  color: rgba(246, 245, 240, 0.78);
+}
+
+.matter-story-attribution strong {
+  color: #ffffff;
+  font-weight: 650;
+}
+
+.matter-walkthrough-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(45, 212, 168, 0.38);
+  background: rgba(45, 212, 168, 0.1);
+  color: var(--emerald-bright);
+  font-size: 0.82rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.matter-walkthrough-btn:hover {
+  background: var(--emerald-bright);
+  border-color: var(--emerald-bright);
+  color: var(--obsidian);
+}
+
 .cp-stage-switcher {
   display: flex;
   flex-wrap: wrap;
