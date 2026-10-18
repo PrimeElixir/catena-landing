@@ -29,8 +29,8 @@
   --ink-secondary: #374151;
   --muted: #6b7280;
 
-  --line: #e5e7eb;
-  --line-strong: #d1d5db;
+  --line: #dde1e6;
+  --line-strong: #c6cbd2;
 
   --accent: #0f3d30;
   --accent-hover: #0a2920;
@@ -701,18 +701,22 @@ p {
 }
 
 .hero-pillar-strip {
-  margin-top: clamp(2.25rem, 3.8vw, 3.25rem);
+  margin-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding-top: clamp(2rem, 3.5vw, 2.75rem);
+  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: clamp(1.75rem, 3.5vw, 3rem);
+  align-items: start;
 }
 
 .hero-pillar-col {
-  padding: 1.4rem 1.5rem;
-  border-radius: 16px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  box-shadow: 0 2px 10px rgba(15, 23, 20, 0.025);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .hero-pillar-kicker {
@@ -722,14 +726,204 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent);
-  margin-bottom: 0.55rem;
+}
+
+.strip-viz {
+  margin: 0.75rem 0 0.85rem;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Col 01: Three-stage track (Intake · Treatment & records · Demand) */
+.strip-track {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.strip-stage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.32rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.strip-check {
+  display: inline-flex;
+  width: 1.12rem;
+  height: 1.12rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.strip-check svg {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
+.strip-track-line {
+  width: 0.75rem;
+  height: 1.5px;
+  background: var(--accent);
+  opacity: 0.32;
+  border-radius: 999px;
+  transform-origin: left center;
+}
+
+/* Col 02: Segmented control (10-25 files | 30-day rule | Caseload segment) */
+.strip-segmented {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.18rem;
+  padding: 0.2rem;
+  border-radius: 8px;
+  background: #eef0f3;
+  border: 1px solid var(--line);
+  width: fit-content;
+}
+
+.strip-seg-pill {
+  padding: 0.24rem 0.54rem;
+  border-radius: 6px;
+  font-size: 0.73rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+  line-height: 1.25;
+}
+
+.strip-seg-active {
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow:
+    0 1px 2px rgba(15, 23, 20, 0.08),
+    0 0 0 1px rgba(15, 23, 20, 0.06);
+}
+
+/* Col 03: Two-column mini ledger (Yours vs Catena) */
+.strip-mini-ledger {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 0.85rem;
+  width: 100%;
+  align-items: start;
+}
+
+.strip-ledger-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0.16rem;
+}
+
+.strip-ledger-catena {
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--line-strong);
+}
+
+.strip-ledger-head {
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.1;
+}
+
+.strip-ledger-yours .strip-ledger-head {
+  color: var(--copper-ink);
+}
+
+.strip-ledger-catena .strip-ledger-head {
+  color: var(--accent);
+}
+
+.strip-ledger-items {
+  font-size: 0.75rem;
+  font-weight: 550;
+  color: var(--ink);
+  line-height: 1.32;
 }
 
 .hero-pillar-col p {
   margin: 0;
   font-size: 0.91rem;
-  line-height: 1.56;
+  line-height: 1.54;
   color: var(--ink-secondary);
+  max-width: 42ch;
+}
+
+/* One-shot entry stagger & 400ms Demand check completion */
+@keyframes stripColEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stripCheckFill {
+  0% {
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1.5px var(--accent);
+    transform: scale(0.92);
+  }
+  60% {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 0 var(--accent);
+    transform: scale(1.06);
+  }
+  100% {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 0 var(--accent);
+    transform: scale(1);
+  }
+}
+
+@keyframes stripCheckStroke {
+  from {
+    stroke-dashoffset: 14;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-pillar-col-1 {
+    animation: stripColEnter 0.42s var(--ease-out) 0.05s both;
+  }
+  .hero-pillar-col-2 {
+    animation: stripColEnter 0.42s var(--ease-out) 0.14s both;
+  }
+  .hero-pillar-col-3 {
+    animation: stripColEnter 0.42s var(--ease-out) 0.23s both;
+  }
+
+  .strip-track-line-final {
+    animation: progressFill 0.28s var(--ease-out) 0.28s both;
+  }
+
+  .strip-check-final {
+    animation: stripCheckFill 0.4s var(--ease-out) 0.46s both;
+  }
+
+  .strip-check-path-final {
+    stroke-dasharray: 14;
+    stroke-dashoffset: 14;
+    animation: stripCheckStroke 0.4s var(--ease-out) 0.52s forwards;
+  }
 }
 
 .hero-quick-points {

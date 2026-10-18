@@ -87,31 +87,81 @@ export default function Home() {
           </div>
         </div>
 
-        {/* THREE-COLUMN STRIP DIRECTLY UNDER HERO */}
+        {/* THREE-COLUMN OPEN STRIP DIRECTLY UNDER HERO */}
         <div className="hero-pillar-strip wrap" aria-label="Core operating commitments">
-          <div className="hero-pillar-col">
+          {/* Col 01: Accountable for the result */}
+          <div className="hero-pillar-col hero-pillar-col-1">
             <span className="hero-pillar-kicker">01 · Accountable for the result</span>
+
+            <div className="strip-viz strip-track" aria-hidden="true">
+              <span className="strip-stage strip-stage-done">
+                <span className="strip-check">
+                  <svg viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6.2L5 8.6L9.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span>Intake</span>
+              </span>
+              <span className="strip-track-line strip-track-line-done" />
+              <span className="strip-stage strip-stage-done">
+                <span className="strip-check">
+                  <svg viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 6.2L5 8.6L9.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span>Treatment &amp; records</span>
+              </span>
+              <span className="strip-track-line strip-track-line-final" />
+              <span className="strip-stage strip-stage-final">
+                <span className="strip-check strip-check-final">
+                  <svg viewBox="0 0 12 12" fill="none">
+                    <path className="strip-check-path-final" d="M2.5 6.2L5 8.6L9.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </span>
+                <span>Demand</span>
+              </span>
+            </div>
+
             <p>
-              A returned record isn’t a ready file, and a lead isn’t a signed
-              case. Catena carries each assigned matter to the agreed state —
-              intake assessed and ready for your acceptance, treatment and
-              records followed through, demand prepared for your review.
+              A returned record isn’t a ready file. Catena carries each assigned
+              matter to the agreed state — through all three.
             </p>
           </div>
-          <div className="hero-pillar-col">
+
+          {/* Col 02: You choose the matters */}
+          <div className="hero-pillar-col hero-pillar-col-2">
             <span className="hero-pillar-kicker">02 · You choose the matters</span>
+
+            <div className="strip-viz strip-segmented" aria-hidden="true">
+              <span className="strip-seg-pill strip-seg-active">10–25 files</span>
+              <span className="strip-seg-pill">30-day rule</span>
+              <span className="strip-seg-pill">Caseload segment</span>
+            </div>
+
             <p>
-              Start with 10–25 files. Set a rule for overflow or files stalled
-              past 30 days. Or assign a standing segment of your caseload.
+              Start small, set a rule, or assign a segment. Expand only if we
+              earn it.
             </p>
           </div>
-          <div className="hero-pillar-col">
+
+          {/* Col 03: Your firm keeps the firm */}
+          <div className="hero-pillar-col hero-pillar-col-3">
             <span className="hero-pillar-kicker">03 · Your firm keeps the firm</span>
+
+            <div className="strip-viz strip-mini-ledger" aria-hidden="true">
+              <div className="strip-ledger-side strip-ledger-yours">
+                <span className="strip-ledger-head">Yours</span>
+                <span className="strip-ledger-items">Client · judgment · acceptance · settlement</span>
+              </div>
+              <div className="strip-ledger-side strip-ledger-catena">
+                <span className="strip-ledger-head">Catena</span>
+                <span className="strip-ledger-items">The chase · the follow-through</span>
+              </div>
+            </div>
+
             <p>
-              Paralegals keep their files. Your practice software stays. Keep
-              your retrieval vendors or use ours, with provider charges passed
-              through on the invoice. Matter acceptance, valuation, and
-              settlement stay with your attorneys.
+              Paralegals keep their files. Your software and vendors stay, or
+              use ours with charges passed through.
             </p>
           </div>
         </div>
