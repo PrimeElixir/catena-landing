@@ -862,6 +862,7 @@ const LANE_DETAILS = [
     number: "01",
     shortTitle: "Intake & Case Assessment",
     oneLineHook: "Evaluate incoming matters and carry intake follow-through.",
+    collapsedResult: "Agreed result: assessment prepared, ready for your acceptance",
     summary:
       "Collect and evaluate required information, prepare substantive case assessments and recommendations for firm review, and carry the agreed intake follow-through.",
     agreedResult: "Substantive case assessment and recommendations ready for review.",
@@ -910,6 +911,7 @@ const LANE_DETAILS = [
     number: "02",
     shortTitle: "Treatment & Records Follow-Through",
     oneLineHook: "Eliminate provider chasing, billing gaps, and stale status checks.",
+    collapsedResult: "Agreed result: records and itemized bills verified in hand",
     summary:
       "Carry agreed follow-ups, requests, waits, deficiencies, corrections, and evidence review through to a supported operational state—using your retrieval vendor or a Catena-managed supplier.",
     agreedResult:
@@ -963,6 +965,7 @@ const LANE_DETAILS = [
     number: "03",
     shortTitle: "Qualified Demand Preparation",
     oneLineHook: "Receive an evidence-backed demand package staged for your review.",
+    collapsedResult: "Agreed result: demand package staged for attorney review",
     summary:
       "Assemble the agreed evidence and prepare the demand and supporting material for the firm’s review, with any outstanding issues made explicit.",
     agreedResult:
@@ -1015,94 +1018,47 @@ export function ResponsibilityExplorer() {
   const [openRowIdx, setOpenRowIdx] = useState<number | null>(1);
   const active = LANE_DETAILS[selectedIdx];
 
-  return (
-    <div className="resp-playbook">
-      {/* Left Accordion / Playbook Selector Rail */}
-      <div className="resp-playbook-rail" role="tablist" aria-label="Pre-litigation responsibilities">
-        {LANE_DETAILS.map((item, idx) => {
-          const isSelected = idx === selectedIdx;
-          return (
-            <div
-              key={item.id}
-              className={`resp-playbook-item ${isSelected ? "resp-playbook-item-open" : ""}`}
-            >
-              <button
-                type="button"
-                role="tab"
-                aria-selected={isSelected}
-                className="resp-playbook-trigger"
-                onClick={() => {
-                  setSelectedIdx(idx);
-                  setOpenRowIdx(0);
-                }}
-              >
-                <span className="resp-playbook-num">{item.number}</span>
-                <div className="resp-playbook-head">
-                  <h3>{item.shortTitle}</h3>
-                  <p className="resp-playbook-hook">{item.oneLineHook}</p>
-                </div>
-                <span className="resp-playbook-arrow" aria-hidden="true">
-                  {isSelected ? "●" : "○"}
-                </span>
-              </button>
-
-              {isSelected && (
-                <div className="resp-playbook-body">
-                  <div className="resp-progress-bar" aria-hidden="true">
-                    <span className="resp-progress-fill" />
-                  </div>
-                  <p className="resp-body-summary">{item.summary}</p>
-                  <div className="resp-result-pill">
-                    <strong>Agreed result:</strong> {item.agreedResult}
-                  </div>
-                  {item.link && (
-                    <Link className="text-link resp-inline-link" href={item.link.href}>
-                      {item.link.label} <span aria-hidden="true">↗</span>
-                    </Link>
-                  )}
-                </div>
-              )}
-            </div>
-          );
-        })}
+  const renderCanvasContent = (lane: (typeof LANE_DETAILS)[number]) => (
+    <>
+      <div className="resp-canvas-topbar">
+        <span className="resp-canvas-kicker">
+          Lane {lane.number} · {lane.shortTitle}
+        </span>
+        <div
+          className="resp-canvas-tabs"
+          role="tablist"
+          aria-label="Inspect deliverable or responsibilities"
+        >
+          <button
+            type="button"
+            role="tab"
+            aria-selected={rightTab === "deliverable"}
+            className={`resp-canvas-tab ${rightTab === "deliverable" ? "resp-canvas-tab-active" : ""}`}
+            onClick={() => setRightTab("deliverable")}
+          >
+            Deliverable Preview
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={rightTab === "boundary"}
+            className={`resp-canvas-tab ${rightTab === "boundary" ? "resp-canvas-tab-active" : ""}`}
+            onClick={() => setRightTab("boundary")}
+          >
+            What We Carry vs. Keep
+          </button>
+        </div>
       </div>
 
-      {/* Right Synchronized Visual Canvas */}
-      <div className="resp-canvas" role="tabpanel">
-        <div className="resp-canvas-topbar">
-          <span className="resp-canvas-kicker">
-            Lane {active.number} · {active.shortTitle}
-          </span>
-          <div className="resp-canvas-tabs" role="tablist" aria-label="Inspect deliverable or responsibilities">
-            <button
-              type="button"
-              role="tab"
-              aria-selected={rightTab === "deliverable"}
-              className={`resp-canvas-tab ${rightTab === "deliverable" ? "resp-canvas-tab-active" : ""}`}
-              onClick={() => setRightTab("deliverable")}
-            >
-              Deliverable Preview
-            </button>
-            <button
-              type="button"
-              role="tab"
-              aria-selected={rightTab === "boundary"}
-              className={`resp-canvas-tab ${rightTab === "boundary" ? "resp-canvas-tab-active" : ""}`}
-              onClick={() => setRightTab("boundary")}
-            >
-              What We Carry vs. Keep
-            </button>
-          </div>
-        </div>
-
+      <div key={`${lane.id}-${rightTab}`} className="resp-canvas-inner">
         {rightTab === "deliverable" ? (
           <div className="artifact-card">
             <div className="artifact-head">
-              <span>{active.artifactTitle}</span>
-              <span className="artifact-badge">{active.artifactStatus}</span>
+              <span>{lane.artifactTitle}</span>
+              <span className="artifact-badge">{lane.artifactStatus}</span>
             </div>
             <div className="artifact-rows">
-              {active.artifactRows.map((row, rIdx) => {
+              {lane.artifactRows.map((row, rIdx) => {
                 const isRowOpen = openRowIdx === rIdx;
                 return (
                   <div key={row.label} className="artifact-row-group">
@@ -1123,9 +1079,7 @@ export function ResponsibilityExplorer() {
                       </span>
                     </button>
                     {isRowOpen && (
-                      <div className="artifact-row-detail">
-                        {row.detail}
-                      </div>
+                      <div className="artifact-row-detail">{row.detail}</div>
                     )}
                   </div>
                 );
@@ -1148,7 +1102,7 @@ export function ResponsibilityExplorer() {
               <span className="pill-box-tag">Catena’s Agreed Work</span>
               <h4>What Catena Carries</h4>
               <ul>
-                {active.catenaPills.map((pill) => (
+                {lane.catenaPills.map((pill) => (
                   <li key={pill}>
                     <span aria-hidden="true">✓</span> {pill}
                   </li>
@@ -1157,10 +1111,12 @@ export function ResponsibilityExplorer() {
             </div>
 
             <div className="resp-pill-box resp-pill-firm">
-              <span className="pill-box-tag pill-box-tag-firm">Your Firm’s Decisions</span>
+              <span className="pill-box-tag pill-box-tag-firm">
+                Your Firm’s Decisions
+              </span>
               <h4>What Your Firm Keeps</h4>
               <ul>
-                {active.firmPills.map((pill) => (
+                {lane.firmPills.map((pill) => (
                   <li key={pill}>
                     <span aria-hidden="true">◆</span> {pill}
                   </li>
@@ -1169,6 +1125,93 @@ export function ResponsibilityExplorer() {
             </div>
           </div>
         )}
+      </div>
+    </>
+  );
+
+  return (
+    <div className="resp-playbook">
+      {/* Left Accordion / Playbook Selector Rail */}
+      <div
+        className="resp-playbook-rail"
+        role="tablist"
+        aria-label="Pre-litigation responsibilities"
+      >
+        {LANE_DETAILS.map((item, idx) => {
+          const isSelected = idx === selectedIdx;
+          return (
+            <div
+              key={item.id}
+              className={`resp-playbook-item ${isSelected ? "resp-playbook-item-open" : ""}`}
+            >
+              <button
+                type="button"
+                role="tab"
+                aria-selected={isSelected}
+                className="resp-playbook-trigger"
+                onClick={() => {
+                  setSelectedIdx(idx);
+                  setOpenRowIdx(0);
+                }}
+              >
+                <span className="resp-playbook-num">{item.number}</span>
+                <div className="resp-playbook-head">
+                  <h3>{item.shortTitle}</h3>
+                  <p className="resp-playbook-hook">{item.oneLineHook}</p>
+                  {!isSelected && (
+                    <p className="resp-collapsed-result">
+                      {item.collapsedResult}
+                    </p>
+                  )}
+                </div>
+                <span className="resp-playbook-arrow" aria-hidden="true">
+                  <svg
+                    className={`resp-chevron ${isSelected ? "resp-chevron-open" : ""}`}
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M6 3.5L10.5 8L6 12.5"
+                      stroke="currentColor"
+                      strokeWidth="1.75"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+              </button>
+
+              {isSelected && (
+                <div className="resp-playbook-body">
+                  <p className="resp-body-summary">{item.summary}</p>
+                  <div className="resp-result-pill">
+                    <strong>Agreed result:</strong> {item.agreedResult}
+                  </div>
+                  {item.link && (
+                    <Link
+                      className="text-link resp-inline-link"
+                      href={item.link.href}
+                    >
+                      {item.link.label} <span aria-hidden="true">↗</span>
+                    </Link>
+                  )}
+
+                  {/* Inline Deliverable Canvas on Mobile/Tablet (<= 1080px) */}
+                  <div className="resp-canvas resp-canvas-mobile">
+                    {renderCanvasContent(item)}
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Right Synchronized Visual Canvas (Desktop > 1080px) */}
+      <div className="resp-canvas resp-canvas-desktop" role="tabpanel">
+        {renderCanvasContent(active)}
       </div>
     </div>
   );

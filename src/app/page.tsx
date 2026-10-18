@@ -108,9 +108,7 @@ export default function Home() {
             </h2>
           </div>
           <p className="section-lead">
-            Entrust one lane or all three. Select a responsibility below to
-            inspect the deliverable your attorney receives and the decisions
-            your firm retains.
+            Entrust one lane or all three.
           </p>
         </div>
 
