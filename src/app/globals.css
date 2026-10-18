@@ -755,8 +755,8 @@ p {
 
 .strip-check {
   display: inline-flex;
-  width: 1.12rem;
-  height: 1.12rem;
+  width: 1.15rem;
+  height: 1.15rem;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
@@ -766,17 +766,73 @@ p {
 }
 
 .strip-check svg {
-  width: 0.7rem;
-  height: 0.7rem;
+  width: 0.72rem;
+  height: 0.72rem;
 }
 
 .strip-track-line {
-  width: 0.75rem;
+  width: 0.8rem;
   height: 1.5px;
   background: var(--accent);
-  opacity: 0.32;
+  opacity: 0.34;
   border-radius: 999px;
+}
+
+.strip-track-line-final {
+  background: var(--line-strong);
+  opacity: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.strip-track-line-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  opacity: 0.34;
+  transform: scaleX(0);
   transform-origin: left center;
+  transition: transform 0.22s var(--ease-out);
+}
+
+.strip-check-final {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--line-strong);
+  transform: scale(0.94);
+  transition:
+    background 0.38s var(--ease-out) 0.16s,
+    box-shadow 0.38s var(--ease-out) 0.16s,
+    transform 0.38s var(--ease-out) 0.16s;
+}
+
+.strip-check-path-final {
+  stroke-dasharray: 14;
+  stroke-dashoffset: 14;
+  transition: stroke-dashoffset 0.4s var(--ease-out) 0.2s;
+}
+
+.strip-stage-final-label {
+  color: var(--muted);
+  transition: color 0.35s var(--ease-out) 0.16s;
+}
+
+.strip-in-view .strip-track-line-fill {
+  transform: scaleX(1);
+}
+
+.strip-in-view .strip-check-final {
+  background: var(--accent);
+  box-shadow: inset 0 0 0 0 var(--accent);
+  transform: scale(1);
+}
+
+.strip-in-view .strip-check-path-final {
+  stroke-dashoffset: 0;
+}
+
+.strip-in-view .strip-stage-final-label {
+  color: var(--ink);
 }
 
 /* Col 02: Segmented control (10-25 files | 30-day rule | Caseload segment) */
@@ -812,11 +868,10 @@ p {
 
 /* Col 03: Two-column mini ledger (Yours vs Catena) */
 .strip-mini-ledger {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  display: inline-flex;
+  align-items: stretch;
   gap: 0.85rem;
-  width: 100%;
-  align-items: start;
+  width: fit-content;
 }
 
 .strip-ledger-side {
@@ -850,7 +905,8 @@ p {
   font-size: 0.75rem;
   font-weight: 550;
   color: var(--ink);
-  line-height: 1.32;
+  line-height: 1.34;
+  white-space: nowrap;
 }
 
 .hero-pillar-col p {
@@ -861,68 +917,24 @@ p {
   max-width: 42ch;
 }
 
-/* One-shot entry stagger & 400ms Demand check completion */
-@keyframes stripColEnter {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
+@media (prefers-reduced-motion: reduce) {
+  .strip-track-line-fill {
+    transform: scaleX(1);
+    transition: none;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes stripCheckFill {
-  0% {
-    background: var(--accent-soft);
-    box-shadow: inset 0 0 0 1.5px var(--accent);
-    transform: scale(0.92);
-  }
-  60% {
-    background: var(--accent);
-    box-shadow: inset 0 0 0 0 var(--accent);
-    transform: scale(1.06);
-  }
-  100% {
-    background: var(--accent);
-    box-shadow: inset 0 0 0 0 var(--accent);
-    transform: scale(1);
-  }
-}
-
-@keyframes stripCheckStroke {
-  from {
-    stroke-dashoffset: 14;
-  }
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .hero-pillar-col-1 {
-    animation: stripColEnter 0.42s var(--ease-out) 0.05s both;
-  }
-  .hero-pillar-col-2 {
-    animation: stripColEnter 0.42s var(--ease-out) 0.14s both;
-  }
-  .hero-pillar-col-3 {
-    animation: stripColEnter 0.42s var(--ease-out) 0.23s both;
-  }
-
-  .strip-track-line-final {
-    animation: progressFill 0.28s var(--ease-out) 0.28s both;
-  }
-
   .strip-check-final {
-    animation: stripCheckFill 0.4s var(--ease-out) 0.46s both;
+    background: var(--accent);
+    box-shadow: none;
+    transform: scale(1);
+    transition: none;
   }
-
   .strip-check-path-final {
-    stroke-dasharray: 14;
-    stroke-dashoffset: 14;
-    animation: stripCheckStroke 0.4s var(--ease-out) 0.52s forwards;
+    stroke-dashoffset: 0;
+    transition: none;
+  }
+  .strip-stage-final-label {
+    color: var(--ink);
+    transition: none;
   }
 }
 
