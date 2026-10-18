@@ -862,10 +862,12 @@ const LANE_DETAILS = [
     number: "01",
     shortTitle: "Intake & Case Assessment",
     oneLineHook: "Evaluate incoming matters and carry intake follow-through.",
-    collapsedResult: "Agreed result: assessment prepared, ready for your acceptance",
+    collapsedResult:
+      "assessment and recommendation prepared, ready for your acceptance.",
     summary:
       "Collect and evaluate required information, prepare substantive case assessments and recommendations for firm review, and carry the agreed intake follow-through.",
-    agreedResult: "Substantive case assessment and recommendations ready for review.",
+    agreedResult:
+      "Substantive case assessment and recommendations ready for review.",
     catenaPills: [
       "Collect & evaluate required intake facts",
       "Crash report & coverage follow-through",
@@ -878,31 +880,35 @@ const LANE_DETAILS = [
       "Client relationship & strategic counsel",
     ],
     artifactTitle: "Deliverable · Intake Assessment Memo",
-    artifactStatus: "Staged for Acceptance Decision",
+    artifactStatus: "Staged for acceptance decision",
     artifactRows: [
       {
-        label: "Liability & Crash Report",
+        label: "Liability & crash report",
         value: "Rear-end collision verified · Clear fault",
         state: "done",
-        detail: "Official police report obtained and indexed; zero comparative fault indicators.",
+        detail:
+          "Official police report obtained and indexed; zero comparative fault indicators.",
       },
       {
-        label: "Insurance Coverage",
+        label: "Insurance coverage",
         value: "$100k/$300k BI + $50k UM confirmed",
         state: "done",
-        detail: "Carrier policy disclosure verified and logged in matter record.",
+        detail:
+          "Carrier policy disclosure verified and logged in matter record.",
       },
       {
-        label: "Initial Clinical Facts",
+        label: "Initial clinical facts",
         value: "ER + Ortho evaluation within 48 hrs",
         state: "done",
-        detail: "Initial discharge diagnosis and orthopedic referral confirmed with client.",
+        detail:
+          "Initial discharge diagnosis and orthopedic referral confirmed with client.",
       },
       {
-        label: "Reserved Firm Decision",
+        label: "Reserved firm decision",
         value: "Approve matter acceptance & open pre-lit",
         state: "firm",
-        detail: "Attorney reviews substantive assessment memo and authorizes matter acceptance.",
+        detail:
+          "Attorney reviews substantive assessment memo and authorizes matter acceptance.",
       },
     ],
   },
@@ -910,10 +916,12 @@ const LANE_DETAILS = [
     id: "records",
     number: "02",
     shortTitle: "Treatment & Records Follow-Through",
-    oneLineHook: "Eliminate provider chasing, billing gaps, and stale status checks.",
-    collapsedResult: "Agreed result: records and itemized bills verified in hand",
+    oneLineHook:
+      "Eliminate provider chasing, billing gaps, and stale status checks.",
+    collapsedResult:
+      "Required records and itemized bills verified in hand; treatment follow-ups completed.",
     summary:
-      "Carry agreed follow-ups, requests, waits, deficiencies, corrections, and evidence review through to a supported operational state—using your retrieval vendor or a Catena-managed supplier.",
+      "Carry agreed follow-ups, requests, waits, deficiencies, corrections, and evidence review through to a supported operational state — using your retrieval vendor or a Catena-managed supplier.",
     agreedResult:
       "Required records and itemized bills verified in hand; treatment follow-ups completed.",
     link: {
@@ -932,31 +940,35 @@ const LANE_DETAILS = [
       "Patient & clinician medical autonomy",
     ],
     artifactTitle: "Deliverable · Records & Billing Readiness Ledger",
-    artifactStatus: "1 Deficiency Resolved · 1 Decision Routed",
+    artifactStatus: "1 deficiency resolved · 1 decision routed",
     artifactRows: [
       {
-        label: "Peachtree Ortho Clinical Notes",
+        label: "Peachtree Ortho clinical notes",
         value: "05/12 – 07/31 verified complete",
         state: "done",
-        detail: "All 42 pages of clinical visit notes and diagnostic reports verified against date range.",
+        detail:
+          "All 42 pages of clinical visit notes and diagnostic reports verified against date range.",
       },
       {
-        label: "Billing Deficiency Audit",
+        label: "Billing deficiency audit",
         value: "Balance summary rejected → CPT ledger verified",
         state: "done",
-        detail: "Catena rejected bare $8,420 balance summary and obtained the 14-line itemized CPT ledger.",
+        detail:
+          "Catena rejected bare $8,420 balance summary and obtained the 14-line itemized CPT ledger.",
       },
       {
-        label: "Mid-Stream Treatment Signal",
-        value: "08/14 MRI referral detected → State reopened",
-        state: "warn",
-        detail: "Follow-up note disclosed new lumbar MRI referral; earlier evidence preserved in history.",
+        label: "Mid-stream treatment signal",
+        value: "08/14 MRI referral found → readiness paused",
+        state: "done",
+        detail:
+          "Follow-up note disclosed new lumbar MRI referral; earlier evidence preserved in history.",
       },
       {
-        label: "Reserved Cutoff Choice",
+        label: "Reserved cutoff choice",
         value: "Routed to firm with supporting records",
         state: "firm",
-        detail: "Designated reviewer chooses whether to hold for August MRI or proceed under July 31 cutoff.",
+        detail:
+          "Designated reviewer chooses whether to hold for August MRI or proceed under July 31 cutoff.",
       },
     ],
   },
@@ -964,8 +976,10 @@ const LANE_DETAILS = [
     id: "demand",
     number: "03",
     shortTitle: "Qualified Demand Preparation",
-    oneLineHook: "Receive an evidence-backed demand package staged for your review.",
-    collapsedResult: "Agreed result: demand package staged for attorney review",
+    oneLineHook:
+      "Receive an evidence-backed demand package staged for your review.",
+    collapsedResult:
+      "demand and supporting material prepared for your review, open issues made explicit.",
     summary:
       "Assemble the agreed evidence and prepare the demand and supporting material for the firm’s review, with any outstanding issues made explicit.",
     agreedResult:
@@ -982,31 +996,35 @@ const LANE_DETAILS = [
       "Adjuster negotiation & settlement authority",
     ],
     artifactTitle: "Deliverable · Staged Demand Package",
-    artifactStatus: "Demand Ready · Staged for Review",
+    artifactStatus: "Demand ready · staged for review",
     artifactRows: [
       {
-        label: "Evidence Completeness",
+        label: "Evidence completeness",
         value: "All 4 providers & CPT ledgers linked",
         state: "done",
-        detail: "Every medical fact and billing line in the package links directly to verified source pages.",
+        detail:
+          "Every medical fact and billing line in the package links directly to verified source pages.",
       },
       {
-        label: "Specials & Chronology",
+        label: "Specials & chronology",
         value: "$23,810 verified specials indexed to exhibits",
         state: "done",
-        detail: "Chronological treatment narrative reconciled dollar-for-dollar with itemized billing exhibits.",
+        detail:
+          "Chronological treatment narrative reconciled dollar-for-dollar with itemized billing exhibits.",
       },
       {
-        label: "Qualified Demand Draft",
+        label: "Qualified demand draft",
         value: "Prepared under firm playbook template",
         state: "done",
-        detail: "Complete draft staged with liability, medical progression, and specials tables populated.",
+        detail:
+          "Complete draft staged with liability, medical progression, and specials tables populated.",
       },
       {
-        label: "Valuation & Dispatch",
+        label: "Valuation & dispatch",
         value: "Reserved to lead attorney",
         state: "firm",
-        detail: "Attorney sets settlement valuation, approves final text, and controls dispatch and negotiation.",
+        detail:
+          "Attorney sets settlement valuation, approves final text, and controls dispatch and negotiation.",
       },
     ],
   },
@@ -1014,7 +1032,9 @@ const LANE_DETAILS = [
 
 export function ResponsibilityExplorer() {
   const [selectedIdx, setSelectedIdx] = useState(1);
-  const [rightTab, setRightTab] = useState<"deliverable" | "boundary">("deliverable");
+  const [rightTab, setRightTab] = useState<"deliverable" | "boundary">(
+    "deliverable",
+  );
   const [openRowIdx, setOpenRowIdx] = useState<number | null>(1);
   const active = LANE_DETAILS[selectedIdx];
 
@@ -1036,7 +1056,7 @@ export function ResponsibilityExplorer() {
             className={`resp-canvas-tab ${rightTab === "deliverable" ? "resp-canvas-tab-active" : ""}`}
             onClick={() => setRightTab("deliverable")}
           >
-            Deliverable Preview
+            Deliverable preview
           </button>
           <button
             type="button"
@@ -1045,7 +1065,7 @@ export function ResponsibilityExplorer() {
             className={`resp-canvas-tab ${rightTab === "boundary" ? "resp-canvas-tab-active" : ""}`}
             onClick={() => setRightTab("boundary")}
           >
-            What We Carry vs. Keep
+            What we carry vs. keep
           </button>
         </div>
       </div>
@@ -1054,14 +1074,17 @@ export function ResponsibilityExplorer() {
         {rightTab === "deliverable" ? (
           <div className="artifact-card">
             <div className="artifact-head">
-              <span>{lane.artifactTitle}</span>
+              <span className="artifact-title">{lane.artifactTitle}</span>
               <span className="artifact-badge">{lane.artifactStatus}</span>
             </div>
             <div className="artifact-rows">
               {lane.artifactRows.map((row, rIdx) => {
                 const isRowOpen = openRowIdx === rIdx;
                 return (
-                  <div key={row.label} className="artifact-row-group">
+                  <div
+                    key={row.label}
+                    className={`artifact-row-group ${isRowOpen ? "artifact-row-group-open" : ""}`}
+                  >
                     <button
                       type="button"
                       className="artifact-row"
@@ -1086,7 +1109,22 @@ export function ResponsibilityExplorer() {
               })}
             </div>
             <div className="artifact-foot">
-              <span>Click any row above to inspect verification detail</span>
+              <div className="artifact-legend" aria-label="Responsibility legend">
+                <span className="artifact-legend-item">
+                  <span
+                    className="legend-dot legend-dot-catena"
+                    aria-hidden="true"
+                  />
+                  Catena did it
+                </span>
+                <span className="artifact-legend-item">
+                  <span
+                    className="legend-dot legend-dot-firm"
+                    aria-hidden="true"
+                  />
+                  Went to your firm
+                </span>
+              </div>
               <button
                 type="button"
                 className="artifact-switch-link"
@@ -1104,7 +1142,10 @@ export function ResponsibilityExplorer() {
               <ul>
                 {lane.catenaPills.map((pill) => (
                   <li key={pill}>
-                    <span aria-hidden="true">✓</span> {pill}
+                    <span className="pill-check-catena" aria-hidden="true">
+                      ✓
+                    </span>{" "}
+                    {pill}
                   </li>
                 ))}
               </ul>
@@ -1118,7 +1159,10 @@ export function ResponsibilityExplorer() {
               <ul>
                 {lane.firmPills.map((pill) => (
                   <li key={pill}>
-                    <span aria-hidden="true">◆</span> {pill}
+                    <span className="pill-check-firm" aria-hidden="true">
+                      ◆
+                    </span>{" "}
+                    {pill}
                   </li>
                 ))}
               </ul>
@@ -1151,7 +1195,7 @@ export function ResponsibilityExplorer() {
                 className="resp-playbook-trigger"
                 onClick={() => {
                   setSelectedIdx(idx);
-                  setOpenRowIdx(0);
+                  setOpenRowIdx(idx === 1 ? 1 : 0);
                 }}
               >
                 <span className="resp-playbook-num">{item.number}</span>
@@ -1160,15 +1204,15 @@ export function ResponsibilityExplorer() {
                   <p className="resp-playbook-hook">{item.oneLineHook}</p>
                   {!isSelected && (
                     <p className="resp-collapsed-result">
-                      {item.collapsedResult}
+                      <strong>Agreed result:</strong> {item.collapsedResult}
                     </p>
                   )}
                 </div>
                 <span className="resp-playbook-arrow" aria-hidden="true">
                   <svg
                     className={`resp-chevron ${isSelected ? "resp-chevron-open" : ""}`}
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                     viewBox="0 0 16 16"
                     fill="none"
                   >

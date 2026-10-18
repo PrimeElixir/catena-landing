@@ -108,7 +108,8 @@ export default function Home() {
             </h2>
           </div>
           <p className="section-lead">
-            Entrust one lane or all three.
+            Entrust one lane or all three. Each has an agreed result Catena
+            carries it to, and decisions that stay with your firm.
           </p>
         </div>
 
