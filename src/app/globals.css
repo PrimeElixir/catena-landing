@@ -519,6 +519,12 @@ p {
   margin-top: 1.5rem;
 }
 
+.page-section {
+  margin-top: clamp(2.75rem, 5vw, 4.25rem);
+  padding-top: clamp(2.75rem, 5vw, 4.25rem);
+  border-top: 1px solid var(--line);
+}
+
 .surface-card {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -536,9 +542,14 @@ p {
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
   gap: 2.5rem;
   align-items: end;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2.25rem;
   padding-bottom: 1.75rem;
   border-bottom: 1px solid var(--line);
+}
+
+.page-section .section-header-compact {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .section-lead {
@@ -1566,10 +1577,11 @@ p {
 .assignment-card {
   display: flex;
   flex-direction: column;
-  padding: 1.35rem;
+  padding: 1.5rem;
   border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--surface-subtle);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 2px 10px rgba(15, 23, 20, 0.025);
   transition:
     border-color 0.22s var(--ease-out),
     box-shadow 0.22s var(--ease-out),
@@ -1578,21 +1590,8 @@ p {
 
 .assignment-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 16px 36px rgba(12, 21, 18, 0.07);
+  box-shadow: 0 12px 28px rgba(12, 21, 18, 0.06);
   transform: translateY(-2px);
-}
-
-.assignment-viz {
-  margin-bottom: 1.15rem;
-  border-radius: 12px;
-  overflow: hidden;
-  background: var(--obsidian);
-  border: 1px solid rgba(15, 23, 20, 0.12);
-}
-
-.assign-svg {
-  width: 100%;
-  height: auto;
 }
 
 .assignment-card-top {
@@ -1600,7 +1599,27 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.85rem;
+}
+
+.assignment-mode-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.assignment-num-badge {
+  display: inline-flex;
+  width: 1.85rem;
+  height: 1.85rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 .assignment-number {
@@ -1614,7 +1633,7 @@ p {
 .assignment-tag {
   padding: 0.2rem 0.55rem;
   border-radius: 999px;
-  background: var(--surface);
+  background: var(--surface-subtle);
   border: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.7rem;
@@ -1733,7 +1752,7 @@ p {
 .resp-playbook-item {
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: var(--surface-subtle);
+  background: var(--surface);
   overflow: hidden;
   transition:
     border-color 0.2s ease,
@@ -2273,13 +2292,9 @@ p {
 
 .arch-diagram {
   margin-top: 1.5rem;
-  padding: 1.25rem;
-  border-radius: 18px;
-  background: var(--surface-subtle);
-  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.55rem;
 }
 
 .arch-tier {
@@ -2289,7 +2304,7 @@ p {
 }
 
 .arch-node {
-  padding: 0.8rem 0.95rem;
+  padding: 0.85rem 1rem;
   border-radius: 12px;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -2319,10 +2334,11 @@ p {
 }
 
 .arch-core {
-  padding: 1rem 1.1rem;
+  padding: 1rem 1.15rem;
   border-radius: 14px;
-  background: var(--obsidian);
-  color: #ffffff;
+  background: var(--accent-soft);
+  border: 1px solid rgba(15, 61, 48, 0.16);
+  color: var(--ink);
 }
 
 .arch-core-top {
@@ -2337,12 +2353,13 @@ p {
 .arch-core-badge {
   font-size: 0.78rem;
   font-weight: 700;
-  color: var(--emerald-bright);
+  color: var(--accent);
 }
 
 .arch-core-sub {
-  font-size: 0.7rem;
-  color: rgba(246, 245, 240, 0.62);
+  font-size: 0.72rem;
+  font-weight: 550;
+  color: var(--muted);
 }
 
 .arch-core-pills {
@@ -2352,11 +2369,13 @@ p {
 }
 
 .arch-core-pills span {
-  padding: 0.25rem 0.55rem;
+  padding: 0.25rem 0.6rem;
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--surface);
+  border: 1px solid rgba(15, 61, 48, 0.14);
+  color: var(--ink);
   font-size: 0.73rem;
-  font-weight: 550;
+  font-weight: 600;
 }
 
 .drilldown-list-header {
@@ -2384,7 +2403,7 @@ p {
 .faq-item {
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: var(--surface-subtle);
+  background: var(--surface);
   padding: 0.9rem 1.1rem;
   transition: border-color 0.18s ease, background 0.18s ease;
 }

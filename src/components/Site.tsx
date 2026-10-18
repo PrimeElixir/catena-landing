@@ -18,7 +18,6 @@ export function SiteHeader() {
           <Link className="wordmark" href="/" aria-label="Catena home">
             catena<span aria-hidden="true">.</span>
           </Link>
-          <span className="brand-tag">Pre-Lit Operations Platform</span>
         </div>
         <nav aria-label="Main navigation" className="desktop-nav">
           <div className="nav-dropdown-group">
@@ -46,7 +45,7 @@ export function SiteHeader() {
                   </Link>
                 </div>
                 <div className="nav-dropdown-col nav-dropdown-col-highlight">
-                  <span className="nav-dropdown-kicker">Operational Spine</span>
+                  <span className="nav-dropdown-kicker">Continuity &amp; Handover</span>
                   <Link href="/#continuity" className="nav-dropdown-item">
                     <strong>CatenaOS Operational Context</strong>
                     <span>Shared requirements, verified evidence &amp; next-action ownership across covered matters</span>
@@ -68,14 +67,14 @@ export function SiteHeader() {
               </span>
             </Link>
             <div className="nav-dropdown-menu nav-dropdown-menu-compact" role="region" aria-label="Assignment modes">
-              <span className="nav-dropdown-kicker">Firm-Controlled Routing</span>
+              <span className="nav-dropdown-kicker">How You Assign Work</span>
               <Link href="/#assignment" className="nav-dropdown-item">
                 <strong>01 · Defined Set</strong>
                 <span>Start with a bounded group of 10–25 eligible files</span>
               </Link>
               <Link href="/#assignment" className="nav-dropdown-item">
                 <strong>02 · 30+ Day Stall / Overflow Rule</strong>
-                <span>Auto-route stalled provider chases or capacity spikes</span>
+                <span>Route stalled provider chases or capacity spikes</span>
               </Link>
               <Link href="/#assignment" className="nav-dropdown-item">
                 <strong>03 · Standing Caseload</strong>

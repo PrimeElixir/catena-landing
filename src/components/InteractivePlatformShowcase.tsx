@@ -68,7 +68,7 @@ const ROUTING_MODES: Record<
           "08/14 orthopedic follow-up note disclosed a new lumbar MRI referral. Earlier verified evidence stays locked in history while readiness reopens.",
       },
     ],
-    signalTitle: "Readiness Reopened Automatically",
+    signalTitle: "Readiness Reopened on New Treatment",
     signalDetail:
       "08/14 follow-up note references a new lumbar MRI referral. Earlier verified records stay locked; readiness paused until resolved.",
     firmDecision:
@@ -146,7 +146,7 @@ const ROUTING_MODES: Record<
         billingState: "Itemized ledger requested (Day 6)",
         billingTone: "active",
         auditDetail:
-          "Acute visit clinical note verified; automated follow-up scheduled for outstanding itemized billing statement.",
+          "Acute visit clinical note verified; follow-up scheduled for outstanding itemized billing statement.",
       },
       {
         name: "ChiroCare Rehabilitation",
@@ -587,15 +587,14 @@ const ASSIGNMENT_CARDS = [
       "Choose a concrete initial group of eligible matters and the specific pre-lit responsibilities Catena will carry.",
     whatAcceptanceEstablishes:
       "Named matters, supported scope, required system access, the agreed operational result, and clear execution ownership from day one.",
-    visualType: "cohort",
   },
   {
     number: "02",
     mode: "Routing Rule",
     tag: "Overflow, backlog & stalls",
-    headline: "Auto-route 30+ day stalls or overflow.",
+    headline: "Route 30+ day stalls or overflow.",
     quickPitch:
-      "Set a standing rule so stalled provider chases or capacity spikes route to Catena automatically.",
+      "Set a standing rule so stalled provider chases or capacity spikes route to Catena within agreed volume bands.",
     bullets: [
       "Files stalled > 30 days trigger relief",
       "Agreed monthly volume bands",
@@ -605,7 +604,6 @@ const ASSIGNMENT_CARDS = [
       "Define an ongoing trigger—such as intake overflow, a backlog segment, or files stalled more than 30 days—and refine the rule with us during onboarding.",
     whatAcceptanceEstablishes:
       "A repeatable way to route eligible work to Catena with admission and capacity controls applied before we accept responsibility.",
-    visualType: "valve",
   },
   {
     number: "03",
@@ -623,7 +621,6 @@ const ASSIGNMENT_CARDS = [
       "Direct agreed pre-lit responsibilities across an eligible caseload, practice segment, or attorney pod.",
     whatAcceptanceEstablishes:
       "Continuing execution within agreed scope, firm operating policies, service terms, and dedicated capacity—with structured handover whenever ownership changes.",
-    visualType: "pod",
   },
 ];
 
@@ -639,58 +636,11 @@ export function AssignmentExplorer() {
             key={item.mode}
             className={`assignment-card ${isOpen ? "assignment-card-expanded" : ""}`}
           >
-            {/* Visual SVG Header */}
-            <div className="assignment-viz" aria-hidden="true">
-              {item.visualType === "cohort" && (
-                <svg viewBox="0 0 280 84" className="assign-svg">
-                  <rect x="12" y="14" width="68" height="56" rx="8" fill="#13251E" stroke="#2DD4A8" strokeWidth="1.5" />
-                  <circle cx="28" cy="30" r="4" fill="#2DD4A8" />
-                  <rect x="38" y="27" width="32" height="6" rx="3" fill="#2DD4A8" opacity="0.8" />
-                  <rect x="24" y="42" width="44" height="5" rx="2.5" fill="#F6F5F0" opacity="0.35" />
-                  <rect x="24" y="53" width="34" height="5" rx="2.5" fill="#F6F5F0" opacity="0.25" />
-
-                  <path d="M88 42 H132" stroke="#2DD4A8" strokeWidth="1.75" strokeDasharray="4 4" />
-                  <polygon points="132,38 140,42 132,46" fill="#2DD4A8" />
-
-                  <rect x="148" y="14" width="120" height="56" rx="8" fill="#182F26" stroke="rgba(255,255,255,0.16)" />
-                  <text x="162" y="34" fill="#2DD4A8" fontSize="10" fontWeight="700" letterSpacing="0.08em">DEFINED COHORT</text>
-                  <text x="162" y="52" fill="#FFFFFF" fontSize="12" fontWeight="600">15 Selected Files</text>
-                </svg>
-              )}
-              {item.visualType === "valve" && (
-                <svg viewBox="0 0 280 84" className="assign-svg">
-                  <rect x="12" y="20" width="76" height="44" rx="8" fill="#182F26" stroke="rgba(255,255,255,0.16)" />
-                  <text x="24" y="39" fill="#FBBF24" fontSize="10" fontWeight="700">STALLED &gt; 30d</text>
-                  <text x="24" y="53" fill="#FFFFFF" fontSize="10" opacity="0.7">Auto-Trigger</text>
-
-                  <path d="M94 42 C112 42, 116 26, 136 26" stroke="#2DD4A8" strokeWidth="2" fill="none" />
-                  <path d="M94 42 C112 42, 116 58, 136 58" stroke="rgba(255,255,255,0.22)" strokeWidth="1.5" fill="none" />
-                  <circle cx="94" cy="42" r="5" fill="#FBBF24" />
-
-                  <rect x="142" y="12" width="126" height="32" rx="6" fill="#13251E" stroke="#2DD4A8" strokeWidth="1.5" />
-                  <text x="154" y="32" fill="#2DD4A8" fontSize="11" fontWeight="600">Routed to CatenaOS</text>
-
-                  <rect x="142" y="48" width="126" height="24" rx="6" fill="rgba(255,255,255,0.05)" />
-                  <text x="154" y="64" fill="rgba(255,255,255,0.5)" fontSize="10">In-House Flow Continues</text>
-                </svg>
-              )}
-              {item.visualType === "pod" && (
-                <svg viewBox="0 0 280 84" className="assign-svg">
-                  <rect x="12" y="14" width="256" height="56" rx="10" fill="#13251E" stroke="rgba(45,212,168,0.4)" strokeWidth="1.5" />
-                  <rect x="24" y="24" width="72" height="36" rx="6" fill="rgba(45,212,168,0.14)" />
-                  <text x="34" y="46" fill="#2DD4A8" fontSize="11" fontWeight="700">01 Intake</text>
-
-                  <rect x="104" y="24" width="72" height="36" rx="6" fill="rgba(45,212,168,0.22)" />
-                  <text x="112" y="46" fill="#FFFFFF" fontSize="11" fontWeight="700">02 Records</text>
-
-                  <rect x="184" y="24" width="72" height="36" rx="6" fill="#2DD4A8" />
-                  <text x="192" y="46" fill="#0B1512" fontSize="11" fontWeight="700">03 Demand</text>
-                </svg>
-              )}
-            </div>
-
             <div className="assignment-card-top">
-              <span className="assignment-number">Mode {item.number} · {item.mode}</span>
+              <div className="assignment-mode-group">
+                <span className="assignment-num-badge">{item.number}</span>
+                <span className="assignment-number">{item.mode}</span>
+              </div>
               <span className="assignment-tag">{item.tag}</span>
             </div>
 
@@ -715,8 +665,8 @@ export function AssignmentExplorer() {
               >
                 <span>
                   {isOpen
-                    ? "Hide governance & acceptance terms"
-                    : "Inspect governance & acceptance terms"}
+                    ? "Hide admission and capacity details"
+                    : "How admission and capacity work"}
                 </span>
                 <span className="drill-plus" aria-hidden="true">
                   {isOpen ? "−" : "+"}
@@ -904,7 +854,7 @@ export function ResponsibilityExplorer() {
 
   return (
     <div className="resp-playbook">
-      {/* Left Accordion / Playbook Selector Rail (Finch / Apollo style) */}
+      {/* Left Accordion / Playbook Selector Rail */}
       <div className="resp-playbook-rail" role="tablist" aria-label="Pre-litigation responsibilities">
         {LANE_DETAILS.map((item, idx) => {
           const isSelected = idx === selectedIdx;
@@ -960,7 +910,7 @@ export function ResponsibilityExplorer() {
           <span className="resp-canvas-kicker">
             Lane {active.number} · {active.shortTitle}
           </span>
-          <div className="resp-canvas-tabs" role="tablist" aria-label="Inspect deliverable or authority boundary">
+          <div className="resp-canvas-tabs" role="tablist" aria-label="Inspect deliverable or responsibilities">
             <button
               type="button"
               role="tab"
@@ -977,7 +927,7 @@ export function ResponsibilityExplorer() {
               className={`resp-canvas-tab ${rightTab === "boundary" ? "resp-canvas-tab-active" : ""}`}
               onClick={() => setRightTab("boundary")}
             >
-              Authority Boundary
+              What We Carry vs. Keep
             </button>
           </div>
         </div>
@@ -1025,14 +975,14 @@ export function ResponsibilityExplorer() {
                 className="artifact-switch-link"
                 onClick={() => setRightTab("boundary")}
               >
-                Inspect Catena vs. Firm authority →
+                See what we carry vs. what you keep →
               </button>
             </div>
           </div>
         ) : (
           <div className="resp-boundary-grid">
             <div className="resp-pill-box resp-pill-catena">
-              <span className="pill-box-tag">Delegated Execution</span>
+              <span className="pill-box-tag">Catena’s Agreed Work</span>
               <h4>What Catena Carries</h4>
               <ul>
                 {active.catenaPills.map((pill) => (
@@ -1044,8 +994,8 @@ export function ResponsibilityExplorer() {
             </div>
 
             <div className="resp-pill-box resp-pill-firm">
-              <span className="pill-box-tag pill-box-tag-firm">Reserved Authority</span>
-              <h4>What Your Firm Retains</h4>
+              <span className="pill-box-tag pill-box-tag-firm">Your Firm’s Decisions</span>
+              <h4>What Your Firm Keeps</h4>
               <ul>
                 {active.firmPills.map((pill) => (
                   <li key={pill}>
@@ -1065,7 +1015,7 @@ const MECHANISM_STEPS = [
   {
     step: "01",
     title: "Catch deficiencies on return",
-    shortHook: "Reject bare balance summaries automatically.",
+    shortHook: "Reject bare balance summaries and pursue the itemized ledger.",
     detail:
       "When an itemized bill through July 31 is required but a provider returns a bare balance summary without service dates or CPT line items, Catena flags the deficiency, requests the correction, and verifies the updated return.",
     stateBadge: "Deficiency Flagged → Correction Pursued",

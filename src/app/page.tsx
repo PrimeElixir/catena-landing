@@ -34,8 +34,8 @@ const workflowDrilldowns = [
     },
   },
   {
-    headline: "Auto-route 30+ day stalls or capacity overflow",
-    subline: "Trigger relief automatically within agreed volume bands",
+    headline: "Route 30+ day stalls or capacity overflow",
+    subline: "Trigger relief within agreed volume bands",
     answer:
       "We agree on the routing trigger, the responsibilities Catena will carry, and the capacity band we hold for your firm. We begin with a defined initial set of matters so your team sees how we operate and reviews decisions with us, then transition into the continuing routing rule.",
   },
@@ -76,12 +76,9 @@ export default function Home() {
               <Link className="button" href="/conversation">
                 Book 15 minutes <Arrow />
               </Link>
-              <Link
-                className="button-secondary"
-                href="/records-to-demand#live-matter"
-              >
-                See a live matter
-              </Link>
+              <a className="button-secondary" href="#assignment">
+                How assignment works
+              </a>
             </div>
           </div>
 
@@ -120,111 +117,104 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECTION 2: FIRM-CONTROLLED ASSIGNMENT (Visual Cards + On-Demand Governance Drawer) */}
+      {/* SECTION 2: THREE RESPONSIBILITIES (What we carry, what you keep — the product) */}
       <section
-        className="section-card-wrap wrap"
-        id="assignment"
-        aria-labelledby="assignment-title"
-      >
-        <div className="surface-card">
-          <div className="section-header-compact">
-            <div>
-              <p className="eyebrow">Firm-Controlled Assignment</p>
-              <h2 id="assignment-title">
-                Start with a defined set, an overflow rule, or a caseload.
-              </h2>
-            </div>
-            <p className="section-lead">
-              Your paralegals keep matter ownership while Catena takes
-              accountable execution off their plate—using your existing
-              retrieval vendor or a Catena-managed supplier.
-            </p>
-          </div>
-
-          <AssignmentExplorer />
-        </div>
-      </section>
-
-      {/* SECTION 3: ONE SYSTEM. THREE RESPONSIBILITIES (Interactive Playbook + Synchronized Deliverable) */}
-      <section
-        className="section-card-wrap wrap"
+        className="page-section wrap"
         id="ownership"
         aria-labelledby="ownership-title"
       >
         <span id="how-it-works" className="anchor-alias" />
         <span id="responsibilities" className="anchor-alias" />
-        <div className="surface-card">
-          <div className="section-header-compact">
-            <div>
-              <p className="eyebrow">Scope &amp; Governance Boundary</p>
-              <h2 id="ownership-title">
-                One system. Three pre-lit responsibilities.
-              </h2>
-            </div>
-            <p className="section-lead">
-              Entrust one lane or all three. Select a responsibility below to
-              inspect the deliverable your attorney receives and the decisions
-              your firm retains.
-            </p>
+        <div className="section-header-compact">
+          <div>
+            <p className="eyebrow">What Catena carries. What your firm keeps.</p>
+            <h2 id="ownership-title">
+              One system. Three pre-lit responsibilities.
+            </h2>
           </div>
-
-          <ResponsibilityExplorer />
+          <p className="section-lead">
+            Entrust one lane or all three. Select a responsibility below to
+            inspect the deliverable your attorney receives and the decisions
+            your firm retains.
+          </p>
         </div>
+
+        <ResponsibilityExplorer />
       </section>
 
-      {/* SECTION 4: WHY FOLLOW-THROUGH MATTERS (Interactive 3-Step Scrubber + 42s Video Theater) */}
+      {/* SECTION 3: HOW YOU ASSIGN WORK (The on-ramp) */}
       <section
-        className="section-card-wrap wrap"
+        className="page-section wrap"
+        id="assignment"
+        aria-labelledby="assignment-title"
+      >
+        <div className="section-header-compact">
+          <div>
+            <p className="eyebrow">How you assign work</p>
+            <h2 id="assignment-title">
+              Start with a defined set, an overflow rule, or a caseload.
+            </h2>
+          </div>
+          <p className="section-lead">
+            Your paralegals keep matter ownership while Catena takes
+            accountable execution off their plate—using your existing
+            retrieval vendor or a Catena-managed supplier.
+          </p>
+        </div>
+
+        <AssignmentExplorer />
+      </section>
+
+      {/* SECTION 4: THE VIDEO — PROOF OF MECHANISM */}
+      <section
+        className="page-section wrap"
         id="proof"
         aria-labelledby="mechanism-title"
       >
         <span id="document-readiness" className="anchor-alias" />
-        <div className="surface-card surface-card-tinted">
-          <div className="mechanism-grid">
-            <div className="mechanism-copy">
-              <p className="eyebrow">Why Accountable Follow-Through Matters</p>
-              <h2 id="mechanism-title">
-                A returned PDF isn’t readiness. We work through the gaps.
-              </h2>
-              <p className="mechanism-intro">
-                Pre-lit files rarely move in a straight line—providers return
-                bare balance summaries instead of CPT line items, and new
-                treatment appears mid-stream. Click each step to see how Catena
-                carries the loop to completion:
-              </p>
+        <div className="mechanism-grid">
+          <div className="mechanism-copy">
+            <p className="eyebrow">How follow-through works</p>
+            <h2 id="mechanism-title">
+              A returned PDF isn’t readiness. We work through the gaps.
+            </h2>
+            <p className="mechanism-intro">
+              Pre-lit files rarely move in a straight line—providers return
+              bare balance summaries instead of CPT line items, and new
+              treatment appears mid-stream. Click each step to see how Catena
+              carries the loop to completion:
+            </p>
 
-              <MidStreamInteractiveStepList />
+            <MidStreamInteractiveStepList />
 
-              <div className="actions">
-                <Link className="text-link" href="/records-to-demand">
-                  Inspect the full Records-to-Demand proof brief <Arrow />
-                </Link>
-              </div>
+            <div className="actions">
+              <Link className="text-link" href="/records-to-demand">
+                Inspect the full Records-to-Demand proof brief <Arrow />
+              </Link>
             </div>
+          </div>
 
-            <div className="mechanism-media">
-              <OperatingModelFilm />
-            </div>
+          <div className="mechanism-media">
+            <OperatingModelFilm />
           </div>
         </div>
       </section>
 
-      {/* SECTION 5: WORKFLOW & CONTINUITY (Apollo-style "Don't Change Your Workflow. Just Add Catena.") */}
+      {/* SECTION 5: CONTINUITY & HANDOVER */}
       <section
-        className="section-card-wrap wrap"
+        className="page-section wrap"
         id="continuity"
         aria-labelledby="continuity-title"
       >
         <span id="fit" className="anchor-alias" />
         <span id="integrations" className="anchor-alias" />
-        <div className="surface-card">
-          <div className="workflow-split-grid">
-            {/* Left: Visual Architecture & Continuity Card */}
-            <div className="workflow-left-col">
-              <p className="eyebrow">Operational Continuity · CatenaOS</p>
-              <h2 id="continuity-title">
-                When staff or queues shift, no file loses its place.
-              </h2>
+        <div className="workflow-split-grid">
+          {/* Left: Visual Architecture & Continuity Card */}
+          <div className="workflow-left-col">
+            <p className="eyebrow">Continuity &amp; Handover</p>
+            <h2 id="continuity-title">
+              When staff or queues shift, no file loses its place.
+            </h2>
               <p className="workflow-lead">
                 CatenaOS preserves requirements, verified source evidence,
                 recorded firm decisions, and next-action ownership across
@@ -315,12 +305,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
       </section>
 
       {/* SECTION 6: FOUNDING PARTNER PROGRAM & BEHIND CATENA */}
       <section
-        className="section-card-wrap wrap"
+        className="page-section wrap"
         id="founding-partners"
         aria-labelledby="founding-title"
       >
