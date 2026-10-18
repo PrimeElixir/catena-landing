@@ -488,10 +488,11 @@ export function HeroPillarStrip() {
         <span className="hero-pillar-kicker">01 · Accountable for the result</span>
 
         <div className="strip-viz strip-track" aria-hidden="true">
-          <span className="strip-stage strip-stage-done">
-            <span className="strip-check">
+          <span className="strip-stage strip-stage-1">
+            <span className="strip-check strip-check-1">
               <svg viewBox="0 0 12 12" fill="none">
                 <path
+                  className="strip-check-path strip-check-path-1"
                   d="M2.5 6.2L5 8.6L9.5 3.5"
                   stroke="currentColor"
                   strokeWidth="1.8"
@@ -500,13 +501,18 @@ export function HeroPillarStrip() {
                 />
               </svg>
             </span>
-            <span>Intake</span>
+            <span className="strip-stage-label strip-stage-label-1">Intake</span>
           </span>
-          <span className="strip-track-line strip-track-line-done" />
-          <span className="strip-stage strip-stage-done">
-            <span className="strip-check">
+
+          <span className="strip-track-line">
+            <span className="strip-track-line-fill strip-line-fill-1" />
+          </span>
+
+          <span className="strip-stage strip-stage-2">
+            <span className="strip-check strip-check-2">
               <svg viewBox="0 0 12 12" fill="none">
                 <path
+                  className="strip-check-path strip-check-path-2"
                   d="M2.5 6.2L5 8.6L9.5 3.5"
                   stroke="currentColor"
                   strokeWidth="1.8"
@@ -515,16 +521,20 @@ export function HeroPillarStrip() {
                 />
               </svg>
             </span>
-            <span>Treatment &amp; records</span>
+            <span className="strip-stage-label strip-stage-label-2">
+              Treatment &amp; records
+            </span>
           </span>
-          <span className="strip-track-line strip-track-line-final">
-            <span className="strip-track-line-fill" />
+
+          <span className="strip-track-line">
+            <span className="strip-track-line-fill strip-line-fill-2" />
           </span>
-          <span className="strip-stage strip-stage-final">
-            <span className="strip-check strip-check-final">
+
+          <span className="strip-stage strip-stage-3">
+            <span className="strip-check strip-check-3">
               <svg viewBox="0 0 12 12" fill="none">
                 <path
-                  className="strip-check-path-final"
+                  className="strip-check-path strip-check-path-3"
                   d="M2.5 6.2L5 8.6L9.5 3.5"
                   stroke="currentColor"
                   strokeWidth="1.8"
@@ -533,7 +543,7 @@ export function HeroPillarStrip() {
                 />
               </svg>
             </span>
-            <span className="strip-stage-final-label">Demand</span>
+            <span className="strip-stage-label strip-stage-label-3">Demand</span>
           </span>
         </div>
 

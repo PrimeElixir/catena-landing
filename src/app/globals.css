@@ -773,14 +773,8 @@ p {
 .strip-track-line {
   width: 0.8rem;
   height: 1.5px;
-  background: var(--accent);
-  opacity: 0.34;
-  border-radius: 999px;
-}
-
-.strip-track-line-final {
   background: var(--line-strong);
-  opacity: 1;
+  border-radius: 999px;
   position: relative;
   overflow: hidden;
 }
@@ -790,49 +784,202 @@ p {
   width: 100%;
   height: 100%;
   background: var(--accent);
-  opacity: 0.34;
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.22s var(--ease-out);
-}
-
-.strip-check-final {
-  background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--line-strong);
-  transform: scale(0.94);
-  transition:
-    background 0.38s var(--ease-out) 0.16s,
-    box-shadow 0.38s var(--ease-out) 0.16s,
-    transform 0.38s var(--ease-out) 0.16s;
-}
-
-.strip-check-path-final {
-  stroke-dasharray: 14;
-  stroke-dashoffset: 14;
-  transition: stroke-dashoffset 0.4s var(--ease-out) 0.2s;
-}
-
-.strip-stage-final-label {
-  color: var(--muted);
-  transition: color 0.35s var(--ease-out) 0.16s;
-}
-
-.strip-in-view .strip-track-line-fill {
+  opacity: 0.42;
   transform: scaleX(1);
+  transform-origin: left center;
 }
 
-.strip-in-view .strip-check-final {
-  background: var(--accent);
-  box-shadow: inset 0 0 0 0 var(--accent);
-  transform: scale(1);
+/* Calm 7.5s sequential 3-stage progression (Intake -> Treatment & records -> Demand, then 3.7s hold) */
+@keyframes checkCircle1 {
+  0%, 3% {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    transform: scale(0.92);
+  }
+  10%, 91% {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 0 var(--accent);
+    transform: scale(1);
+  }
+  97%, 100% {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    transform: scale(0.92);
+  }
 }
 
-.strip-in-view .strip-check-path-final {
-  stroke-dashoffset: 0;
+@keyframes checkPath1 {
+  0%, 4% {
+    stroke-dashoffset: 14;
+  }
+  12%, 91% {
+    stroke-dashoffset: 0;
+  }
+  97%, 100% {
+    stroke-dashoffset: 14;
+  }
 }
 
-.strip-in-view .strip-stage-final-label {
-  color: var(--ink);
+@keyframes checkLabel1 {
+  0%, 3% {
+    color: var(--muted);
+  }
+  10%, 91% {
+    color: var(--ink);
+  }
+  97%, 100% {
+    color: var(--muted);
+  }
+}
+
+@keyframes lineFill1 {
+  0%, 12% {
+    transform: scaleX(0);
+  }
+  20%, 91% {
+    transform: scaleX(1);
+  }
+  97%, 100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes checkCircle2 {
+  0%, 19% {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    transform: scale(0.92);
+  }
+  26%, 91% {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 0 var(--accent);
+    transform: scale(1);
+  }
+  97%, 100% {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    transform: scale(0.92);
+  }
+}
+
+@keyframes checkPath2 {
+  0%, 20% {
+    stroke-dashoffset: 14;
+  }
+  28%, 91% {
+    stroke-dashoffset: 0;
+  }
+  97%, 100% {
+    stroke-dashoffset: 14;
+  }
+}
+
+@keyframes checkLabel2 {
+  0%, 19% {
+    color: var(--muted);
+  }
+  26%, 91% {
+    color: var(--ink);
+  }
+  97%, 100% {
+    color: var(--muted);
+  }
+}
+
+@keyframes lineFill2 {
+  0%, 28% {
+    transform: scaleX(0);
+  }
+  36%, 91% {
+    transform: scaleX(1);
+  }
+  97%, 100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes checkCircle3 {
+  0%, 35% {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    transform: scale(0.92);
+  }
+  42%, 91% {
+    background: var(--accent);
+    box-shadow: inset 0 0 0 0 var(--accent);
+    transform: scale(1);
+  }
+  97%, 100% {
+    background: transparent;
+    box-shadow: inset 0 0 0 1.5px var(--line-strong);
+    transform: scale(0.92);
+  }
+}
+
+@keyframes checkPath3 {
+  0%, 36% {
+    stroke-dashoffset: 14;
+  }
+  44%, 91% {
+    stroke-dashoffset: 0;
+  }
+  97%, 100% {
+    stroke-dashoffset: 14;
+  }
+}
+
+@keyframes checkLabel3 {
+  0%, 35% {
+    color: var(--muted);
+  }
+  42%, 91% {
+    color: var(--ink);
+  }
+  97%, 100% {
+    color: var(--muted);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .strip-check-path {
+    stroke-dasharray: 14;
+  }
+
+  .strip-in-view .strip-check-1 {
+    animation: checkCircle1 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-check-path-1 {
+    animation: checkPath1 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-stage-label-1 {
+    animation: checkLabel1 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-line-fill-1 {
+    animation: lineFill1 7.5s var(--ease-out) infinite;
+  }
+
+  .strip-in-view .strip-check-2 {
+    animation: checkCircle2 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-check-path-2 {
+    animation: checkPath2 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-stage-label-2 {
+    animation: checkLabel2 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-line-fill-2 {
+    animation: lineFill2 7.5s var(--ease-out) infinite;
+  }
+
+  .strip-in-view .strip-check-3 {
+    animation: checkCircle3 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-check-path-3 {
+    animation: checkPath3 7.5s var(--ease-out) infinite;
+  }
+  .strip-in-view .strip-stage-label-3 {
+    animation: checkLabel3 7.5s var(--ease-out) infinite;
+  }
 }
 
 /* Col 02: Segmented control (10-25 files | 30-day rule | Caseload segment) */
@@ -915,27 +1062,6 @@ p {
   line-height: 1.54;
   color: var(--ink-secondary);
   max-width: 42ch;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .strip-track-line-fill {
-    transform: scaleX(1);
-    transition: none;
-  }
-  .strip-check-final {
-    background: var(--accent);
-    box-shadow: none;
-    transform: scale(1);
-    transition: none;
-  }
-  .strip-check-path-final {
-    stroke-dashoffset: 0;
-    transition: none;
-  }
-  .strip-stage-final-label {
-    color: var(--ink);
-    transition: none;
-  }
 }
 
 .hero-quick-points {
