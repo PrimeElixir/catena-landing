@@ -142,48 +142,34 @@ export default function Home() {
         <span id="integrations" className="anchor-alias" />
         <div className="continuity-split">
           <div className="continuity-copy">
-            <p className="eyebrow">Continuity &amp; Handover</p>
+            <p className="eyebrow">When staff or caseloads shift</p>
             <h2 id="continuity-title">
-              When staff or queues shift, no file loses its place.
+              A case manager leaves. The chase doesn’t.
             </h2>
-            <p className="continuity-question">
-              If your case manager were out tomorrow, could someone else see
-              what each file needs next—or would they spend days rebuilding it
-              from emails and notes?
-            </p>
             <p className="continuity-lead">
-              On matters Catena covers, the requirements, the verified evidence,
-              the decisions your firm made, and the next step stay with the
-              file—not with the person. Hand a file to someone new, or take it
-              back in-house, and nothing has to be reconstructed.
+              Your practice software keeps the notes. It doesn’t call the
+              provider on Monday. On matters Catena carries, the follow-through
+              was never sitting on one person’s desk—so it keeps moving when
+              that person doesn’t.
             </p>
+            <ul className="continuity-cases">
+              <li>
+                <strong>Files Catena is carrying keep moving.</strong> Name a
+                new owner; they open the file to current state and the one
+                question waiting on the firm.
+              </li>
+              <li>
+                <strong>Files she was carrying herself — assign them.</strong> A
+                departure is overflow. Name an owner on your side, route the
+                open segment under the rule you already set, and Catena picks up
+                the follow-through instead of your team absorbing it on top of
+                their own caseload.
+              </li>
+            </ul>
           </div>
 
           <div className="continuity-media">
             <ContinuityHandoverCard />
-          </div>
-        </div>
-
-        <div className="continuity-points">
-          <div className="continuity-point">
-            <h3>Someone’s out.</h3>
-            <p>
-              The next person opens the file and sees what’s verified, what’s
-              missing, and whose move it is.
-            </p>
-          </div>
-          <div className="continuity-point">
-            <h3>A file comes back to your team.</h3>
-            <p>
-              It arrives with its history, decisions, and open items—not a
-              status call.
-            </p>
-          </div>
-          <div className="continuity-point">
-            <h3>You check our work first.</h3>
-            <p>
-              Side-by-side on candidate files before you rely on it.
-            </p>
           </div>
         </div>
       </section>

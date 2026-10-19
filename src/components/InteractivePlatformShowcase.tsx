@@ -1294,7 +1294,7 @@ export function ResponsibilityExplorer() {
 export function ContinuityHandoverCard() {
   const cardRef = useRef<HTMLDivElement | null>(null);
   const [inView, setInView] = useState(false);
-  const [reassigned, setReassigned] = useState(false);
+  const [step, setStep] = useState(0);
 
   useEffect(() => {
     const el = cardRef.current;
@@ -1306,7 +1306,7 @@ export function ContinuityHandoverCard() {
     ) {
       const id = window.setTimeout(() => {
         setInView(true);
-        setReassigned(true);
+        setStep(3);
       }, 0);
       return () => window.clearTimeout(id);
     }
@@ -1333,33 +1333,35 @@ export function ContinuityHandoverCard() {
       return;
     }
 
-    // Start in S. Jenkins state for 1.4s so the viewer sees the "before",
-    // then transition to M. Reyes and hold for 3.8s, repeating on a calm 6.2s cycle.
-    let timeout1: number | undefined;
-    let timeout2: number | undefined;
+    let t1: number | undefined;
+    let t2: number | undefined;
+    let t3: number | undefined;
 
     const runCycle = () => {
-      setReassigned(false);
-      timeout1 = window.setTimeout(() => {
-        setReassigned(true);
-      }, 1600);
+      setStep(0);
+      t1 = window.setTimeout(() => setStep(1), 850);
+      t2 = window.setTimeout(() => setStep(2), 1950);
+      t3 = window.setTimeout(() => setStep(3), 3100);
     };
 
     runCycle();
-    const interval = window.setInterval(runCycle, 6400);
+    const interval = window.setInterval(runCycle, 7200);
 
     return () => {
       window.clearInterval(interval);
-      if (timeout1 !== undefined) window.clearTimeout(timeout1);
-      if (timeout2 !== undefined) window.clearTimeout(timeout2);
+      if (t1 !== undefined) window.clearTimeout(t1);
+      if (t2 !== undefined) window.clearTimeout(t2);
+      if (t3 !== undefined) window.clearTimeout(t3);
     };
   }, [inView]);
+
+  const reassigned = step >= 2;
 
   return (
     <div
       ref={cardRef}
-      className={`handover-card ${reassigned ? "handover-card-active" : ""}`}
-      aria-label="Matter #2048 reassigned from S. Jenkins to M. Reyes with context preserved"
+      className={`handover-card ${reassigned ? "handover-card-active" : ""} handover-step-${step}`}
+      aria-label="Matter #2048 provider follow-ups continuing without pause while firm owner changes from S. Jenkins to M. Reyes"
     >
       <div className="matter-story-header">
         <div className="matter-story-meta">
@@ -1386,7 +1388,7 @@ export function ContinuityHandoverCard() {
         </div>
       </div>
 
-      {/* Animated Reassignment Bar */}
+      {/* Secondary detail: Firm Owner Reassignment Bar */}
       <div className="handover-owner-bar">
         <div className="handover-owner-left">
           <span className="handover-owner-kicker">Firm owner</span>
@@ -1409,48 +1411,65 @@ export function ContinuityHandoverCard() {
         <span className="handover-reassigned-tag">Reassigned by your firm</span>
       </div>
 
-      {/* 3-Part Snapshot: Verified / Open firm call / Next step */}
-      <div className="handover-snapshot">
-        <div className="handover-snap-row">
-          <span
-            className="handover-snap-dot handover-snap-dot-green"
-            aria-hidden="true"
-          />
-          <span className="handover-snap-label">Verified</span>
-          <span className="handover-snap-val">
-            Grady EMS &amp; Peachtree Ortho · 14 CPT lines
+      {/* Primary motion: 3 follow-up rows ticking forward across the owner swap */}
+      <div className="handover-tick-list">
+        <div
+          className={`handover-tick-row ${step >= 1 ? "handover-tick-done" : "handover-tick-active"}`}
+        >
+          <span className="handover-tick-date">08/18</span>
+          <span className="handover-tick-check" aria-hidden="true">
+            {step >= 1 ? "✓" : "●"}
+          </span>
+          <span className="handover-tick-text">
+            Peachtree Ortho billing follow-up · 14 CPT lines
+          </span>
+          <span className="handover-tick-chip handover-tick-chip-green">
+            {step >= 1 ? "Verified" : "Following up"}
           </span>
         </div>
-        <div className="handover-snap-row">
-          <span
-            className="handover-snap-dot handover-snap-dot-copper"
-            aria-hidden="true"
-          />
-          <span className="handover-snap-label">Open firm call</span>
-          <span className="handover-snap-val">
-            08/14 lumbar MRI cutoff · 2 PDFs attached
+
+        <div
+          className={`handover-tick-row ${step >= 2 ? "handover-tick-done" : step === 1 ? "handover-tick-active" : ""}`}
+        >
+          <span className="handover-tick-date">08/19</span>
+          <span className="handover-tick-check" aria-hidden="true">
+            {step >= 2 ? "✓" : "●"}
+          </span>
+          <span className="handover-tick-text">
+            Metro PT discharge records &amp; ledger chase
+          </span>
+          <span className="handover-tick-chip handover-tick-chip-green">
+            {step >= 2 ? "Continued" : "Scheduled"}
           </span>
         </div>
-        <div className="handover-snap-row">
+
+        <div
+          className={`handover-tick-row ${step >= 3 ? "handover-tick-routed" : step === 2 ? "handover-tick-active" : ""}`}
+        >
+          <span className="handover-tick-date">08/21</span>
           <span
-            className="handover-snap-dot handover-snap-dot-copper"
+            className="handover-tick-check handover-tick-check-copper"
             aria-hidden="true"
-          />
-          <span className="handover-snap-label">Next step</span>
-          <span className="handover-snap-val">
-            Awaiting the firm’s call · everything else continues
+          >
+            {step >= 3 ? "→" : "●"}
+          </span>
+          <span className="handover-tick-text">
+            08/14 MRI cutoff question · 2 PDFs attached
+          </span>
+          <span className="handover-tick-chip handover-tick-chip-copper">
+            {step >= 3 ? "To M. Reyes" : "To S. Jenkins"}
           </span>
         </div>
       </div>
 
       <div className="matter-story-footer handover-footer">
         <p className="matter-story-attribution handover-footer-from">
-          <strong>Assigned to S. Jenkins.</strong> Catena carries the
-          follow-through.
+          <strong>Follow-through in motion.</strong> Catena is chasing providers
+          underneath.
         </p>
         <p className="matter-story-attribution handover-footer-to">
-          <strong>Handed to M. Reyes.</strong> Nothing to reconstruct from
-          email.
+          <strong>3 provider follow-ups continued · 0 days paused.</strong> M.
+          Reyes opens to current state.
         </p>
       </div>
     </div>
