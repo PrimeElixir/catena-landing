@@ -152,7 +152,7 @@ export function OperatingModelFilm() {
             Watch how Catena resolves gaps and stages the demand (42s)
           </h3>
         </div>
-        <span className="film-badge">42 sec · Captioned</span>
+        <span className="film-badge">42 sec · Voiceover + Captions</span>
       </div>
       <video
         controls
