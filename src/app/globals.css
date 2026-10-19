@@ -2780,7 +2780,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.42s var(--ease-out), transform 0.42s var(--ease-out);
+  transition: opacity 0.52s var(--ease-out), transform 0.52s var(--ease-out);
 }
 
 .handover-avatar-sj {
@@ -2791,14 +2791,14 @@ p {
 
 .handover-avatar-mr {
   opacity: 0;
-  transform: translateY(6px);
+  transform: translateY(8px);
   color: var(--copper-ink);
   background: var(--copper-soft);
 }
 
 .handover-card-active .handover-avatar-sj {
   opacity: 0;
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 
 .handover-card-active .handover-avatar-mr {
@@ -2812,7 +2812,7 @@ p {
   align-items: center;
   justify-content: space-between;
   gap: 0.65rem;
-  padding: 0.75rem 1.35rem;
+  padding: 0.78rem 1.35rem;
   background: #fbfbfa;
   border-bottom: 1px solid var(--line);
 }
@@ -2844,8 +2844,12 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
-  transition: opacity 0.42s var(--ease-out), transform 0.42s var(--ease-out),
-    color 0.42s var(--ease-out), background 0.42s var(--ease-out);
+  padding: 0.16rem 0.52rem 0.16rem 0.22rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: opacity 0.52s var(--ease-out), transform 0.52s var(--ease-out),
+    color 0.52s var(--ease-out), background 0.52s var(--ease-out),
+    border-color 0.52s var(--ease-out);
 }
 
 .handover-mini-badge {
@@ -2864,25 +2868,31 @@ p {
 
 .handover-mini-badge-to {
   background: var(--copper-soft);
-  border-color: rgba(184, 74, 39, 0.25);
+  border-color: rgba(184, 74, 39, 0.28);
   color: var(--copper-ink);
 }
 
 .handover-person-from {
   color: var(--ink);
+  background: var(--surface);
+  border-color: var(--line-strong);
 }
 
 .handover-card-active .handover-person-from {
   color: var(--muted);
+  background: transparent;
+  border-color: transparent;
   text-decoration: line-through;
-  opacity: 0.7;
+  opacity: 0.68;
 }
 
 .handover-swap-arrow {
-  color: var(--muted);
-  opacity: 0.35;
-  transform: translateX(-3px);
-  transition: opacity 0.42s var(--ease-out), transform 0.42s var(--ease-out);
+  color: var(--copper);
+  font-weight: 700;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.48s var(--ease-out) 0.06s,
+    transform 0.48s var(--ease-out) 0.06s;
 }
 
 .handover-card-active .handover-swap-arrow {
@@ -2891,19 +2901,16 @@ p {
 }
 
 .handover-person-to {
-  opacity: 0.3;
-  transform: translateX(-4px);
+  opacity: 0;
+  transform: translateX(-10px);
   color: var(--copper-ink);
-  padding: 0.14rem 0.5rem 0.14rem 0.2rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
 }
 
 .handover-card-active .handover-person-to {
   opacity: 1;
   transform: translateX(0);
   background: var(--copper-soft);
-  border-color: rgba(184, 74, 39, 0.2);
+  border-color: rgba(184, 74, 39, 0.25);
 }
 
 .handover-reassigned-tag {
@@ -2914,9 +2921,9 @@ p {
   padding: 0.22rem 0.56rem;
   border-radius: 6px;
   opacity: 0;
-  transform: translateY(4px);
-  transition: opacity 0.42s var(--ease-out) 0.1s,
-    transform 0.42s var(--ease-out) 0.1s;
+  transform: translateY(6px);
+  transition: opacity 0.48s var(--ease-out) 0.18s,
+    transform 0.48s var(--ease-out) 0.18s;
 }
 
 .handover-card-active .handover-reassigned-tag {
@@ -2969,6 +2976,40 @@ p {
   font-weight: 500;
 }
 
+.handover-footer {
+  position: relative;
+  min-height: 46px;
+  overflow: hidden;
+}
+
+.handover-footer-from,
+.handover-footer-to {
+  transition: opacity 0.48s var(--ease-out), transform 0.48s var(--ease-out);
+}
+
+.handover-footer-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.handover-footer-to {
+  position: absolute;
+  left: 1.35rem;
+  right: 1.35rem;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.handover-card-active .handover-footer-from {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.handover-card-active .handover-footer-to {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .continuity-points {
   margin-top: 2.25rem;
   padding-top: 1.6rem;
@@ -2996,7 +3037,9 @@ p {
   .handover-avatar-slot,
   .handover-person,
   .handover-swap-arrow,
-  .handover-reassigned-tag {
+  .handover-reassigned-tag,
+  .handover-footer-from,
+  .handover-footer-to {
     transition: none !important;
   }
 }

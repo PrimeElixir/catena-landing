@@ -1293,6 +1293,7 @@ export function ResponsibilityExplorer() {
 
 export function ContinuityHandoverCard() {
   const cardRef = useRef<HTMLDivElement | null>(null);
+  const [inView, setInView] = useState(false);
   const [reassigned, setReassigned] = useState(false);
 
   useEffect(() => {
@@ -1303,32 +1304,56 @@ export function ContinuityHandoverCard() {
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
-      const id = window.setTimeout(() => setReassigned(true), 0);
+      const id = window.setTimeout(() => {
+        setInView(true);
+        setReassigned(true);
+      }, 0);
       return () => window.clearTimeout(id);
     }
 
-    let timerId: number | undefined;
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
-          if (entry.isIntersecting) {
-            timerId = window.setTimeout(() => {
-              setReassigned(true);
-            }, 350);
-            observer.disconnect();
-            break;
-          }
+          setInView(entry.isIntersecting);
         }
       },
-      { threshold: 0.55 },
+      { threshold: 0.35 },
     );
 
     observer.observe(el);
-    return () => {
-      observer.disconnect();
-      if (timerId !== undefined) window.clearTimeout(timerId);
-    };
+    return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (!inView) return;
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    // Start in S. Jenkins state for 1.4s so the viewer sees the "before",
+    // then transition to M. Reyes and hold for 3.8s, repeating on a calm 6.2s cycle.
+    let timeout1: number | undefined;
+    let timeout2: number | undefined;
+
+    const runCycle = () => {
+      setReassigned(false);
+      timeout1 = window.setTimeout(() => {
+        setReassigned(true);
+      }, 1600);
+    };
+
+    runCycle();
+    const interval = window.setInterval(runCycle, 6400);
+
+    return () => {
+      window.clearInterval(interval);
+      if (timeout1 !== undefined) window.clearTimeout(timeout1);
+      if (timeout2 !== undefined) window.clearTimeout(timeout2);
+    };
+  }, [inView]);
 
   return (
     <div
@@ -1361,7 +1386,7 @@ export function ContinuityHandoverCard() {
         </div>
       </div>
 
-      {/* Once-on-scroll Reassignment Bar */}
+      {/* Animated Reassignment Bar */}
       <div className="handover-owner-bar">
         <div className="handover-owner-left">
           <span className="handover-owner-kicker">Firm owner</span>
@@ -1418,8 +1443,12 @@ export function ContinuityHandoverCard() {
         </div>
       </div>
 
-      <div className="matter-story-footer">
-        <p className="matter-story-attribution">
+      <div className="matter-story-footer handover-footer">
+        <p className="matter-story-attribution handover-footer-from">
+          <strong>Assigned to S. Jenkins.</strong> Catena carries the
+          follow-through.
+        </p>
+        <p className="matter-story-attribution handover-footer-to">
           <strong>Handed to M. Reyes.</strong> Nothing to reconstruct from
           email.
         </p>
