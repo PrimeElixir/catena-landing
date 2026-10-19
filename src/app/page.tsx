@@ -6,46 +6,10 @@ import {
 } from "@/components/Site";
 import {
   AssignmentExplorer,
+  ContinuityHandoverCard,
   HeroPillarStrip,
   ResponsibilityExplorer,
 } from "@/components/InteractivePlatformShowcase";
-
-const workflowDrilldowns = [
-  {
-    headline: "Zero reconstruction when contributors change",
-    subline: "CatenaOS preserves context across covered matters",
-    answer:
-      "CatenaOS maintains the operational context—requirements, verified evidence, firm policy, recorded decisions, and next-action ownership—across agreed matters and sources, including covered matters your own team executes. If a case manager with 80 files is out tomorrow, nobody spends days reconstructing status from emails and notes.",
-  },
-  {
-    headline: "Structured handover record at any point",
-    subline: "Every requirement, verified source & decision stays portable",
-    answer:
-      "Whether a matter transitions back to your internal team after readiness or you adjust routing scope, Catena provides a structured handover of the current requirement state, verified records and billing ledgers, open deficiencies, and logged firm decisions.",
-  },
-  {
-    headline: "Side-by-side calibration before you rely on it",
-    subline: "Verify readiness & decision routing on candidate files first",
-    answer:
-      "We review candidate matters, agreed responsibilities, system connections, and decision-routing boundaries together before live work begins. Initial delivery includes full review of readiness and preparation states alongside your named operational counterpart.",
-    link: {
-      href: "/records-to-demand#evaluation",
-      label: "Review the evaluation & calibration process",
-    },
-  },
-  {
-    headline: "Route 30+ day stalls or capacity overflow",
-    subline: "Trigger relief within agreed volume bands",
-    answer:
-      "We agree on the routing trigger, the responsibilities Catena will carry, and the capacity band we hold for your firm. We begin with a defined initial set of matters so your team sees how we operate and reviews decisions with us, then transition into the continuing routing rule.",
-  },
-  {
-    headline: "Transparent Founding Partner economics",
-    subline: "Cost recovery + shared acquisition contribution",
-    answer:
-      "During the founding engagement, partners pay agreed cost recovery for the operating work Catena carries on assigned matters plus a fixed shared acquisition contribution. The supported operating view across agreed matters is included with no separate platform subscription during the founding program.",
-  },
-];
 
 export default function Home() {
   return (
@@ -176,103 +140,52 @@ export default function Home() {
       >
         <span id="fit" className="anchor-alias" />
         <span id="integrations" className="anchor-alias" />
-        <div className="workflow-split-grid">
-          {/* Left: Visual Architecture & Continuity Card */}
-          <div className="workflow-left-col">
+        <div className="continuity-split">
+          <div className="continuity-copy">
             <p className="eyebrow">Continuity &amp; Handover</p>
             <h2 id="continuity-title">
               When staff or queues shift, no file loses its place.
             </h2>
-              <p className="workflow-lead">
-                CatenaOS preserves requirements, verified source evidence,
-                recorded firm decisions, and next-action ownership across
-                covered matters—so if a case manager is out tomorrow or a file
-                transfers back to your team, nobody spends days reconstructing
-                status from emails and notes.
-              </p>
-
-              {/* Visual Architecture Diagram */}
-              <div className="arch-diagram" aria-label="CatenaOS operational context architecture">
-                <div className="arch-tier">
-                  <div className="arch-node">
-                    <span className="arch-node-kicker">Your Practice Stack</span>
-                    <strong>Clio · Filevine · CASEpeer</strong>
-                  </div>
-                  <div className="arch-node">
-                    <span className="arch-node-kicker">Matter Ownership</span>
-                    <strong>Your Paralegals &amp; Attorneys</strong>
-                  </div>
-                </div>
-
-                <div className="arch-connector" aria-hidden="true">
-                  <span>↕ Shared Visibility &amp; Governance</span>
-                </div>
-
-                <div className="arch-core">
-                  <div className="arch-core-top">
-                    <span className="arch-core-badge">CatenaOS Operational Context</span>
-                    <span className="arch-core-sub">Included across covered matters</span>
-                  </div>
-                  <div className="arch-core-pills">
-                    <span>Requirements &amp; Policy</span>
-                    <span>Verified Evidence</span>
-                    <span>Recorded Decisions</span>
-                    <span>Next-Action Owner</span>
-                  </div>
-                </div>
-
-                <div className="arch-connector" aria-hidden="true">
-                  <span>↕ Accountable Follow-Through</span>
-                </div>
-
-                <div className="arch-tier">
-                  <div className="arch-node arch-node-subtle">
-                    <span className="arch-node-kicker">Retrieval Execution</span>
-                    <strong>Incumbent Vendor or Catena Supplier</strong>
-                  </div>
-                  <div className="arch-node arch-node-subtle">
-                    <span className="arch-node-kicker">Continuity Guarantee</span>
-                    <strong>Structured Handover at Any Point</strong>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Right: Apollo-Style Fast-Selling Accordion Drilldowns */}
-            <div className="workflow-right-col">
-              <div className="drilldown-list-header">
-                <span>How Catena fits an established PI practice</span>
-                <span className="drilldown-hint">Click any topic to expand</span>
-              </div>
-              <div className="faq">
-                {workflowDrilldowns.map((item, index) => (
-                  <details
-                    key={item.headline}
-                    className="faq-item"
-                    open={index === 0}
-                  >
-                    <summary>
-                      <div className="faq-summary-text">
-                        <strong>{item.headline}</strong>
-                        <span>{item.subline}</span>
-                      </div>
-                      <span className="accordion-icon" aria-hidden="true">
-                        +
-                      </span>
-                    </summary>
-                    <div className="faq-answer">
-                      <p>{item.answer}</p>
-                      {item.link && (
-                        <Link className="text-link" href={item.link.href}>
-                          {item.link.label} <Arrow />
-                        </Link>
-                      )}
-                    </div>
-                  </details>
-                ))}
-              </div>
-            </div>
+            <p className="continuity-question">
+              If your case manager were out tomorrow, could someone else see
+              what each file needs next—or would they spend days rebuilding it
+              from emails and notes?
+            </p>
+            <p className="continuity-lead">
+              On matters Catena covers, the requirements, the verified evidence,
+              the decisions your firm made, and the next step stay with the
+              file—not with the person. Hand a file to someone new, or take it
+              back in-house, and nothing has to be reconstructed.
+            </p>
           </div>
+
+          <div className="continuity-media">
+            <ContinuityHandoverCard />
+          </div>
+        </div>
+
+        <div className="continuity-points">
+          <div className="continuity-point">
+            <h3>Someone’s out.</h3>
+            <p>
+              The next person opens the file and sees what’s verified, what’s
+              missing, and whose move it is.
+            </p>
+          </div>
+          <div className="continuity-point">
+            <h3>A file comes back to your team.</h3>
+            <p>
+              It arrives with its history, decisions, and open items—not a
+              status call.
+            </p>
+          </div>
+          <div className="continuity-point">
+            <h3>You check our work first.</h3>
+            <p>
+              Side-by-side on candidate files before you rely on it.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* SECTION 6: FOUNDING PARTNER PROGRAM & BEHIND CATENA */}

@@ -1291,73 +1291,139 @@ export function ResponsibilityExplorer() {
   );
 }
 
-const MECHANISM_STEPS = [
-  {
-    step: "01",
-    title: "Catch deficiencies on return",
-    shortHook: "Reject bare balance summaries and pursue the itemized ledger.",
-    detail:
-      "When an itemized bill through July 31 is required but a provider returns a bare balance summary without service dates or CPT line items, Catena flags the deficiency, requests the correction, and verifies the updated return.",
-    stateBadge: "Deficiency Flagged → Correction Pursued",
-    tone: "warn",
-  },
-  {
-    step: "02",
-    title: "Reevaluate when new treatment appears",
-    shortHook: "Preserve history while reopening readiness.",
-    detail:
-      "If a later update identifies additional treatment—such as an August 14 lumbar MRI referral—earlier records remain preserved in history while Catena updates what is required and reopens readiness so an incomplete demand is never sent.",
-    stateBadge: "08/14 MRI Detected → State Reopened",
-    tone: "warn",
-  },
-  {
-    step: "03",
-    title: "Route only reserved decisions with context",
-    shortHook: "Bring the exact cutoff question to your reviewer.",
-    detail:
-      "When later treatment requires a legal cutoff or waiver decision from the firm, Catena brings the exact question and supporting evidence to your designated reviewer—then resumes execution immediately once decided.",
-    stateBadge: "Firm Decision Recorded → Demand Staged",
-    tone: "done",
-  },
-];
+export function ContinuityHandoverCard() {
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [reassigned, setReassigned] = useState(false);
 
-export function MidStreamInteractiveStepList() {
-  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    const el = cardRef.current;
+    if (!el) return;
+
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      const id = window.setTimeout(() => setReassigned(true), 0);
+      return () => window.clearTimeout(id);
+    }
+
+    let timerId: number | undefined;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            timerId = window.setTimeout(() => {
+              setReassigned(true);
+            }, 350);
+            observer.disconnect();
+            break;
+          }
+        }
+      },
+      { threshold: 0.55 },
+    );
+
+    observer.observe(el);
+    return () => {
+      observer.disconnect();
+      if (timerId !== undefined) window.clearTimeout(timerId);
+    };
+  }, []);
 
   return (
-    <div className="mech-interactive-list" role="tablist" aria-label="How Catena handles mid-stream changes">
-      {MECHANISM_STEPS.map((item, idx) => {
-        const isOpen = idx === activeStep;
-        return (
-          <div
-            key={item.step}
-            className={`mech-step-card ${isOpen ? "mech-step-card-open" : ""}`}
+    <div
+      ref={cardRef}
+      className={`handover-card ${reassigned ? "handover-card-active" : ""}`}
+      aria-label="Matter #2048 reassigned from S. Jenkins to M. Reyes with context preserved"
+    >
+      <div className="matter-story-header">
+        <div className="matter-story-meta">
+          <span className="matter-story-id">#2048</span>
+          <span className="matter-story-name">MVA bodily injury</span>
+          <span className="matter-story-providers">4 providers</span>
+        </div>
+        <div className="matter-story-badges">
+          <span className="matter-status-chip">
+            <span className="matter-status-dot" aria-hidden="true" />
+            Catena carrying
+          </span>
+          <span
+            className="handover-header-avatar"
+            title={
+              reassigned
+                ? "M. Reyes (Firm Paralegal)"
+                : "S. Jenkins (Firm Paralegal)"
+            }
           >
-            <button
-              type="button"
-              role="tab"
-              aria-selected={isOpen}
-              className="mech-step-trigger"
-              onClick={() => setActiveStep(idx)}
-            >
-              <span className="step-badge">{item.step}</span>
-              <div className="mech-step-headings">
-                <h3>{item.title}</h3>
-                <p className="mech-step-hook">{item.shortHook}</p>
-              </div>
-              <span className="mech-step-toggle" aria-hidden="true">
-                {isOpen ? "−" : "+"}
+            <span className="handover-avatar-slot handover-avatar-sj">SJ</span>
+            <span className="handover-avatar-slot handover-avatar-mr">MR</span>
+          </span>
+        </div>
+      </div>
+
+      {/* Once-on-scroll Reassignment Bar */}
+      <div className="handover-owner-bar">
+        <div className="handover-owner-left">
+          <span className="handover-owner-kicker">Firm owner</span>
+          <div className="handover-owner-swap">
+            <span className="handover-person handover-person-from">
+              <span className="handover-mini-badge">SJ</span>
+              S. Jenkins
+            </span>
+            <span className="handover-swap-arrow" aria-hidden="true">
+              →
+            </span>
+            <span className="handover-person handover-person-to">
+              <span className="handover-mini-badge handover-mini-badge-to">
+                MR
               </span>
-            </button>
-            {isOpen && (
-              <div className="mech-step-body">
-                <p>{item.detail}</p>
-                <div className="mech-state-chip">{item.stateBadge}</div>
-              </div>
-            )}
+              M. Reyes
+            </span>
           </div>
-        );
-      })}
+        </div>
+        <span className="handover-reassigned-tag">Reassigned by your firm</span>
+      </div>
+
+      {/* 3-Part Snapshot: Verified / Open firm call / Next step */}
+      <div className="handover-snapshot">
+        <div className="handover-snap-row">
+          <span
+            className="handover-snap-dot handover-snap-dot-green"
+            aria-hidden="true"
+          />
+          <span className="handover-snap-label">Verified</span>
+          <span className="handover-snap-val">
+            Grady EMS &amp; Peachtree Ortho · 14 CPT lines
+          </span>
+        </div>
+        <div className="handover-snap-row">
+          <span
+            className="handover-snap-dot handover-snap-dot-copper"
+            aria-hidden="true"
+          />
+          <span className="handover-snap-label">Open firm call</span>
+          <span className="handover-snap-val">
+            08/14 lumbar MRI cutoff · 2 PDFs attached
+          </span>
+        </div>
+        <div className="handover-snap-row">
+          <span
+            className="handover-snap-dot handover-snap-dot-copper"
+            aria-hidden="true"
+          />
+          <span className="handover-snap-label">Next step</span>
+          <span className="handover-snap-val">
+            Awaiting the firm’s call · everything else continues
+          </span>
+        </div>
+      </div>
+
+      <div className="matter-story-footer">
+        <p className="matter-story-attribution">
+          <strong>Handed to M. Reyes.</strong> Nothing to reconstruct from
+          email.
+        </p>
+      </div>
     </div>
   );
 }
