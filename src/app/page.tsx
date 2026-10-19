@@ -33,7 +33,7 @@ export default function Home() {
 
             <p className="hero-scarcity">
               <span className="cp-live-indicator" aria-hidden="true" />
-              <span>Now taking 3–5 founding plaintiff PI firms.</span>
+              <span>Now taking five founding plaintiff PI firms.</span>
             </p>
 
             <div className="actions">
@@ -113,7 +113,7 @@ export default function Home() {
           <div>
             <p className="eyebrow">How follow-through works</p>
             <h2 id="mechanism-title">
-              A returned PDF isn’t readiness. We work through the gaps.
+              A returned record isn’t a ready file. We work through the gaps.
             </h2>
           </div>
           <p className="section-lead">
@@ -186,46 +186,52 @@ export default function Home() {
           <div className="founding-offer-box">
             <div className="founding-top-badge">
               <span className="cp-live-indicator" aria-hidden="true" />
-              Founding Partner Program · 3–5 Plaintiff PI Firms
+              Founding Partner Program · Five Plaintiff PI Firms
             </div>
             <h2 id="founding-title">
-              Real pre-lit work carried. Shaped around your firm.
+              Five founding firms. Built with you, not sold to you.
             </h2>
             <p className="founding-description">
-              Partner with us on a defined starting set of matters to take real
-              execution off your team’s plate and establish a repeatable routing
-              arrangement together.
+              We’re taking a small number on purpose. Each one starts with a
+              defined set of matters, a named counterpart on your side, and a
+              working arrangement we shape together — not a seat in a queue.
             </p>
             <ul className="founding-quick-list">
               <li>
                 <span className="qp-icon" aria-hidden="true">✓</span>
                 <span>
-                  <strong>Bounded starting cohort</strong> — Begin with a
-                  defined set of eligible matters and a named operational
-                  counterpart
+                  <strong>Bounded.</strong> 10–25 files, or one routing rule.
+                  Expand only if we earn it.
                 </span>
               </li>
               <li>
                 <span className="qp-icon" aria-hidden="true">✓</span>
                 <span>
-                  <strong>No separate platform fee</strong> — Pay agreed cost
-                  recovery for operated work + a fixed shared acquisition
-                  contribution
+                  <strong>Checked first.</strong> We run side-by-side on your
+                  candidate files before you rely on the result.
                 </span>
               </li>
               <li>
                 <span className="qp-icon" aria-hidden="true">✓</span>
                 <span>
-                  <strong>15-minute fit call</strong> — Identify candidate
-                  matters or 30+ day stalls with zero prep required
+                  <strong>Reversible.</strong> Any file comes back to your team
+                  at any point, with its history and open items intact.
+                </span>
+              </li>
+              <li>
+                <span className="qp-icon" aria-hidden="true">✓</span>
+                <span>
+                  <strong>Direct.</strong> You work with the founder. Terms in
+                  writing before you decide; no platform fee during the founding
+                  period.
                 </span>
               </li>
             </ul>
             <div className="actions">
-              <Link className="button button-light" href="/conversation">
-                Book a 15-minute conversation <Arrow />
+              <Link className="button" href="/conversation">
+                Book 15 minutes <Arrow />
               </Link>
-              <Link className="text-link text-link-light" href="/records-to-demand">
+              <Link className="text-link" href="/records-to-demand">
                 Inspect Records-to-Demand brief <Arrow />
               </Link>
             </div>

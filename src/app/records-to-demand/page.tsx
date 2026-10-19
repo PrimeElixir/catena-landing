@@ -330,9 +330,9 @@ export default function LaneBrief() {
                   retrieval vendor or Catena supplier mode, and decision owners.
                 </li>
                 <li>
-                  <strong>Agree written terms:</strong> Cost recovery + fixed
-                  shared acquisition contribution, with no separate platform
-                  subscription.
+                  <strong>Agree written terms:</strong> Terms in writing before
+                  you decide; no separate platform fee during the founding
+                  period.
                 </li>
               </ul>
             </div>

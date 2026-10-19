@@ -110,8 +110,9 @@ export default function Conversation() {
               <h3>03 · Founding scope &amp; written terms</h3>
               <p>
                 If there is a fit, we review candidate matters with your
-                operational counterpart and provide exact written scope and
-                founding cost-recovery terms before any commitment.
+                operational counterpart and provide written scope and founding
+                terms before you decide—with no platform fee during the founding
+                period.
               </p>
             </div>
           </div>

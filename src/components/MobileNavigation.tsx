@@ -21,10 +21,10 @@ export function MobileNavigation() {
         Menu <span aria-hidden="true" className="menu-glyph">+</span>
       </summary>
       <nav aria-label="Mobile navigation">
-        <Link href="/#assignment">How assignment works</Link>
         <Link href="/#ownership">Pre-lit responsibilities</Link>
+        <Link href="/#assignment">How assignment works</Link>
+        <Link href="/#continuity">Continuity &amp; handover</Link>
         <Link href="/records-to-demand">Records-to-Demand brief</Link>
-        <Link href="/#founding-partners">Founding partners</Link>
         <Link href="/conversation" className="mobile-menu-cta">
           Book a 15-minute conversation <span aria-hidden="true">↗</span>
         </Link>

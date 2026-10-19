@@ -47,8 +47,8 @@ export function SiteHeader() {
                 <div className="nav-dropdown-col nav-dropdown-col-highlight">
                   <span className="nav-dropdown-kicker">Continuity &amp; Handover</span>
                   <Link href="/#continuity" className="nav-dropdown-item">
-                    <strong>CatenaOS Operational Context</strong>
-                    <span>Shared requirements, verified evidence &amp; next-action ownership across covered matters</span>
+                    <strong>When Staff or Caseloads Shift</strong>
+                    <span>Follow-through keeps moving when a case manager leaves or queues change</span>
                   </Link>
                   <Link href="/records-to-demand" className="nav-dropdown-promo">
                     <span>Foundational Lane Brief</span>
@@ -84,7 +84,6 @@ export function SiteHeader() {
           </div>
 
           <Link href="/records-to-demand">Records-to-Demand</Link>
-          <Link href="/#founding-partners">Founding Partners</Link>
           <Link className="nav-inquiry" href="/conversation">
             Book a conversation <Arrow />
           </Link>
