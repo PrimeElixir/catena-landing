@@ -1578,20 +1578,21 @@ p {
 .cp-video-stage {
   border-radius: 14px;
   overflow: hidden;
-  background: #080f0d;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #fafafa;
+  border: 1px solid var(--line);
 }
 
 .hero-story-card .cp-video-stage {
   border-radius: 0;
   border: none;
-  background: var(--surface);
+  background: #fafafa;
 }
 
 .cp-video-stage video {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
+  background: #fafafa;
 }
 
 .cp-video-footer {
@@ -2648,10 +2649,11 @@ p {
 .operation-film {
   margin: 0;
   padding: 1.15rem;
-  border-radius: 20px;
-  background: var(--obsidian);
-  color: #f6f5f0;
-  box-shadow: 0 20px 44px rgba(12, 21, 18, 0.18);
+  border-radius: 18px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  box-shadow: var(--shadow-card);
 }
 
 .film-heading {
@@ -2669,20 +2671,20 @@ p {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--emerald-bright);
+  color: var(--accent);
   margin-bottom: 0.18rem;
 }
 
 .film-heading h3 {
-  color: #ffffff;
+  color: var(--ink);
   font-size: 1rem;
 }
 
 .film-badge {
   padding: 0.24rem 0.6rem;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(246, 245, 240, 0.85);
+  background: var(--accent-soft);
+  color: var(--accent);
   font-size: 0.72rem;
   font-weight: 600;
 }
@@ -2691,13 +2693,13 @@ p {
   width: 100%;
   height: auto;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  background: #080f0d;
+  border: 1px solid var(--line);
+  background: #fafafa;
 }
 
 .film-transcript {
   margin-top: 0.8rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid var(--line);
   padding-top: 0.65rem;
 }
 
@@ -2709,7 +2711,7 @@ p {
   list-style: none;
   font-size: 0.82rem;
   font-weight: 600;
-  color: rgba(246, 245, 240, 0.8);
+  color: var(--ink-secondary);
 }
 
 .film-transcript summary::-webkit-details-marker {
@@ -2722,7 +2724,10 @@ p {
   gap: 0.45rem;
   font-size: 0.8rem;
   line-height: 1.5;
-  color: rgba(246, 245, 240, 0.72);
+  color: var(--muted);
+}
+.transcript-content strong {
+  color: var(--ink);
 }
 
 /* ==========================================================================

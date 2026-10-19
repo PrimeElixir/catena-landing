@@ -160,22 +160,22 @@ export function OperatingModelFilm() {
         preload="metadata"
         width="1280"
         height="720"
-        poster="/media/records-to-demand-explainer-poster-v3.webp"
+        poster="/media/records-to-demand-walkthrough-poster-v4.webp"
         aria-label="Catena requests records and bills, resolves gaps and prepares the demand package for review"
       >
         <source
-          src="/media/records-to-demand-explainer-v3.mp4"
+          src="/media/records-to-demand-walkthrough-v4.mp4"
           type="video/mp4"
         />
         <track
           kind="captions"
-          src="/media/records-to-demand-explainer-v3.vtt"
+          src="/media/records-to-demand-walkthrough-v4.vtt"
           srcLang="en"
           label="English"
           default
         />
         <p>
-          <a href="/media/records-to-demand-explainer-v3.mp4">
+          <a href="/media/records-to-demand-walkthrough-v4.mp4">
             Watch the short walkthrough
           </a>{" "}
           or read the step-by-step sequence below.
@@ -190,35 +190,47 @@ export function OperatingModelFilm() {
         </summary>
         <div className="transcript-content">
           <p>
-            <strong>1. Matter routing &amp; admission.</strong> Route a defined
-            set, overflow rule, or caseload. Catena establishes required
-            providers, date ranges, and governing criteria under your policy.
+            <strong>1. Matter #2048 assigned to Catena (00:00–00:04).</strong>{" "}
+            Four providers; S. Jenkins (your paralegal) keeps the file while
+            Catena carries the follow-through. Grady EMS records and itemized
+            bill are requested, returned, and verified.
           </p>
           <p>
-            <strong>2. Return verification.</strong> Medical records arrive, but
-            a required itemized CPT billing ledger is missing. Catena checks the
-            return against requirements and flags the deficiency.
+            <strong>
+              2. A returned record isn’t a ready file (00:04–00:11).
+            </strong>{" "}
+            Peachtree Ortho returns a bare balance summary—no CPT codes and no
+            itemized bill.
           </p>
           <p>
-            <strong>3. Deficiency resolution.</strong> When a provider sends a
-            bare balance summary instead of dated CPT charges, Catena chases the
-            correction and verifies the updated itemized ledger.
+            <strong>
+              3. Catena chased it; your paralegal didn’t (00:11–00:19).
+            </strong>{" "}
+            Catena rejects the balance summary, requests the itemized ledger,
+            and verifies all 14 service lines without a handoff.
           </p>
           <p>
-            <strong>4. Mid-stream treatment signal.</strong> When an August 14
-            note discloses a new lumbar MRI referral, Catena preserves earlier
-            evidence in history and reopens readiness automatically.
+            <strong>
+              4. New treatment appears; readiness reopens (00:19–00:27).
+            </strong>{" "}
+            An 08/14 follow-up note references a new lumbar MRI. Catena pauses
+            readiness while keeping verified records locked.
           </p>
           <p>
-            <strong>5. Reserved firm judgment.</strong> Only legal decisions—like
-            whether to hold for the new MRI or apply a treatment cutoff—route to
-            your designated reviewer with linked records.
+            <strong>
+              5. One question goes to the firm—records attached (00:27–00:35).
+            </strong>{" "}
+            Catena routes the legal call to S. Jenkins with both options and the
+            supporting PDFs attached: hold the demand for MRI results, or
+            proceed on the 07/31 cutoff. Everything else continues.
           </p>
           <p>
-            <strong>6. Qualified demand preparation.</strong> With all records,
-            itemized bills, and firm decisions complete, Catena stages the
-            verified chronology, specials, and demand package for attorney
-            review.
+            <strong>
+              6. Your firm decides; Catena carried the rest (00:35–00:42).
+            </strong>{" "}
+            When the firm answers (“Hold for MRI results”), Catena adds the
+            records, prepares the chronology and specials, and stages the demand
+            for your review. Valuation, sending, and settlement stay with you.
           </p>
         </div>
       </details>

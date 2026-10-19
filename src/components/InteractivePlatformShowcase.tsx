@@ -236,16 +236,16 @@ export function HeroControlPlane() {
               playsInline
               width="1280"
               height="720"
-              poster="/media/records-to-demand-explainer-poster-v3.webp"
+              poster="/media/records-to-demand-walkthrough-poster-v4.webp"
               aria-label="Catena requests records and bills, resolves gaps and prepares the demand package for review"
             >
               <source
-                src="/media/records-to-demand-explainer-v3.mp4"
+                src="/media/records-to-demand-walkthrough-v4.mp4"
                 type="video/mp4"
               />
               <track
                 kind="captions"
-                src="/media/records-to-demand-explainer-v3.vtt"
+                src="/media/records-to-demand-walkthrough-v4.vtt"
                 srcLang="en"
                 label="English"
                 default
