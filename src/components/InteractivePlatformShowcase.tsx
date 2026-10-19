@@ -222,218 +222,248 @@ export function HeroScopeDrawer() {
 export function HeroControlPlane() {
   const [showVideo, setShowVideo] = useState(false);
 
+  useEffect(() => {
+    if (!showVideo) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowVideo(false);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [showVideo]);
+
   return (
     <div
       className="hero-app-frame"
       aria-label="Matter #2048 follow-through example"
     >
       <div className="hero-story-card">
-        {showVideo ? (
-          <div className="cp-video-stage">
-            <video
-              controls
-              autoPlay
-              playsInline
-              width="1280"
-              height="720"
-              poster="/media/records-to-demand-walkthrough-poster-v4.webp"
-              aria-label="Catena requests records and bills, resolves gaps and prepares the demand package for review"
-            >
-              <source
-                src="/media/records-to-demand-walkthrough-v4.mp4"
-                type="video/mp4"
-              />
-              <track
-                kind="captions"
-                src="/media/records-to-demand-walkthrough-v4.vtt"
-                srcLang="en"
-                label="English"
-                default
-              />
-            </video>
-            <div className="cp-video-footer">
-              <span>
-                <strong>42-second walkthrough:</strong> How Catena resolves
-                missing CPT bills, pauses readiness on new treatment, and routes
-                the decision.
+        <div className="matter-story-window">
+          <div className="matter-story-header">
+            <div className="matter-story-meta">
+              <span className="matter-story-id">#2048</span>
+              <span className="matter-story-name">MVA bodily injury</span>
+              <span className="matter-story-providers">4 providers</span>
+            </div>
+            <div className="matter-story-badges">
+              <span className="matter-status-chip">
+                <span className="matter-status-dot" aria-hidden="true" />
+                Catena carrying
               </span>
-              <button
-                type="button"
-                className="cp-back-btn"
-                onClick={() => setShowVideo(false)}
+              <span
+                className="matter-owner-avatar"
+                title="S. Jenkins (Firm Paralegal)"
               >
-                ← Back to Matter #2048
-              </button>
+                SJ
+              </span>
             </div>
           </div>
-        ) : (
-          <div className="matter-story-window">
-            <div className="matter-story-header">
-              <div className="matter-story-meta">
-                <span className="matter-story-id">#2048</span>
-                <span className="matter-story-name">MVA bodily injury</span>
-                <span className="matter-story-providers">4 providers</span>
+
+          <div className="matter-story-events">
+            <div className="matter-story-row">
+              <span className="matter-story-date">07/31</span>
+              <div className="matter-story-rail" aria-hidden="true">
+                <span className="matter-story-dot" />
               </div>
-              <div className="matter-story-badges">
-                <span className="matter-status-chip">
-                  <span className="matter-status-dot" aria-hidden="true" />
-                  Catena carrying
-                </span>
-                <span
-                  className="matter-owner-avatar"
-                  title="S. Jenkins (Firm Paralegal)"
-                >
-                  SJ
-                </span>
+              <div className="matter-story-body">
+                <div className="matter-actor-line">
+                  <span className="matter-actor-catena">CATENA</span>
+                </div>
+                <p className="matter-story-text">
+                  Peachtree Ortho returned a balance summary. Catena rejected
+                  it, requested the itemized ledger, verified 14 service lines.
+                </p>
               </div>
             </div>
 
-            <div className="matter-story-events">
-              <div className="matter-story-row">
-                <span className="matter-story-date">07/31</span>
-                <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-dot" />
-                </div>
-                <div className="matter-story-body">
-                  <div className="matter-actor-line">
-                    <span className="matter-actor-catena">CATENA</span>
-                  </div>
-                  <p className="matter-story-text">
-                    Peachtree Ortho returned a balance summary. Catena rejected
-                    it, requested the itemized ledger, verified 14 service
-                    lines.
-                  </p>
-                </div>
+            <div className="matter-story-row">
+              <span className="matter-story-date">08/14</span>
+              <div className="matter-story-rail" aria-hidden="true">
+                <span className="matter-story-dot" />
               </div>
-
-              <div className="matter-story-row">
-                <span className="matter-story-date">08/14</span>
-                <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-dot" />
+              <div className="matter-story-body">
+                <div className="matter-actor-line">
+                  <span className="matter-actor-catena">CATENA</span>
                 </div>
-                <div className="matter-story-body">
-                  <div className="matter-actor-line">
-                    <span className="matter-actor-catena">CATENA</span>
-                  </div>
-                  <p className="matter-story-text">
-                    A follow-up note referenced a new lumbar MRI. Catena paused
-                    readiness; verified records stay locked.
-                  </p>
-                </div>
+                <p className="matter-story-text">
+                  A follow-up note referenced a new lumbar MRI. Catena paused
+                  readiness; verified records stay locked.
+                </p>
               </div>
+            </div>
 
-              <div className="matter-story-row matter-story-row-last">
-                <span className="matter-story-date">08/14</span>
-                <div className="matter-story-rail" aria-hidden="true">
-                  <span className="matter-story-dot matter-story-dot-handoff" />
+            <div className="matter-story-row matter-story-row-last">
+              <span className="matter-story-date">08/14</span>
+              <div className="matter-story-rail" aria-hidden="true">
+                <span className="matter-story-dot matter-story-dot-handoff" />
+              </div>
+              <div className="matter-story-body">
+                <div className="matter-actor-line">
+                  <span className="matter-actor-catena">CATENA</span>
+                  <span className="matter-actor-arrow" aria-hidden="true">
+                    →
+                  </span>
+                  <span className="matter-actor-firm">S. JENKINS</span>
                 </div>
-                <div className="matter-story-body">
-                  <div className="matter-actor-line">
-                    <span className="matter-actor-catena">CATENA</span>
-                    <span className="matter-actor-arrow" aria-hidden="true">
-                      →
-                    </span>
-                    <span className="matter-actor-firm">S. JENKINS</span>
-                  </div>
-                  <p className="matter-story-text">
-                    One question sent to the firm with both options and the
-                    records attached: hold the demand for MRI results, or
-                    proceed on the 07/31 cutoff.
-                  </p>
-                  <div
-                    className="matter-attachments"
-                    aria-label="Attached records sent with question"
-                  >
-                    <span className="matter-attachment-pill">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
-                          stroke="currentColor"
-                          strokeWidth="1.35"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M9 2v4h4"
-                          stroke="currentColor"
-                          strokeWidth="1.35"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      Peachtree_CPT_Ledger.pdf
-                    </span>
-                    <span className="matter-attachment-pill">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
-                          stroke="currentColor"
-                          strokeWidth="1.35"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M9 2v4h4"
-                          stroke="currentColor"
-                          strokeWidth="1.35"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                      08-14_Ortho_FollowUp.pdf
-                    </span>
-                  </div>
-                  <div className="matter-awaiting-tag">
+                <p className="matter-story-text">
+                  One question sent to the firm with both options and the
+                  records attached: hold the demand for MRI results, or proceed
+                  on the 07/31 cutoff.
+                </p>
+                <div
+                  className="matter-attachments"
+                  aria-label="Attached records sent with question"
+                >
+                  <span className="matter-attachment-pill">
                     <svg
-                      className="matter-awaiting-icon"
-                      width="13"
-                      height="13"
+                      width="12"
+                      height="12"
                       viewBox="0 0 16 16"
                       fill="none"
                       aria-hidden="true"
                     >
                       <path
-                        d="M2.5 3h11v7.5H6.5L3.5 13v-2.5h-1V3Z"
+                        d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
                         stroke="currentColor"
-                        strokeWidth="1.4"
+                        strokeWidth="1.35"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M9 2v4h4"
+                        stroke="currentColor"
+                        strokeWidth="1.35"
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span>
-                      Awaiting the firm’s call · everything else continues
-                    </span>
-                  </div>
+                    Peachtree_CPT_Ledger.pdf
+                  </span>
+                  <span className="matter-attachment-pill">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4 2h5.5L13 5.5V13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z"
+                        stroke="currentColor"
+                        strokeWidth="1.35"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M9 2v4h4"
+                        stroke="currentColor"
+                        strokeWidth="1.35"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    08-14_Ortho_FollowUp.pdf
+                  </span>
+                </div>
+                <div className="matter-awaiting-tag">
+                  <svg
+                    className="matter-awaiting-icon"
+                    width="13"
+                    height="13"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2.5 3h11v7.5H6.5L3.5 13v-2.5h-1V3Z"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  <span>
+                    Awaiting the firm’s call · everything else continues
+                  </span>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="matter-story-footer">
-              <p className="matter-story-attribution">
-                <strong>Nothing to monitor.</strong> Catena brings the decision
-                to you.
-              </p>
+          <div className="matter-story-footer">
+            <p className="matter-story-attribution">
+              <strong>Nothing to monitor.</strong> Catena brings the decision to
+              you.
+            </p>
+            <button
+              type="button"
+              className="matter-walkthrough-btn"
+              onClick={() => setShowVideo(true)}
+            >
+              <span className="matter-play-icon" aria-hidden="true">
+                ▶
+              </span>{" "}
+              Watch the 42s walkthrough
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {showVideo && (
+        <div
+          className="walkthrough-modal-backdrop"
+          role="dialog"
+          aria-modal="true"
+          aria-label="42-second Matter #2048 walkthrough"
+          onClick={() => setShowVideo(false)}
+        >
+          <div
+            className="walkthrough-modal-dialog"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="walkthrough-modal-header">
+              <div>
+                <span className="film-kicker">
+                  Records-to-Demand · Matter #2048
+                </span>
+                <strong>
+                  How Catena resolves missing CPT bills, pauses readiness on new
+                  treatment, and routes the decision (42s)
+                </strong>
+              </div>
               <button
                 type="button"
-                className="matter-walkthrough-btn"
-                onClick={() => setShowVideo(true)}
+                className="walkthrough-modal-close"
+                onClick={() => setShowVideo(false)}
               >
-                <span className="matter-play-icon" aria-hidden="true">
-                  ▶
-                </span>{" "}
-                Watch the 42s walkthrough
+                ✕ Close
               </button>
             </div>
+            <div className="walkthrough-modal-stage">
+              <video
+                controls
+                autoPlay
+                playsInline
+                width="1280"
+                height="720"
+                poster="/media/records-to-demand-walkthrough-poster-v4.webp"
+                aria-label="Catena requests records and bills, resolves gaps and prepares the demand package for review"
+              >
+                <source
+                  src="/media/records-to-demand-walkthrough-v4.mp4"
+                  type="video/mp4"
+                />
+                <track
+                  kind="captions"
+                  src="/media/records-to-demand-walkthrough-v4.vtt"
+                  srcLang="en"
+                  label="English"
+                  default
+                />
+              </video>
+            </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

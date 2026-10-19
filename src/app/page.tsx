@@ -7,7 +7,6 @@ import {
 import {
   AssignmentExplorer,
   HeroPillarStrip,
-  MidStreamInteractiveStepList,
   ResponsibilityExplorer,
 } from "@/components/InteractivePlatformShowcase";
 
@@ -146,31 +145,26 @@ export default function Home() {
         aria-labelledby="mechanism-title"
       >
         <span id="document-readiness" className="anchor-alias" />
-        <div className="mechanism-grid">
-          <div className="mechanism-copy">
+        <div className="section-header-compact">
+          <div>
             <p className="eyebrow">How follow-through works</p>
             <h2 id="mechanism-title">
               A returned PDF isn’t readiness. We work through the gaps.
             </h2>
-            <p className="mechanism-intro">
-              Pre-lit files rarely move in a straight line—providers return
-              bare balance summaries instead of CPT line items, and new
-              treatment appears mid-stream. Click each step to see how Catena
-              carries the loop to completion:
-            </p>
-
-            <MidStreamInteractiveStepList />
-
-            <div className="actions">
-              <Link className="text-link" href="/records-to-demand">
-                Inspect the full Records-to-Demand proof brief <Arrow />
-              </Link>
-            </div>
           </div>
+          <p className="section-lead">
+            Pre-lit files rarely move in a straight line—providers return bare
+            balance summaries instead of CPT line items, and new treatment
+            appears mid-stream. Watch how Catena carries Matter #2048 to
+            completion, or{" "}
+            <Link className="text-link" href="/records-to-demand">
+              inspect the full Records-to-Demand proof brief <Arrow />
+            </Link>
+          </p>
+        </div>
 
-          <div className="mechanism-media">
-            <OperatingModelFilm />
-          </div>
+        <div className="mechanism-stage">
+          <OperatingModelFilm />
         </div>
       </section>
 
